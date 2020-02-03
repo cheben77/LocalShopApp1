@@ -2064,26 +2064,26 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var GeoCatchingPage = /** @class */ (function () {
-    function GeoCatchingPage(geolocation, alertController, actionCtrl, platform) {
-        // this.geolocation.getCurrentPosition().then((resp) => {
-        //  // resp.coords.latitude
-        //  // resp.coords.longitude
-        // }).catch((error) => {
-        //   console.log('Error getting location', error);
-        // });
-        this.geolocation = geolocation;
+    function GeoCatchingPage(alertController, actionCtrl, platform) {
         this.alertController = alertController;
         this.actionCtrl = actionCtrl;
         this.platform = platform;
-        // const watch = this.geolocation.watchPosition();
-        // watch.subscribe((data) => {
-        //  // data can be a set of coordinates, or an error (if an error occurred).
-        //  // data.coords.latitude
-        //  // data.coords.longitude
-        //  console.log('Tes pister !!', data.coords);
-        // });
         if (this.platform.is('cordova')) {
             this.loadMap();
+            // this.geolocation.getCurrentPosition().then((resp) => {
+            //  // resp.coords.latitude
+            //  // resp.coords.longitude
+            // }).catch((error) => {
+            //   console.log('Error getting location', error);
+            // });
+            this.geolocation = new _ionic_native_geolocation_ngx__WEBPACK_IMPORTED_MODULE_4__["Geolocation"];
+            var watch = this.geolocation.watchPosition();
+            watch.subscribe(function (data) {
+                // data can be a set of coordinates, or an error (if an error occurred).
+                // data.coords.latitude
+                // data.coords.longitude
+                console.log('Tes pister !!', data.coords);
+            });
         }
     }
     GeoCatchingPage.prototype.loadMap = function () {
@@ -2199,7 +2199,6 @@ var GeoCatchingPage = /** @class */ (function () {
         });
     };
     GeoCatchingPage.ctorParameters = function () { return [
-        { type: _ionic_native_geolocation_ngx__WEBPACK_IMPORTED_MODULE_4__["Geolocation"] },
         { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["AlertController"] },
         { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["ActionSheetController"] },
         { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["Platform"] }
@@ -2210,8 +2209,7 @@ var GeoCatchingPage = /** @class */ (function () {
             template: __webpack_require__(/*! raw-loader!./geoCatching.page.html */ "./node_modules/raw-loader/index.js!./src/app/geoCatching/geoCatching.page.html"),
             styles: [__webpack_require__(/*! ./geoCatching.page.scss */ "./src/app/geoCatching/geoCatching.page.scss")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ionic_native_geolocation_ngx__WEBPACK_IMPORTED_MODULE_4__["Geolocation"],
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["AlertController"],
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_3__["AlertController"],
             _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["ActionSheetController"],
             _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["Platform"]])
     ], GeoCatchingPage);

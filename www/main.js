@@ -542,6 +542,7 @@ var AppComponent = /** @class */ (function () {
         this.statusBar = statusBar;
         this.router = router;
         this.afAuth = afAuth;
+        this.initializeApp();
     }
     AppComponent.prototype.initializeApp = function () {
         var _this = this;
@@ -549,7 +550,7 @@ var AppComponent = /** @class */ (function () {
             _this.afAuth.authState.subscribe(function (auth) {
                 if (!auth) {
                     console.log('non connecté');
-                    _this.router.navigateByUrl('/login');
+                    _this.router.navigateByUrl('tabs/login');
                 }
                 else {
                     _this.router.navigateByUrl('/');
