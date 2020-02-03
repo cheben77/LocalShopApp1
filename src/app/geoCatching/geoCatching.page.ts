@@ -32,7 +32,6 @@ export class GeoCatchingPage {
     public platform: Platform
   ) {
     if (this.platform.is('cordova')) {
-      this.loadMap();
       // this.geolocation.getCurrentPosition().then((resp) => {
       //  // resp.coords.latitude
       //  // resp.coords.longitude
@@ -44,14 +43,11 @@ export class GeoCatchingPage {
   
       const watch = this.geolocation.watchPosition();
       watch.subscribe((data) => {
-       // data can be a set of coordinates, or an error (if an error occurred).
-       // data.coords.latitude
-       // data.coords.longitude
-       console.log('Tes pister !!', data.coords);
+        this.loadMap(data.coords);
       });
     }
   }
-  loadMap() {
+  loadMap(coords) {
     Environment.setEnv({
       API_KEY_FOR_BROWSER_RELEASE: 'AIzaSyAJjXyc0-8x1DSdbnS0FhnkmskZ5hHvzlQ',
       API_KEY_FOR_BROWSER_DEBUG: ''
@@ -59,8 +55,8 @@ export class GeoCatchingPage {
     this.map = GoogleMaps.create('map_canvas', {
       camera: {
         target: {
-          lat: 43.610769,
-          lng: 3.876716
+          lat: coords.latitude,
+          lng: coords.longitude
         },
         zoom: 12,
         tilt: 30
