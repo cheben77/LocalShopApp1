@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\n\n</ion-header>\n\n\n<ion-tabs>\n\n  <ion-tab-bar slot=\"bottom\">\n    <ion-tab-button tab=\"tab1\">\n      <ion-icon name=\"home\"></ion-icon>\n      <ion-label>Shop</ion-label>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"tab2\">\n      <ion-icon name=\"qr-scanner\"></ion-icon>\n      <ion-label>QR Code</ion-label>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"tab3\">\n      <ion-icon name=\"walk\"></ion-icon>\n      <ion-label>Géo Maps</ion-label>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"tab4\">\n      <ion-icon name=\"contact\"></ion-icon>\n      <ion-label>Profile</ion-label>\n    </ion-tab-button>\n  </ion-tab-bar>\n\n</ion-tabs>\n"
+module.exports = "<ion-header>\r\n\r\n</ion-header>\r\n\r\n\r\n<ion-tabs>\r\n\r\n  <ion-tab-bar slot=\"bottom\">\r\n    <ion-tab-button tab=\"localShop\">\r\n      <ion-icon name=\"home\"></ion-icon>\r\n      <ion-label>Shop</ion-label>\r\n    </ion-tab-button>\r\n\r\n    <ion-tab-button tab=\"qrCode\">\r\n      <ion-icon name=\"qr-scanner\"></ion-icon>\r\n      <ion-label>QR Code</ion-label>\r\n    </ion-tab-button>\r\n\r\n    <ion-tab-button tab=\"geoCatching\">\r\n      <ion-icon name=\"walk\"></ion-icon>\r\n      <ion-label>Géo Maps</ion-label>\r\n    </ion-tab-button>\r\n\r\n    <ion-tab-button tab=\"profile\">\r\n      <ion-icon name=\"contact\"></ion-icon>\r\n      <ion-label>Profile</ion-label>\r\n    </ion-tab-button>\r\n  </ion-tab-bar>\r\n\r\n</ion-tabs>\r\n"
 
 /***/ }),
 
@@ -35,12 +35,12 @@ var routes = [
         component: _tabs_page__WEBPACK_IMPORTED_MODULE_3__["TabsPage"],
         children: [
             {
-                path: 'login',
+                path: 'profile',
                 children: [
                     {
                         path: '',
                         loadChildren: function () {
-                            return __webpack_require__.e(/*! import() | auth-login-login-module */ "auth-login-login-module").then(__webpack_require__.bind(null, /*! ../auth/login/login.module */ "./src/app/auth/login/login.module.ts")).then(function (m) { return m.LoginPageModule; });
+                            return __webpack_require__.e(/*! import() | profile-profile-module */ "profile-profile-module").then(__webpack_require__.bind(null, /*! ../profile/profile.module */ "./src/app/profile/profile.module.ts")).then(function (m) { return m.ProfilePageModule; });
                         }
                     }
                 ]
@@ -79,12 +79,12 @@ var routes = [
                 ]
             },
             {
-                path: 'profile',
+                path: 'login',
                 children: [
                     {
                         path: '',
                         loadChildren: function () {
-                            return __webpack_require__.e(/*! import() | profile-profile-module */ "profile-profile-module").then(__webpack_require__.bind(null, /*! ../profile/profile.module */ "./src/app/profile/profile.module.ts")).then(function (m) { return m.ProfilePageModule; });
+                            return __webpack_require__.e(/*! import() | auth-login-login-module */ "auth-login-login-module").then(__webpack_require__.bind(null, /*! ../auth/login/login.module */ "./src/app/auth/login/login.module.ts")).then(function (m) { return m.LoginPageModule; });
                         }
                     }
                 ]
