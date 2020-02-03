@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
 import {
-        GoogleMaps,
-        GoogleMap,
-        GoogleMapsMapTypeId,
-        GoogleMapsEvent,
-        GoogleMapOptions,
-        CameraPosition,
-        MarkerOptions,
-        Marker,
-        Environment
+  GoogleMaps,
+  GoogleMap,
+  GoogleMapsMapTypeId,
+  GoogleMapsEvent,
+  GoogleMapOptions,
+  CameraPosition,
+  MarkerOptions,
+  Marker,
+  Environment
 } from '@ionic-native/google-maps';
 import { ActionSheetController, Platform, AlertController } from '@ionic/angular';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
@@ -25,28 +25,30 @@ import { Geolocation } from '@ionic-native/geolocation/ngx';
 
 export class GeoCatchingPage {
   map: GoogleMap;
+  private geolocation:Geolocation
   constructor(
-    private geolocation: Geolocation,
     public alertController: AlertController,
     public actionCtrl: ActionSheetController,
     public platform: Platform
   ) {
-    // this.geolocation.getCurrentPosition().then((resp) => {
-    //  // resp.coords.latitude
-    //  // resp.coords.longitude
-    // }).catch((error) => {
-    //   console.log('Error getting location', error);
-    // });
-
-    // const watch = this.geolocation.watchPosition();
-    // watch.subscribe((data) => {
-    //  // data can be a set of coordinates, or an error (if an error occurred).
-    //  // data.coords.latitude
-    //  // data.coords.longitude
-    //  console.log('Tes pister !!', data.coords);
-    // });
     if (this.platform.is('cordova')) {
       this.loadMap();
+      // this.geolocation.getCurrentPosition().then((resp) => {
+      //  // resp.coords.latitude
+      //  // resp.coords.longitude
+      // }).catch((error) => {
+      //   console.log('Error getting location', error);
+      // });
+
+      this.geolocation = new Geolocation;
+  
+      const watch = this.geolocation.watchPosition();
+      watch.subscribe((data) => {
+       // data can be a set of coordinates, or an error (if an error occurred).
+       // data.coords.latitude
+       // data.coords.longitude
+       console.log('Tes pister !!', data.coords);
+      });
     }
   }
   loadMap() {
@@ -69,6 +71,7 @@ export class GeoCatchingPage {
   setMapTypeId() {
     this.map.setMapTypeId(GoogleMapsMapTypeId.SATELLITE);
   }
+  
   async mapOptions() {
     const actionSheet = await this.actionCtrl.create({
       buttons: [{
@@ -107,35 +110,35 @@ export class GeoCatchingPage {
        animation: 'DROP',
        position: this.map.getCameraPosition().target
     });
- }
+  }
 
- async addMarker() {
-  const alert = await this.alertController.create({
-    header: 'Ajouter un emplacement',
-    inputs: [
-      {
-        name: 'title',
-        type: 'text',
-        placeholder: 'Le titre'
-      }
-    ],
-    buttons: [
-      {
-        text: 'Annuler',
-        role: 'cancel',
-        cssClass: 'secondary',
-        handler: () => {
-          console.log('Confirm Cancel');
+  async addMarker() {
+    const alert = await this.alertController.create({
+      header: 'Ajouter un emplacement',
+      inputs: [
+        {
+          name: 'title',
+          type: 'text',
+          placeholder: 'Le titre'
         }
-      }, {
-        text: 'Ajouter',
-        handler: data => {
-          console.log('Titre: ' + data.title);
-          this.placeMarker(data.title);
+      ],
+      buttons: [
+        {
+          text: 'Annuler',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: () => {
+            console.log('Confirm Cancel');
+          }
+        }, {
+          text: 'Ajouter',
+          handler: data => {
+            console.log('Titre: ' + data.title);
+            this.placeMarker(data.title);
+          }
         }
-      }
-    ]
-  });
-  await alert.present();
-}
+      ]
+    });
+    await alert.present();
+  }
 }

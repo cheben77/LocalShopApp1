@@ -19,14 +19,16 @@ export class AppComponent {
     private statusBar: StatusBar,
     private router: Router,
     public afAuth: AngularFireAuth,
-  ) {}
+  ) {
+    this.initializeApp();
+  }
 
   initializeApp() {
     this.platform.ready().then(() => {
       this.afAuth.authState.subscribe(auth => {
-        if (!auth) {
+      if (!auth) {
           console.log('non connecté');
-          this.router.navigateByUrl('/login');
+          this.router.navigateByUrl('tabs/login');
         } else {
           this.router.navigateByUrl('/');
           console.log('Connecté: ' + auth.uid);
