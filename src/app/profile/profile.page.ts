@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFireDatabase } from '@angular/fire/database';
+
 
 @Component({
   selector: 'app-profile',
@@ -11,9 +13,9 @@ export class ProfilePage {
   mail: string;
   method: any;
   badge: any;
-  //private badge: Badge;
 
   constructor(
+    public afDB: AngularFireDatabase,
     public afAuth: AngularFireAuth
   ) {
     this.afAuth.authState.subscribe(auth => {
