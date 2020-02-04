@@ -17,12 +17,7 @@
   
   <div class="ion-padding">
     <ion-button (click)="login()" expand="block" color="primary">Connexion</ion-button>
-  
-    <p style="text-align: center;">ou</p>
-  
-    <ion-button (click)="signup()" expand="block" color="tertiary">Inscription</ion-button>
   </div>
-  <ion-button (click)="add()">Ajouter</ion-button>
 
  
 <!-- Input with value
@@ -66,16 +61,16 @@
   
   <ion-item>
     <ion-label position="floating">Mot de passe</ion-label>
-    <ion-input required="password"></ion-input>
+    <ion-input required="password" type="password"></ion-input>
   </ion-item>
   
   <ion-item>
-    <ion-label position="floating">confirmer votre mot de passe</ion-label>
-    <ion-input aria-required="password"></ion-input>
+    <ion-label position="floating" >confirmer votre mot de passe</ion-label>
+    <ion-input aria-required="password" type="password"></ion-input>
   </ion-item>
-    <ion-button (click)="connected" aria-expanded="block" slot="end">
-      C'est parti !!
-    </ion-button>
+
+  <ion-button (click)="signup()" expand="block" color="tertiary">Inscription</ion-button>
+   
   </form>
 
 

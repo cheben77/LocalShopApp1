@@ -27,7 +27,7 @@ export class LoginPage implements OnInit {
 
   add() {
     this.afDG.list('User/').push({
-      pseudo: 'drissas'
+      pseudo: ''
     });
   }
   login() {
