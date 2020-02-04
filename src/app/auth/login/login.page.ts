@@ -13,7 +13,9 @@ export class LoginPage implements OnInit {
   afDG: any;
   loginData = {
     email: '',
-    password: ''
+    password: '',
+    pseudo: '',
+    Age: '',
   };
 
   constructor(
@@ -27,7 +29,8 @@ export class LoginPage implements OnInit {
 
   add() {
     this.afDG.list('User/').push({
-      pseudo: ''
+      pseudo: '',
+      Age: '',
     });
   }
   login() {

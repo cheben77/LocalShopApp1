@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-title>login</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <ion-item>\n    <ion-label><b>Email</b></ion-label>\n    <ion-input [(ngModel)]=\"loginData.email\" placeholder=\"Entrez votre email\"></ion-input>\n  </ion-item>\n  \n  <ion-item>\n    <ion-label><b>Mot de passe</b></ion-label>\n    <ion-input [(ngModel)]=\"loginData.password\" type=\"password\" placeholder=\"Entrez votre mot de passe\"></ion-input>\n  </ion-item>\n  \n  <div class=\"ion-padding\">\n    <ion-button (click)=\"login()\" expand=\"block\" color=\"primary\">Connexion</ion-button>\n  </div>\n\n \n<!-- Input with value\n<ion-input value=\"custom\"></ion-input>\n -->\n<!-- Input with placeholder \n<ion-input placeholder=\"Enter Input\"></ion-input>\n-->\n<!-- Input with clear button when there is a value\n<ion-input clearInput value=\"clear me\"></ion-input>\n -->\n<!-- Number type input\n<ion-input type=\"number\" value=\"333\"></ion-input>\n -->\n<!-- Disabled input\n<ion-input value=\"Disabled\" disabled></ion-input>\n -->\n<!-- Readonly input\n<ion-input value=\"Readonly\" readonly></ion-input>\n -->\n <form  *ngIf=\"!connected\">\n  <ion-item  color=\"success\">\n    <ion-label position=\"floating\" class=\"ion-text-center\">Création du compte</ion-label>\n    <ion-input placeholder=\"Pseudo\" color=\"dark\"></ion-input>\n  </ion-item>\n  \n  <ion-item>\n    <ion-label position=\"floating\" >Prénom</ion-label>\n    <ion-input aria-required=\"name\"></ion-input>\n  </ion-item>\n  \n  <ion-item>\n    <ion-label position=\"floating\">Age</ion-label>\n    <ion-input aria-required=\"name\"></ion-input>\n  </ion-item>\n  \n  <ion-item>\n    <ion-label position=\"floating\">email</ion-label>\n    <ion-input aria-required=\"email\"></ion-input>\n  </ion-item>\n  \n  <ion-item>\n    <ion-label position=\"floating\">Mot de passe</ion-label>\n    <ion-input required=\"password\"></ion-input>\n  </ion-item>\n  \n  <ion-item>\n    <ion-label position=\"floating\">confirmer votre mot de passe</ion-label>\n    <ion-input aria-required=\"password\"></ion-input>\n  </ion-item>\n\n  <ion-button (click)=\"signup()\" expand=\"block\" color=\"tertiary\">Inscription</ion-button>\n   \n  </form>\n\n\n</ion-content>\n"
+module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-title>login</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <ion-item>\n    <ion-label><b>Email</b></ion-label>\n    <ion-input [(ngModel)]=\"loginData.email\" placeholder=\"Entrez votre email\"></ion-input>\n  </ion-item>\n  \n  <ion-item>\n    <ion-label><b>Mot de passe</b></ion-label>\n    <ion-input [(ngModel)]=\"loginData.password\" type=\"password\" placeholder=\"Entrez votre mot de passe\"></ion-input>\n  </ion-item>\n  \n  <div class=\"ion-padding\">\n    <ion-button (click)=\"login()\" expand=\"block\" color=\"primary\">Connexion</ion-button>\n  </div>\n\n \n<!-- Input with value\n<ion-input value=\"custom\"></ion-input>\n -->\n<!-- Input with placeholder \n<ion-input placeholder=\"Enter Input\"></ion-input>\n-->\n<!-- Input with clear button when there is a value\n<ion-input clearInput value=\"clear me\"></ion-input>\n -->\n<!-- Number type input\n<ion-input type=\"number\" value=\"333\"></ion-input>\n -->\n<!-- Disabled input\n<ion-input value=\"Disabled\" disabled></ion-input>\n -->\n<!-- Readonly input\n<ion-input value=\"Readonly\" readonly></ion-input>\n -->\n <form  *ngIf=\"!connected\">\n  <ion-item  color=\"success\">\n    <ion-label position=\"floating\" class=\"ion-text-center\">Création du compte</ion-label>\n    <ion-input placeholder=\"Pseudo\" color=\"dark\"></ion-input>\n  </ion-item>\n  \n  <ion-item>\n    <ion-label position=\"floating\" >Prénom</ion-label>\n    <ion-input aria-required=\"name\"></ion-input>\n  </ion-item>\n  \n  <ion-item>\n    <ion-label position=\"floating\">Age</ion-label>\n    <ion-input aria-required=\"name\"></ion-input>\n  </ion-item>\n  \n  <ion-item>\n    <ion-label position=\"floating\">email</ion-label>\n    <ion-input aria-required=\"email\"></ion-input>\n  </ion-item>\n  \n  <ion-item>\n    <ion-label position=\"floating\">Mot de passe</ion-label>\n    <ion-input required=\"password\" type=\"password\"></ion-input>\n  </ion-item>\n  \n  <ion-item>\n    <ion-label position=\"floating\" >confirmer votre mot de passe</ion-label>\n    <ion-input aria-required=\"password\" type=\"password\"></ion-input>\n  </ion-item>\n\n  <ion-button (click)=\"signup()\" expand=\"block\" color=\"tertiary\">Inscription</ion-button>\n   \n  </form>\n\n\n</ion-content>\n"
 
 /***/ }),
 
@@ -102,14 +102,17 @@ var LoginPage = /** @class */ (function () {
         this.afAuth = afAuth;
         this.loginData = {
             email: '',
-            password: ''
+            password: '',
+            pseudo: '',
+            Age: '',
         };
     }
     LoginPage.prototype.ngOnInit = function () {
     };
     LoginPage.prototype.add = function () {
         this.afDG.list('User/').push({
-            pseudo: 'drissas'
+            pseudo: '',
+            Age: '',
         });
     };
     LoginPage.prototype.login = function () {
