@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { QRScanner, QRScannerStatus } from '@ionic-native/qr-scanner/ngx';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 import { AlertController } from '@ionic/angular';
-
+import { QRCodeModule } from 'angularx-qrcode';
 
 
 @Component({
