@@ -1,13 +1,15 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["tabs-tabs-module"],{
 
-/***/ "./node_modules/raw-loader/index.js!./src/app/tabs/tabs.page.html":
-/*!***************************************************************!*\
-  !*** ./node_modules/raw-loader!./src/app/tabs/tabs.page.html ***!
-  \***************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/tabs/tabs.page.html":
+/*!***************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/tabs/tabs.page.html ***!
+  \***************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-module.exports = "<ion-header>\r\n\r\n</ion-header>\r\n\r\n\r\n<ion-tabs>\r\n\r\n  <ion-tab-bar slot=\"bottom\">\r\n    <ion-tab-button tab=\"localShop\">\r\n      <ion-icon name=\"home\"></ion-icon>\r\n      <ion-label>Shop</ion-label>\r\n    </ion-tab-button>\r\n\r\n    <ion-tab-button tab=\"qrCode\">\r\n      <ion-icon name=\"qr-scanner\"></ion-icon>\r\n      <ion-label>QR Code</ion-label>\r\n    </ion-tab-button>\r\n\r\n    <ion-tab-button tab=\"geoCatching\">\r\n      <ion-icon name=\"walk\"></ion-icon>\r\n      <ion-label>Géo Maps</ion-label>\r\n    </ion-tab-button>\r\n\r\n    <ion-tab-button tab=\"profile\">\r\n      <ion-icon name=\"contact\"></ion-icon>\r\n      <ion-label>Profile</ion-label>\r\n    </ion-tab-button>\r\n  </ion-tab-bar>\r\n\r\n</ion-tabs>\r\n"
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n\r\n</ion-header>\r\n\r\n\r\n<ion-tabs>\r\n\r\n  <ion-tab-bar slot=\"bottom\">\r\n    <ion-tab-button tab=\"localShop\">\r\n      <ion-icon name=\"home\"></ion-icon>\r\n      <ion-label>Shop</ion-label>\r\n    </ion-tab-button>\r\n\r\n    <ion-tab-button tab=\"qrCode\">\r\n      <ion-icon name=\"qr-scanner\"></ion-icon>\r\n      <ion-label>QR Code</ion-label>\r\n    </ion-tab-button>\r\n\r\n    <ion-tab-button tab=\"geoCatching\">\r\n      <ion-icon name=\"walk\"></ion-icon>\r\n      <ion-label>Géo Maps</ion-label>\r\n    </ion-tab-button>\r\n\r\n    <ion-tab-button tab=\"profile\">\r\n      <ion-icon name=\"contact\"></ion-icon>\r\n      <ion-label>Profile</ion-label>\r\n    </ion-tab-button>\r\n  </ion-tab-bar>\r\n\r\n</ion-tabs>\r\n");
 
 /***/ }),
 
@@ -167,10 +169,12 @@ var TabsPageModule = /** @class */ (function () {
 /*!*************************************!*\
   !*** ./src/app/tabs/tabs.page.scss ***!
   \*************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3RhYnMvdGFicy5wYWdlLnNjc3MifQ== */"
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3RhYnMvdGFicy5wYWdlLnNjc3MifQ== */");
 
 /***/ }),
 
@@ -194,8 +198,8 @@ var TabsPage = /** @class */ (function () {
     TabsPage = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-tabs',
-            template: __webpack_require__(/*! raw-loader!./tabs.page.html */ "./node_modules/raw-loader/index.js!./src/app/tabs/tabs.page.html"),
-            styles: [__webpack_require__(/*! ./tabs.page.scss */ "./src/app/tabs/tabs.page.scss")]
+            template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./tabs.page.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/tabs/tabs.page.html")).default,
+            styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./tabs.page.scss */ "./src/app/tabs/tabs.page.scss")).default]
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
     ], TabsPage);

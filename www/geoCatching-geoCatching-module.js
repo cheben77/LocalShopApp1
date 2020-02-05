@@ -1976,14 +1976,16 @@ var KmlOverlay = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ "./node_modules/raw-loader/index.js!./src/app/geoCatching/geoCatching.page.html":
-/*!*****************************************************************************!*\
-  !*** ./node_modules/raw-loader!./src/app/geoCatching/geoCatching.page.html ***!
-  \*****************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/geoCatching/geoCatching.page.html":
+/*!*****************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/geoCatching/geoCatching.page.html ***!
+  \*****************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-module.exports = "<ion-header>\n  <ion-toolbar color=\"success\">\n    <ion-title>\n      GéoCatching Game !!\n    </ion-title>\n    <ion-buttons slot=\"end\">\n      <ion-button (click)=\"addMarker()\">\n        <ion-icon slot=\"icon-only\" name=\"add-circle-outline\"></ion-icon>\n      </ion-button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <div id=\"map_canvas\"></div>\n  <ion-fab vertical=\"bottom\" horizontal=\"start\" slot=\"fixed\">\n    <ion-fab-button color=\"success\" (click)=\"mapOptions()\">\n      <ion-icon name=\"map\"></ion-icon>\n    </ion-fab-button>\n  </ion-fab>\n\n  <ion-item [routerLink]=\"['/routePath']\" routerLinkActive=\"router-link-active\" >\n    <ion-icon></ion-icon>\n    <ion-label>Acceuil</ion-label>\n  </ion-item>\n</ion-content>\n"
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\n  <ion-toolbar color=\"success\">\n    <ion-title>\n      GéoCatching Game !!\n    </ion-title>\n    <ion-buttons slot=\"end\">\n      <ion-button (click)=\"addMarker()\">\n        <ion-icon slot=\"icon-only\" name=\"add-circle-outline\"></ion-icon>\n      </ion-button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <div id=\"map_canvas\"></div>\n  <ion-fab vertical=\"bottom\" horizontal=\"start\" slot=\"fixed\">\n    <ion-fab-button color=\"success\" (click)=\"mapOptions()\">\n      <ion-icon name=\"map\"></ion-icon>\n    </ion-fab-button>\n  </ion-fab>\n\n  <ion-item [routerLink]=\"['/routePath']\" routerLinkActive=\"router-link-active\" >\n    <ion-icon></ion-icon>\n    <ion-label>Acceuil</ion-label>\n  </ion-item>\n</ion-content>\n");
 
 /***/ }),
 
@@ -2036,10 +2038,12 @@ var GeoCatchingPageModule = /** @class */ (function () {
 /*!***************************************************!*\
   !*** ./src/app/geoCatching/geoCatching.page.scss ***!
   \***************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-module.exports = "#map_canvas {\n  width: 100%;\n  height: 100%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZ2VvQ2F0Y2hpbmcvQzpcXFVzZXJzXFxDaGVCZW5cXE9uZURyaXZlXFxCdXJlYXVcXFByb2pldCBOdW3DqXJpcXVlc1xcUHJvamV0IElPTklDXFxQcm9qZXQgQXBwU1xcTG9jYWxTaG9wXFxFbiBjb3VyXFxMb2NhbFNob3BBcHAxXFxMb2NhbFNob3BBcHAxXFxBcHAxL3NyY1xcYXBwXFxnZW9DYXRjaGluZ1xcZ2VvQ2F0Y2hpbmcucGFnZS5zY3NzIiwic3JjL2FwcC9nZW9DYXRjaGluZy9nZW9DYXRjaGluZy5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQ0E7RUFDSSxXQUFBO0VBQ0EsWUFBQTtBQ0FKIiwiZmlsZSI6InNyYy9hcHAvZ2VvQ2F0Y2hpbmcvZ2VvQ2F0Y2hpbmcucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiXG4jbWFwX2NhbnZhcyB7XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgaGVpZ2h0OiAxMDAlO1xuICB9IiwiI21hcF9jYW52YXMge1xuICB3aWR0aDogMTAwJTtcbiAgaGVpZ2h0OiAxMDAlO1xufSJdfQ== */"
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("#map_canvas {\n  width: 100%;\n  height: 100%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZ2VvQ2F0Y2hpbmcvQzpcXFVzZXJzXFxDaGVCZW5cXE9uZURyaXZlXFxCdXJlYXVcXFByb2pldCBOdW3DqXJpcXVlc1xcUHJvamV0IElPTklDXFxQcm9qZXQgQXBwU1xcTG9jYWxTaG9wXFxFbiBjb3VyXFxMb2NhbFNob3BBcHAxXFxMb2NhbFNob3BBcHAxXFxBcHAxL3NyY1xcYXBwXFxnZW9DYXRjaGluZ1xcZ2VvQ2F0Y2hpbmcucGFnZS5zY3NzIiwic3JjL2FwcC9nZW9DYXRjaGluZy9nZW9DYXRjaGluZy5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQ0E7RUFDSSxXQUFBO0VBQ0EsWUFBQTtBQ0FKIiwiZmlsZSI6InNyYy9hcHAvZ2VvQ2F0Y2hpbmcvZ2VvQ2F0Y2hpbmcucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiXG4jbWFwX2NhbnZhcyB7XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgaGVpZ2h0OiAxMDAlO1xuICB9IiwiI21hcF9jYW52YXMge1xuICB3aWR0aDogMTAwJTtcbiAgaGVpZ2h0OiAxMDAlO1xufSJdfQ== */");
 
 /***/ }),
 
@@ -2203,8 +2207,8 @@ var GeoCatchingPage = /** @class */ (function () {
     GeoCatchingPage = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-geoCatching',
-            template: __webpack_require__(/*! raw-loader!./geoCatching.page.html */ "./node_modules/raw-loader/index.js!./src/app/geoCatching/geoCatching.page.html"),
-            styles: [__webpack_require__(/*! ./geoCatching.page.scss */ "./src/app/geoCatching/geoCatching.page.scss")]
+            template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./geoCatching.page.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/geoCatching/geoCatching.page.html")).default,
+            styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./geoCatching.page.scss */ "./src/app/geoCatching/geoCatching.page.scss")).default]
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_3__["AlertController"],
             _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["ActionSheetController"],

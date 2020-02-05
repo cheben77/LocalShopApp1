@@ -391,6 +391,28 @@ module.exports = [
         "id": "cordova-plugin-googlemaps.PluginEnvironment",
         "pluginId": "cordova-plugin-googlemaps",
         "runs": true
+    },
+    {
+        "file": "plugins/cordova-plugin-badge/www/badge.js",
+        "id": "cordova-plugin-badge.Badge",
+        "pluginId": "cordova-plugin-badge",
+        "clobbers": [
+            "cordova.plugins.notification.badge"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-badge/src/browser/favico.min.js",
+        "id": "cordova-plugin-badge.Badge.Favico",
+        "pluginId": "cordova-plugin-badge",
+        "clobbers": [
+            "cordova.plugins.notification.badge.Favico"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-badge/src/browser/BadgeProxy.js",
+        "id": "cordova-plugin-badge.Badge.Proxy",
+        "pluginId": "cordova-plugin-badge",
+        "runs": true
     }
 ];
 module.exports.metadata = 
@@ -405,7 +427,8 @@ module.exports.metadata =
     "cordova-plugin-qrscanner": "3.0.1",
     "cordova-plugin-inappbrowser": "3.2.0",
     "cordova-plugin-geolocation": "4.0.2",
-    "cordova-plugin-googlemaps": "2.7.0-20191107-1035"
+    "cordova-plugin-googlemaps": "2.7.0-20191107-1035",
+    "cordova-plugin-badge": "0.8.8"
 }
 // BOTTOM OF METADATA
 });

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFireDatabase } from '@angular/fire/database';
-
+import { Badge } from '@ionic-native/badge/ngx';
 
 @Component({
   selector: 'app-profile',
@@ -12,9 +12,10 @@ export class ProfilePage {
   userId: string;
   mail: string;
   method: any;
-  badge: any;
+
 
   constructor(
+    private badge: Badge,
     public afDB: AngularFireDatabase,
     public afAuth: AngularFireAuth
   ) {
@@ -26,9 +27,9 @@ export class ProfilePage {
         this.userId = auth.uid;
         this.mail = auth.email;
         this.method = auth.providerData[0].providerId;
-        this.badge.set();
-        this.badge.increase();
-        this.badge.clear();
+       // this.badge.set();
+       // this.badge.increase();
+       // this.badge.clear();
       }
     });
   }

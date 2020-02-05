@@ -3939,14 +3939,16 @@ module.exports = Array.isArray || function (arr) {
 
 /***/ }),
 
-/***/ "./node_modules/raw-loader/index.js!./src/app/qrCode/qrCode.page.html":
-/*!*******************************************************************!*\
-  !*** ./node_modules/raw-loader!./src/app/qrCode/qrCode.page.html ***!
-  \*******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/qrCode/qrCode.page.html":
+/*!*******************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/qrCode/qrCode.page.html ***!
+  \*******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-title slot=\"center\">\n      Ionic QR Code\n    </ion-title>\n    <ion-buttons slot=\"end\">\n      <ion-button *ngIf=\"showCamera\" (click)=\"closeCamera()\">\n        <ion-icon name=\"close\"></ion-icon>\n        <ion-icon *ngIf=\"showCamera\" class=\"frame\" name=\"qr-scanner\"></ion-icon>\n        <ion-icon *ngIf=\"connected\" class=\"frame\" name=\"log-out\" (click)=\"logout\"></ion-icon>\n      </ion-button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n\n<ion-content>\n<div class=\"center\" *ngIf=\"myAngularxQrCode\">\n  <qrcode [qrdata]=\"myAngularxQrCode\" [size]=\"250\" [level]=\"'M'\" ></qrcode> \n    <div *ngIf=\"!showCamera\">\n    <ion-item *ngIf=\"textScanned\" lines=\"none\" (click)=\"openLink(textScanned)\">\n      <ion-label>\n        <p>Texte du QR Code</p>\n        <h2><b>{{ textScanned }}</b></h2>\n      </ion-label>\n      <ion-icon slot=\"end\" name=\"open\"></ion-icon>\n    </ion-item>\n    <ion-button expand=\"block\" (click)=\"scanCode()\" >\n      <ion-icon slot=\"start\" name=\"qr-scanner\"></ion-icon>\n      Scanner un QR Code\n    </ion-button>\n  </div>\n\n<div *ngIf=\"!showCamera\">\n  <ion-item lines=\"none\">\n    <ion-label><b>Texte à encoder:</b></ion-label>\n    <ion-input [(ngModel)]=\"textToCode\" placeholder=\"Entrez votre URL\"></ion-input>\n  </ion-item>\n\n  <ion-button color=\"tertiary\" expand=\"block\" (click)=\"createQRCode()\" *ngIf=\"!showCamera\">\n    <ion-icon slot=\"start\" name=\"create\"></ion-icon>\n    Créer un QR Code\n  </ion-button>\n</div>\n</div>\n\n</ion-content>\n"
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\n  <ion-toolbar>\n    <ion-title slot=\"center\">\n      Ionic QR Code\n    </ion-title>\n    <ion-buttons slot=\"end\">\n      <ion-button *ngIf=\"showCamera\" (click)=\"closeCamera()\">\n        <ion-icon name=\"close\"></ion-icon>\n        <ion-icon *ngIf=\"showCamera\" class=\"frame\" name=\"qr-scanner\"></ion-icon>\n        <ion-icon *ngIf=\"connected\" class=\"frame\" name=\"log-out\" (click)=\"logout\"></ion-icon>\n      </ion-button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n\n<ion-content>\n<div class=\"center\" *ngIf=\"myAngularxQrCode\">\n  <qrcode [qrdata]=\"myAngularxQrCode\" [size]=\"250\" [level]=\"'M'\" ></qrcode> \n    <div *ngIf=\"!showCamera\">\n    <ion-item *ngIf=\"textScanned\" lines=\"none\" (click)=\"openLink(textScanned)\">\n      <ion-label>\n        <p>Texte du QR Code</p>\n        <h2><b>{{ textScanned }}</b></h2>\n      </ion-label>\n      <ion-icon slot=\"end\" name=\"open\"></ion-icon>\n    </ion-item>\n    <ion-button expand=\"block\" (click)=\"scanCode()\" >\n      <ion-icon slot=\"start\" name=\"qr-scanner\"></ion-icon>\n      Scanner un QR Code\n    </ion-button>\n  </div>\n\n<div *ngIf=\"!showCamera\">\n  <ion-item lines=\"none\">\n    <ion-label><b>Texte à encoder:</b></ion-label>\n    <ion-input [(ngModel)]=\"textToCode\" placeholder=\"Entrez votre URL\"></ion-input>\n  </ion-item>\n\n  <ion-button color=\"tertiary\" expand=\"block\" (click)=\"createQRCode()\" *ngIf=\"!showCamera\">\n    <ion-icon slot=\"start\" name=\"create\"></ion-icon>\n    Créer un QR Code\n  </ion-button>\n</div>\n</div>\n\n</ion-content>\n");
 
 /***/ }),
 
@@ -4002,10 +4004,12 @@ var QrCodePageModule = /** @class */ (function () {
 /*!*****************************************!*\
   !*** ./src/app/qrCode/qrCode.page.scss ***!
   \*****************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-module.exports = ".center {\n  margin-left: auto;\n  margin-right: auto;\n  width: 250px;\n}\n\nion-content {\n  --ion-background-color: transparent;\n}\n\n.frame {\n  color: #d5d5d5;\n  height: 350px;\n  width: 350px;\n  position: absolute;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  margin: auto;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcXJDb2RlL0M6XFxVc2Vyc1xcQ2hlQmVuXFxPbmVEcml2ZVxcQnVyZWF1XFxQcm9qZXQgTnVtw6lyaXF1ZXNcXFByb2pldCBJT05JQ1xcUHJvamV0IEFwcFNcXExvY2FsU2hvcFxcRW4gY291clxcTG9jYWxTaG9wQXBwMVxcTG9jYWxTaG9wQXBwMVxcQXBwMS9zcmNcXGFwcFxccXJDb2RlXFxxckNvZGUucGFnZS5zY3NzIiwic3JjL2FwcC9xckNvZGUvcXJDb2RlLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFDQTtFQUNJLGlCQUFBO0VBQ0Esa0JBQUE7RUFDQSxZQUFBO0FDQUo7O0FERUE7RUFDSSxtQ0FBQTtBQ0NKOztBREVBO0VBQ0ksY0FBQTtFQUNBLGFBQUE7RUFDQSxZQUFBO0VBQ0Esa0JBQUE7RUFDQSxPQUFBO0VBQ0EsUUFBQTtFQUNBLE1BQUE7RUFDQSxTQUFBO0VBQ0EsWUFBQTtBQ0NKIiwiZmlsZSI6InNyYy9hcHAvcXJDb2RlL3FyQ29kZS5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJcbi5jZW50ZXIge1xuICAgIG1hcmdpbi1sZWZ0OiBhdXRvO1xuICAgIG1hcmdpbi1yaWdodDogYXV0bztcbiAgICB3aWR0aDogMjUwcHg7XG59XG5pb24tY29udGVudHtcbiAgICAtLWlvbi1iYWNrZ3JvdW5kLWNvbG9yOiB0cmFuc3BhcmVudDtcbn1cblxuLmZyYW1lIHtcbiAgICBjb2xvcjogI2Q1ZDVkNTtcbiAgICBoZWlnaHQ6IDM1MHB4O1xuICAgIHdpZHRoOiAzNTBweDtcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgbGVmdDogMDtcbiAgICByaWdodDogMDtcbiAgICB0b3A6IDA7XG4gICAgYm90dG9tOiAwO1xuICAgIG1hcmdpbjogYXV0bztcbn0iLCIuY2VudGVyIHtcbiAgbWFyZ2luLWxlZnQ6IGF1dG87XG4gIG1hcmdpbi1yaWdodDogYXV0bztcbiAgd2lkdGg6IDI1MHB4O1xufVxuXG5pb24tY29udGVudCB7XG4gIC0taW9uLWJhY2tncm91bmQtY29sb3I6IHRyYW5zcGFyZW50O1xufVxuXG4uZnJhbWUge1xuICBjb2xvcjogI2Q1ZDVkNTtcbiAgaGVpZ2h0OiAzNTBweDtcbiAgd2lkdGg6IDM1MHB4O1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIGxlZnQ6IDA7XG4gIHJpZ2h0OiAwO1xuICB0b3A6IDA7XG4gIGJvdHRvbTogMDtcbiAgbWFyZ2luOiBhdXRvO1xufSJdfQ== */"
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".center {\n  margin-left: auto;\n  margin-right: auto;\n  width: 250px;\n}\n\nion-content {\n  --ion-background-color: transparent;\n}\n\n.frame {\n  color: #d5d5d5;\n  height: 350px;\n  width: 350px;\n  position: absolute;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  margin: auto;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcXJDb2RlL0M6XFxVc2Vyc1xcQ2hlQmVuXFxPbmVEcml2ZVxcQnVyZWF1XFxQcm9qZXQgTnVtw6lyaXF1ZXNcXFByb2pldCBJT05JQ1xcUHJvamV0IEFwcFNcXExvY2FsU2hvcFxcRW4gY291clxcTG9jYWxTaG9wQXBwMVxcTG9jYWxTaG9wQXBwMVxcQXBwMS9zcmNcXGFwcFxccXJDb2RlXFxxckNvZGUucGFnZS5zY3NzIiwic3JjL2FwcC9xckNvZGUvcXJDb2RlLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFDQTtFQUNJLGlCQUFBO0VBQ0Esa0JBQUE7RUFDQSxZQUFBO0FDQUo7O0FERUE7RUFDSSxtQ0FBQTtBQ0NKOztBREVBO0VBQ0ksY0FBQTtFQUNBLGFBQUE7RUFDQSxZQUFBO0VBQ0Esa0JBQUE7RUFDQSxPQUFBO0VBQ0EsUUFBQTtFQUNBLE1BQUE7RUFDQSxTQUFBO0VBQ0EsWUFBQTtBQ0NKIiwiZmlsZSI6InNyYy9hcHAvcXJDb2RlL3FyQ29kZS5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJcbi5jZW50ZXIge1xuICAgIG1hcmdpbi1sZWZ0OiBhdXRvO1xuICAgIG1hcmdpbi1yaWdodDogYXV0bztcbiAgICB3aWR0aDogMjUwcHg7XG59XG5pb24tY29udGVudHtcbiAgICAtLWlvbi1iYWNrZ3JvdW5kLWNvbG9yOiB0cmFuc3BhcmVudDtcbn1cblxuLmZyYW1lIHtcbiAgICBjb2xvcjogI2Q1ZDVkNTtcbiAgICBoZWlnaHQ6IDM1MHB4O1xuICAgIHdpZHRoOiAzNTBweDtcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgbGVmdDogMDtcbiAgICByaWdodDogMDtcbiAgICB0b3A6IDA7XG4gICAgYm90dG9tOiAwO1xuICAgIG1hcmdpbjogYXV0bztcbn0iLCIuY2VudGVyIHtcbiAgbWFyZ2luLWxlZnQ6IGF1dG87XG4gIG1hcmdpbi1yaWdodDogYXV0bztcbiAgd2lkdGg6IDI1MHB4O1xufVxuXG5pb24tY29udGVudCB7XG4gIC0taW9uLWJhY2tncm91bmQtY29sb3I6IHRyYW5zcGFyZW50O1xufVxuXG4uZnJhbWUge1xuICBjb2xvcjogI2Q1ZDVkNTtcbiAgaGVpZ2h0OiAzNTBweDtcbiAgd2lkdGg6IDM1MHB4O1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIGxlZnQ6IDA7XG4gIHJpZ2h0OiAwO1xuICB0b3A6IDA7XG4gIGJvdHRvbTogMDtcbiAgbWFyZ2luOiBhdXRvO1xufSJdfQ== */");
 
 /***/ }),
 
@@ -4085,8 +4089,8 @@ var QrCodePage = /** @class */ (function () {
     QrCodePage = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-qrCode',
-            template: __webpack_require__(/*! raw-loader!./qrCode.page.html */ "./node_modules/raw-loader/index.js!./src/app/qrCode/qrCode.page.html"),
-            styles: [__webpack_require__(/*! ./qrCode.page.scss */ "./src/app/qrCode/qrCode.page.scss")]
+            template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./qrCode.page.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/qrCode/qrCode.page.html")).default,
+            styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./qrCode.page.scss */ "./src/app/qrCode/qrCode.page.scss")).default]
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ionic_native_in_app_browser_ngx__WEBPACK_IMPORTED_MODULE_3__["InAppBrowser"],
             _ionic_native_qr_scanner_ngx__WEBPACK_IMPORTED_MODULE_2__["QRScanner"],
