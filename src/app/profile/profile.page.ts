@@ -15,7 +15,7 @@ export class ProfilePage {
 
 
   constructor(
-    private badge: Badge,
+    // badge: Badge,
     public afDB: AngularFireDatabase,
     public afAuth: AngularFireAuth
   ) {
