@@ -16,6 +16,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 
 import { QRScanner } from '@ionic-native/qr-scanner/ngx';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
+import { QRCodeModule } from 'angularx-qrcode';
 
 export const firebaseConfig = {
   apiKey: 'AIzaSyCcyuFkXAqca0vcsLIQRG2UociZGr2oUrA',
@@ -36,6 +37,7 @@ export const firebaseConfig = {
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
+    QRCodeModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
