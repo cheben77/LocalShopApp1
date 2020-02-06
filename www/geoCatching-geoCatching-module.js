@@ -1985,7 +1985,7 @@ var KmlOverlay = /** @class */ (function (_super) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n  <ion-toolbar color=\"success\">\r\n    <ion-title>\r\n      GéoCatching Game !!\r\n    </ion-title>\r\n    <ion-buttons slot=\"end\">\r\n      <ion-button (click)=\"addMarker()\">\r\n        <ion-icon slot=\"icon-only\" name=\"add-circle-outline\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <div id=\"map_canvas\"></div>\r\n  <ion-fab vertical=\"bottom\" horizontal=\"start\" slot=\"fixed\">\r\n    <ion-fab-button color=\"success\" (click)=\"mapOptions()\">\r\n      <ion-icon name=\"map\"></ion-icon>\r\n    </ion-fab-button>\r\n  </ion-fab>\r\n\r\n  <ion-item [routerLink]=\"['/routePath']\" routerLinkActive=\"router-link-active\" >\r\n    <ion-icon></ion-icon>\r\n    <ion-label>Acceuil</ion-label>\r\n  </ion-item>\r\n</ion-content>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n  <ion-toolbar color=\"success\">\r\n    <ion-title>\r\n      GéoCatching Game !!\r\n    </ion-title>\r\n    <ion-buttons slot=\"end\">\r\n      <ion-button (click)=\"addMarker()\">\r\n        <ion-icon slot=\"icon-only\" name=\"add-circle-outline\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <div id=\"map_canvas\"></div>\r\n  <ion-fab vertical=\"bottom\" horizontal=\"start\" slot=\"fixed\">\r\n    <ion-fab-button color=\"success\" (click)=\"mapOptions()\">\r\n      <ion-icon name=\"map\"></ion-icon>\r\n    </ion-fab-button>\r\n  </ion-fab>\r\n\r\n  <ion-fab vertical=\"top\" horizontal=\"end\" slot=\"fixed\">\r\n    <ion-fab-button>\r\n      <ion-icon name=\"share\"></ion-icon>\r\n    </ion-fab-button>\r\n    <ion-fab-list side=\"top\">\r\n      <ion-fab-button><ion-icon name=\"log-out\" color=\"danger\" (click)=\"logout()\" [routerLink]=\"['/tabs/login']\"></ion-icon></ion-fab-button>\r\n    </ion-fab-list>\r\n    <ion-fab-list side=\"bottom\">\r\n      <ion-fab-button><ion-icon name=\"qr-scanner\" color=\"tertiary\" [routerLink]=\"['/tabs/qrCode']\" routerLinkActive=\"router-link-active\" ></ion-icon></ion-fab-button>\r\n    </ion-fab-list>\r\n    <ion-fab-list side=\"start\">\r\n      <ion-fab-button><ion-icon name=\"logo-instagram\"></ion-icon></ion-fab-button>\r\n    </ion-fab-list>\r\n    <ion-fab-list side=\"end\">\r\n      <ion-fab-button><ion-icon name=\"logo-twitter\"></ion-icon></ion-fab-button>\r\n    </ion-fab-list>\r\n  </ion-fab>\r\n</ion-content>\r\n");
 
 /***/ }),
 
@@ -2080,6 +2080,7 @@ var GeoCatchingPage = /** @class */ (function () {
             // }).catch((error) => {
             //   console.log('Error getting location', error);
             // });
+            // tslint:disable-next-line:new-parens
             this.geolocation = new _ionic_native_geolocation_ngx__WEBPACK_IMPORTED_MODULE_4__["Geolocation"];
             var watch = this.geolocation.watchPosition();
             watch.subscribe(function (data) {

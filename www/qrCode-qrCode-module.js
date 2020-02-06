@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\n  <ion-toolbar>\n    <ion-title slot=\"center\">\n       QR Code\n    </ion-title>\n    <ion-buttons slot=\"end\">\n      <ion-button *ngIf=\"showCamera\" (click)=\"closeCamera()\" color=\"warning\">\n        <ion-icon name=\"close\"></ion-icon>\n        <ion-icon *ngIf=\"showCamera\" class=\"frame\" name=\"qr-scanner\"></ion-icon>\n        <ion-icon *ngIf=\"connected\" class=\"frame\" name=\"log-out\" (click)=\"logout\"color=\"primary\"></ion-icon>\n      </ion-button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n\n<ion-content>\n<div class=\"center\" *ngIf=\"myAngularxQrCode\">\n  <qrcode [qrdata]=\"myAngularxQrCode\" [size]=\"250\" [level]=\"'M'\" ></qrcode> \n    <div *ngIf=\"!showCamera\">\n      <ion-item *ngIf=\"textScanned\" lines=\"none\" (click)=\"openLink(textScanned)\">\n      <ion-label>\n        <p>Texte du QR Code</p>\n        <h2><b>{{ textScanned }}</b></h2>\n      </ion-label>\n      <ion-icon slot=\"end\" name=\"open\"></ion-icon>\n      </ion-item>\n        <ion-button expand=\"block\" (click)=\"scanCode()\">\n          <ion-icon slot=\"start\" name=\"qr-scanner\"></ion-icon>\n          Scanner un QR Code\n    </ion-button>\n    </div>\n\n  <div *ngIf=\"!showCamera\">\n    <ion-item lines=\"none\">\n      <ion-label><b>Texte à encoder:</b></ion-label>\n      <ion-input [(ngModel)]=\"textToCode\" placeholder=\"Entrez votre URL\"></ion-input>\n    </ion-item>\n  \n    <ion-button color=\"tertiary\" expand=\"block\" (click)=\"createQRCode()\" *ngIf=\"!showCamera\">\n      <ion-icon slot=\"start\" name=\"create\"></ion-icon>\n      Créer un QR Code\n    </ion-button>\n    <br>\n  \n    <div class=\"center\" *ngIf=\"myAngularxQrCode\">\n      <qrcode [qrdata]=\"myAngularxQrCode\" [size]=\"250\" [level]=\"'M'\"></qrcode>\n    </div>\n    \n  </div>\n</div>\n\n<ion-buttons slot=\"end\">\n  <ion-button *ngIf=\"showCamera\" (click)=\"closeCamera()\" color=\"warning\">\n    <ion-icon name=\"close\"></ion-icon>\n    <ion-icon *ngIf=\"showCamera\" class=\"frame\" name=\"qr-scanner\"></ion-icon>\n    <ion-icon *ngIf=\"connected\" class=\"frame\" name=\"log-out\" (click)=\"logout\"color=\"primary\"></ion-icon>\n  </ion-button>\n</ion-buttons>\n\n</ion-content>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\n  <ion-toolbar>\n    <ion-title>\n      Ionic QR Code\n    </ion-title>\n    <ion-buttons slot=\"end\">\n      <ion-button *ngIf=\"showCamera\" (click)=\"closeCamera()\">\n        <ion-icon name=\"close\"></ion-icon>\n        <ion-icon *ngIf=\"showCamera\" class=\"frame\" name=\"qr-scanner\"></ion-icon>\n        <ion-icon *ngIf=\"connected\" class=\"frame\" name=\"log-out\" (click)=\"logout\"></ion-icon>\n      </ion-button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n\n<ion-content>\n\n  <div *ngIf=\"!showCamera\">\n    <ion-item *ngIf=\"textScanned\" lines=\"none\" (click)=\"openLink(textScanned)\">\n      <ion-label>\n        <p>Texte du QR Code</p>\n        <h2><b>{{ textScanned }}</b></h2>\n      </ion-label>\n      <ion-icon slot=\"end\" name=\"open\"></ion-icon>\n    </ion-item>\n    <ion-button expand=\"block\" (click)=\"scanCode()\" >\n      <ion-icon slot=\"start\" name=\"qr-scanner\"></ion-icon>\n      Scanner un QR Code\n    </ion-button>\n  </div>\n\n\n  <ion-item lines=\"none\">\n    <ion-label><b>Texte à encoder:</b></ion-label>\n    <ion-input [(ngModel)]=\"textToCode\" placeholder=\"Entrez votre URL\"></ion-input>\n  </ion-item>\n\n  <ion-button color=\"tertiary\" expand=\"block\" (click)=\"createQRCode()\" *ngIf=\"!showCamera\">\n    <ion-icon slot=\"start\" name=\"create\"></ion-icon>\n    Créer un QR Code\n  </ion-button>\n\n\n  <div class=\"center\" *ngIf=\"myAngularQrCode\">\n    <qrcode [qrdata]=\"myAngularQrCode\" [size]=\"256\" [level]=\"'M'\"></qrcode>\n  </div>\n\n\n</ion-content>\n");
 
 /***/ }),
 
@@ -40,6 +40,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var QrCodePageModule = /** @class */ (function () {
+    // tslint:disable-next-line: align
     function QrCodePageModule() {
     }
     QrCodePageModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -53,6 +54,7 @@ var QrCodePageModule = /** @class */ (function () {
             ],
             declarations: [_qrCode_page__WEBPACK_IMPORTED_MODULE_7__["QrCodePage"]]
         })
+        // tslint:disable-next-line: align
     ], QrCodePageModule);
     return QrCodePageModule;
 }());
