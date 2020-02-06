@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n\r\n</ion-header>\r\n\r\n\r\n<ion-tabs>\r\n\r\n  <ion-tab-bar slot=\"bottom\">\r\n    <ion-tab-button tab=\"localShop\">\r\n      <ion-icon name=\"home\"></ion-icon>\r\n      <ion-label>Shop</ion-label>\r\n    </ion-tab-button>\r\n\r\n    <ion-tab-button tab=\"qrCode\">\r\n      <ion-icon name=\"qr-scanner\"></ion-icon>\r\n      <ion-label>QR Code</ion-label>\r\n    </ion-tab-button>\r\n\r\n    <ion-tab-button tab=\"geoCatching\">\r\n      <ion-icon name=\"walk\"></ion-icon>\r\n      <ion-label>Géo Maps</ion-label>\r\n    </ion-tab-button>\r\n\r\n    <ion-tab-button tab=\"profile\">\r\n      <ion-icon name=\"contact\"></ion-icon>\r\n      <ion-label>Profile</ion-label>\r\n    </ion-tab-button>\r\n  </ion-tab-bar>\r\n\r\n</ion-tabs>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n\r\n</ion-header>\r\n\r\n\r\n<ion-tabs>\r\n\r\n  <ion-tab-bar slot=\"bottom\">\r\n    <ion-tab-button tab=\"localShop\">\r\n      <ion-icon name=\"home\" color=\"success\"></ion-icon>\r\n      <ion-label>Shop</ion-label>\r\n    </ion-tab-button>\r\n\r\n    <ion-tab-button tab=\"qrCode\">\r\n      <ion-icon name=\"qr-scanner\"></ion-icon>\r\n      <ion-label>QR Code</ion-label>\r\n    </ion-tab-button>\r\n\r\n    <ion-tab-button tab=\"geoCatching\">\r\n      <ion-icon name=\"walk\"></ion-icon>\r\n      <ion-label>Géo Maps</ion-label>\r\n    </ion-tab-button>\r\n\r\n    <ion-tab-button tab=\"profile\">\r\n      <ion-icon name=\"contact\"></ion-icon>\r\n      <ion-label>Profile</ion-label>\r\n    </ion-tab-button>\r\n  </ion-tab-bar>\r\n\r\n</ion-tabs>\r\n");
 
 /***/ }),
 
