@@ -16,4 +16,5 @@ import { QrCodePage } from './qrCode.page';
   ],
   declarations: [QrCodePage]
 })
+// tslint:disable-next-line: align
 export class QrCodePageModule {}

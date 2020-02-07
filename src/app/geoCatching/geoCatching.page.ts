@@ -25,7 +25,7 @@ import { Geolocation } from '@ionic-native/geolocation/ngx';
 
 export class GeoCatchingPage {
   map: GoogleMap;
-  private geolocation:Geolocation
+  private geolocation: Geolocation;
   constructor(
     public alertController: AlertController,
     public actionCtrl: ActionSheetController,
@@ -39,8 +39,9 @@ export class GeoCatchingPage {
       //   console.log('Error getting location', error);
       // });
 
+      // tslint:disable-next-line:new-parens
       this.geolocation = new Geolocation;
-  
+
       const watch = this.geolocation.watchPosition();
       watch.subscribe((data) => {
         this.loadMap(data.coords);
@@ -67,7 +68,7 @@ export class GeoCatchingPage {
   setMapTypeId() {
     this.map.setMapTypeId(GoogleMapsMapTypeId.SATELLITE);
   }
-  
+
   async mapOptions() {
     const actionSheet = await this.actionCtrl.create({
       buttons: [{
