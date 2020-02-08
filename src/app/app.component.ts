@@ -6,6 +6,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { Router } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { Camera } from '@ionic-native/camera/ngx';
 
 @Component({
   selector: 'app-root',
@@ -19,6 +20,7 @@ export class AppComponent {
     private statusBar: StatusBar,
     private router: Router,
     public afAuth: AngularFireAuth,
+    public camera: Camera
   ) {
     this.initializeApp();
   }
