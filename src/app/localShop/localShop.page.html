@@ -26,6 +26,7 @@
 </ion-header>
 
 <ion-content>
+ 
 
   <ion-header> 
     <ion-toolbar color="success"> 
@@ -34,6 +35,8 @@
     </ion-title> 
     </ion-toolbar> 
    </ion-header> 
+
+ 
 
 
    <ion-content class="ion-padding" scroll-y="false" color="dark"> 
@@ -121,7 +124,16 @@
            Alors qu'est-ce qu'ont attends ?!!
        </ion-card-content>
   </ion-card>
-</ion-slides>
+</ion-slides> 
+
+
+<ion-card *ngFor="let image of images">
+    <ion-img [src]="image.url"></ion-img>
+    <ion-card-header>
+      <ion-card-subtitle>{{ image.name }}</ion-card-subtitle>
+    </ion-card-header>
+  </ion-card>
+
 
   <ion-card>
     <ion-item href="#" class="activated">
@@ -144,5 +156,7 @@
       <ion-label>Echange avec partenaires</ion-label>
     </ion-item>
   </ion-card>
+
+ 
 
 </ion-content>

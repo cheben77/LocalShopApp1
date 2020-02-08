@@ -47,30 +47,30 @@
   
   <ion-item>
     <ion-label position="floating" >Prénom</ion-label>
-    <ion-input aria-required="name"></ion-input>
+    <ion-input aria-required="name" [(ngModel)]="text"></ion-input>
   </ion-item>
   
   <ion-item>
     <ion-label position="floating">Age</ion-label>
-    <ion-input aria-required="name"></ion-input>
+    <ion-input aria-required="name" [(ngModel)]="number"></ion-input>
   </ion-item>
   
   <ion-item>
     <ion-label position="floating">email</ion-label>
-    <ion-input aria-required="email"></ion-input>
+    <ion-input aria-required="email" [(ngModel)]="email"></ion-input>
   </ion-item>
   
   <ion-item>
     <ion-label position="floating">Mot de passe</ion-label>
-    <ion-input required="password" type="password"></ion-input>
+    <ion-input required="password" type="password" [(ngModel)]="password"></ion-input>
   </ion-item>
   
   <ion-item>
     <ion-label position="floating" >confirmer votre mot de passe</ion-label>
-    <ion-input aria-required="password" type="password"></ion-input>
+    <ion-input aria-required="password" type="password" ></ion-input>
   </ion-item>
 
-  <ion-button (click)="signup()" expand="block" color="tertiary">Inscription</ion-button>
+  <ion-button (click)="signup()" expand="block" color="dark">Inscription</ion-button>
    
   </form>
 
