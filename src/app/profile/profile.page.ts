@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { Badge } from '@ionic-native/badge/ngx';
+import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 
 @Component({
   selector: 'app-profile',
@@ -13,13 +14,13 @@ export class ProfilePage {
   mail: string;
   method: any;
   image: string;
-  camera: any;
 
 
   constructor(
     // badge: Badge,
     public afDB: AngularFireDatabase,
-    public afAuth: AngularFireAuth
+    public afAuth: AngularFireAuth,
+    private camera: Camera
   ) {
     this.afAuth.authState.subscribe(auth => {
       if (!auth) {
@@ -45,9 +46,8 @@ export class ProfilePage {
       console.log('camera');
 
     }
-   
-   
-}
+  }
+
 async openLibrary() {
   const options: CameraOptions = {
     quality: 100,
