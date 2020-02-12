@@ -4,6 +4,7 @@ import { AngularFireDatabase } from '@angular/fire/database';
 import { Badge } from '@ionic-native/badge/ngx';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 
+
 @Component({
   selector: 'app-profile',
   templateUrl: 'profile.page.html',
@@ -36,13 +37,14 @@ export class ProfilePage {
       }
     });
   }
+
   // tslint:disable-next-line:semicolon
   async addPhoto(source: string) {
-    if  (source === 'library'){
-       console.log('library'); 
+    if  (source === 'library') {
+       console.log('library');
        const libraryImage = await this.openLibrary();
        this.image = 'data:image/jpg;base64,' + libraryImage;
-    } else{
+    } else {
       console.log('camera');
 
     }
@@ -60,10 +62,6 @@ async openLibrary() {
   };
   return await this.camera.getPicture(options);
 }
-
-
-
-
 
   logout() {
     this.afAuth.auth.signOut();

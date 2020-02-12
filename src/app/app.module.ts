@@ -17,7 +17,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { QRScanner } from '@ionic-native/qr-scanner/ngx';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 import { QRCodeModule } from 'angularx-qrcode';
-import { Camera } from '@ionic-native/camera/ngx';
+import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 
 
 export const firebaseConfig = {
@@ -51,8 +51,8 @@ export const firebaseConfig = {
     StatusBar,
     SplashScreen,
     QRScanner,
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     Camera,
-  { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     InAppBrowser,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],

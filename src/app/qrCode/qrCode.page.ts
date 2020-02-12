@@ -46,7 +46,7 @@ scanCode() {
                                                 this.qrScanner.hide(); // hide camera preview
                                                 scanSub.unsubscribe(); // stop scanning
                                                 this.showCamera = false;
-      });
+                                                });
     } else if (status.denied) {
       // camera permission was permanently denied
     } else {
