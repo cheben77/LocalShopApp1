@@ -3,7 +3,8 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { Badge } from '@ionic-native/badge/ngx';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
-
+import { LoadingController, AlertController } from '@ionic/angular';
+import { AngularFireStorage } from '@angular/fire/storage';
 
 @Component({
   selector: 'app-profile',
@@ -14,7 +15,7 @@ export class ProfilePage {
   userId: string;
   mail: string;
   method: any;
-  image: string;
+  image = 'https://www.kasterencultuur.nl/editor/placeholder.jpg';
 
 
   constructor(
@@ -46,9 +47,25 @@ export class ProfilePage {
        this.image = 'data:image/jpg;base64,' + libraryImage;
     } else {
       console.log('camera');
+      const cameraImage = await this.openCamera();
+      this.image = 'data:image/jpg;base64,' + cameraImage;
 
     }
   }
+
+  async openCamera() {
+    const options: CameraOptions = {
+      quality: 100,
+      destinationType: this.camera.DestinationType.DATA_URL,
+      encodingType: this.camera.EncodingType.JPEG,
+      mediaType: this.camera.MediaType.PICTURE,
+      targetWidth: 1000,
+      targetHeight: 1000,
+      sourceType: this.camera.PictureSourceType.CAMERA
+    };
+    return await this.camera.getPicture(options);
+  }
+
 
 async openLibrary() {
   const options: CameraOptions = {
