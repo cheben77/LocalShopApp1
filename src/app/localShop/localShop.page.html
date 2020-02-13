@@ -1,10 +1,10 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title slot="start">
+    
+    <ion-title size="large" class="ion-text-center">
       Local Shop
     </ion-title>
-    <ion-toggle checked slot="end">
-      <ion-icon name="moon" slot="end"></ion-icon>
+      
       <!-- <ion-menu side="start" menuId="first">
       <ion-header>
       <ion-toolbar color="primary">
@@ -21,7 +21,13 @@
         </ion-list>
       </ion-content>
     </ion-menu> -->
-  </ion-toggle> 
+      <ion-toolbar>
+        <ion-searchbar></ion-searchbar>
+        <ion-button slot="end">
+        <ion-icon slot="icon-only" name="create">
+        </ion-icon>
+    </ion-button>
+      </ion-toolbar>
   </ion-toolbar>
 </ion-header>
 

@@ -16,12 +16,17 @@ export class ProfilePage {
   mail: string;
   method: any;
   image = 'https://www.kasterencultuur.nl/editor/placeholder.jpg';
+  imagePath: string;
+  upload: any;
 
 
   constructor(
+    public loadingController: LoadingController,
+    public alertController: AlertController,
     // badge: Badge,
     public afDB: AngularFireDatabase,
     public afAuth: AngularFireAuth,
+    public afSG: AngularFireStorage,
     private camera: Camera
   ) {
     this.afAuth.authState.subscribe(auth => {
@@ -82,5 +87,25 @@ async openLibrary() {
 
   logout() {
     this.afAuth.auth.signOut();
+  }
+
+  async uploadFirebase() {
+    const loading = await this.loadingController.create();
+    await loading.present();
+    this.imagePath = // 'User/'
+     new Date().getTime() + '.jpg';
+
+
+    this.upload = this.afSG.ref(this.imagePath).putString(this.image, 'data_url');
+    this.upload.then(async () => { 
+      this.image = 'https://www.kasterencultuur.nl/editor/placeholder.jpg';
+      await loading.dismiss();
+      const alert = await this.alertController.create({
+        header: 'Bravo',
+        message: 'Votre photo est bien enregistrer.',
+        buttons: ['OK']
+      });
+      await alert.present();
+  });
   }
 }
