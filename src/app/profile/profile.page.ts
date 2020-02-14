@@ -5,12 +5,20 @@ import { Badge } from '@ionic-native/badge/ngx';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { LoadingController, AlertController } from '@ionic/angular';
 import { AngularFireStorage } from '@angular/fire/storage';
+import { Injectable } from '@angular/core';
+import * as firebase from 'firebase';
+// ========================================================//
 
+
+// ========================================================//
 @Component({
   selector: 'app-profile',
   templateUrl: 'profile.page.html',
   styleUrls: ['profile.page.scss']
 })
+
+
+
 export class ProfilePage {
   userId: string;
   mail: string;
@@ -19,7 +27,7 @@ export class ProfilePage {
   imagePath: string;
   upload: any;
 
-
+// ========================================================//
   constructor(
     public loadingController: LoadingController,
     public alertController: AlertController,
@@ -44,6 +52,8 @@ export class ProfilePage {
     });
   }
 
+
+// ========================================================//
   // tslint:disable-next-line:semicolon
   async addPhoto(source: string) {
     if  (source === 'library') {
@@ -57,7 +67,9 @@ export class ProfilePage {
 
     }
   }
+// ========================================================//
 
+// ========================================================//
   async openCamera() {
     const options: CameraOptions = {
       quality: 100,
@@ -70,8 +82,9 @@ export class ProfilePage {
     };
     return await this.camera.getPicture(options);
   }
+// ========================================================//
 
-
+// ========================================================//
 async openLibrary() {
   const options: CameraOptions = {
     quality: 100,
@@ -84,18 +97,20 @@ async openLibrary() {
   };
   return await this.camera.getPicture(options);
 }
+// ========================================================//
 
+// ========================================================//
   logout() {
     this.afAuth.auth.signOut();
   }
+// ========================================================//
 
+// ========================================================//
   async uploadFirebase() {
     const loading = await this.loadingController.create();
     await loading.present();
     this.imagePath = // 'User/'
      new Date().getTime() + '.jpg';
-
-
     this.upload = this.afSG.ref(this.imagePath).putString(this.image, 'data_url');
     this.upload.then(async () => { 
       this.image = 'https://www.kasterencultuur.nl/editor/placeholder.jpg';
@@ -107,5 +122,8 @@ async openLibrary() {
       });
       await alert.present();
   });
+// ========================================================//
+
+// ========================================================//
   }
 }
