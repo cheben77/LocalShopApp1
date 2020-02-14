@@ -5,6 +5,8 @@ import { AngularFireDatabase } from '@angular/fire/database';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { Badge } from '@ionic-native/badge/ngx';
+import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
+import { Component } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'

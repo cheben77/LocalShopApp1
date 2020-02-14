@@ -79,7 +79,21 @@
     <ion-button expand="block" color="warning" (click)="uploadFirebase()">
       <ion-icon slot="start" name="cloud-upload">Envoyer</ion-icon>
     </ion-button>
-  </div>
+</div>
+
+<ion-button expand="block" (click)="scheduleNotification()">Shedule</ion-button>
+<ion-button expand="block" (click)="recurringNotification()">Every Minute</ion-button>
+<ion-button expand="block" (click)="repeatingDaily()">Daily</ion-button>
+<ion-button expand="block" (click)="getAll()">Shedule</ion-button>
+
+<ion-list>
+  <ion-item *ngFor="let n of scheduled">
+    <ion-label text-wrap>
+      {{ n.id }} -- {{ n.title }}
+      <p>Trigger: {{ n.trigger | json }} </p>
+    </ion-label>
+  </ion-item>
+</ion-list>
 
 
   <ion-card>
@@ -98,8 +112,6 @@
       <ion-label text-wrap>Production version will be a lot more polished than this prototype, but still fun to see</ion-label>
     </ion-item>
  </ion-card>
- 
- 
  <ion-card>
   <img class="tweet-img" src="../assets/img/n.jfif">
  </ion-card>

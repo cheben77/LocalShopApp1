@@ -56,7 +56,7 @@ export const firebaseConfig = {
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     Camera,
     InAppBrowser,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+   // { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     LocalNotifications
   ],
   bootstrap: [AppComponent]
