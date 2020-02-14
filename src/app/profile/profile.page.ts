@@ -20,6 +20,7 @@ import * as firebase from 'firebase';
 
 
 export class ProfilePage {
+  [x: string]: any;
   userId: string;
   mail: string;
   method: any;
@@ -29,12 +30,12 @@ export class ProfilePage {
 
 // ========================================================//
   constructor(
-    public loadingController: LoadingController,
-    public alertController: AlertController,
+    public afAuth: AngularFireAuth,
     // badge: Badge,
     public afDB: AngularFireDatabase,
-    public afAuth: AngularFireAuth,
     public afSG: AngularFireStorage,
+    public loadingController: LoadingController,
+    public alertController: AlertController,
     private camera: Camera
   ) {
     this.afAuth.authState.subscribe(auth => {
@@ -49,6 +50,14 @@ export class ProfilePage {
        // this.badge.increase();
        // this.badge.clear();
       }
+      this.plt.ready().then(() =>{
+          this.localNotification.on('click').subscribe(res =>{
+
+          });
+          this.localNotification.on('trigger').subscribe(res => {
+            
+          });
+        });
     });
   }
 
@@ -70,7 +79,7 @@ export class ProfilePage {
 // ========================================================//
 
 // ========================================================//
-  async openCamera() {
+async openCamera() {
     const options: CameraOptions = {
       quality: 100,
       destinationType: this.camera.DestinationType.DATA_URL,
