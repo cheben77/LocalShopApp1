@@ -22,6 +22,7 @@ import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
 
 
 
+
 export const firebaseConfig = {
     apiKey: 'AIzaSyCcyuFkXAqca0vcsLIQRG2UociZGr2oUrA',
     authDomain: 'geoapp-a10da.firebaseapp.com',

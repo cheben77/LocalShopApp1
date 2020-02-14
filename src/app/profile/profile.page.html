@@ -1,5 +1,5 @@
 <ion-header>
- <ion-toolbar>
+ <ion-toolbar class="padding">
    <ion-title class="ion-text-center">
             Profil
     </ion-title>
@@ -7,25 +7,25 @@
       <ion-toggle checked slot="end">
       <ion-icon name="moon" slot="end"></ion-icon>
     </ion-toggle>
+    
 </ion-toolbar>
+<ion-fab vertical="top" horizontal="start" slot="fixed">
+      <ion-fab-button>
+        <img src="./assets/icon/logoProfile.ico" alt="Profil">
+      </ion-fab-button>
+      <ion-fab-list side="top">
+        <ion-fab-button><ion-icon name="log-out" color="danger" (click)="logout()" [routerLink]="['/tabs/login']"></ion-icon></ion-fab-button>
+      </ion-fab-list>
+      <ion-fab-list side="bottom">
+        <ion-fab-button (click)="addPhoto('camera')" color="primary"><ion-icon name="camera">Camera</ion-icon></ion-fab-button>
+      </ion-fab-list>
+      <ion-fab-list side="end">
+        <ion-fab-button (click)="addPhoto('library')" color="tertiary"><ion-icon name="image">Bibliothèque</ion-icon></ion-fab-button>
+      </ion-fab-list>
+    </ion-fab>
 </ion-header>
 
 <ion-content>
-  
-  <ion-fab vertical="top" horizontal="start" slot="fixed">
-    <ion-fab-button>
-      <ion-icon name="share"></ion-icon>
-    </ion-fab-button>
-    <ion-fab-list side="top">
-      <ion-fab-button><ion-icon name="log-out" color="danger" (click)="logout()" [routerLink]="['/tabs/login']"></ion-icon></ion-fab-button>
-    </ion-fab-list>
-    <ion-fab-list side="bottom">
-      <ion-fab-button (click)="addPhoto('camera')" color="primary"><ion-icon name="camera">Camera</ion-icon></ion-fab-button>
-    </ion-fab-list>
-    <ion-fab-list side="end">
-      <ion-fab-button (click)="addPhoto('library')" color="tertiary"><ion-icon name="image">Bibliothèque</ion-icon></ion-fab-button>
-    </ion-fab-list>
-  </ion-fab>
   <!-- <ion-item>
     <ion-label>
       <p>Méthode de connexion</p>
@@ -54,7 +54,7 @@
     <h2>Elon Musk</h2>
     <div class="space-between">
       <div class="followings">
-        <ion-badge color="primary" mode="ios">42</ion-badge>
+        <ion-badge color="primary" mode="ios">46</ion-badge>
         <p>Badges</p>
       </div>
       <div class="followings">
@@ -63,7 +63,7 @@
         </ion-avatar>
       </div>
       <div class="followings">
-        <ion-badge color="primary" mode="ios">42</ion-badge>
+        <ion-badge color="primary" mode="ios">102</ion-badge>
         <p>QR Codes
         </p>
       </div>
@@ -81,10 +81,28 @@
     </ion-button>
 </div>
 
-<ion-button expand="block" (click)="scheduleNotification()">Shedule</ion-button>
-<ion-button expand="block" (click)="recurringNotification()">Every Minute</ion-button>
-<ion-button expand="block" (click)="repeatingDaily()">Daily</ion-button>
-<ion-button expand="block" (click)="getAll()">Shedule</ion-button>
+<ion-grid color="dark" class="ion-align">
+  <ion-row size="2" offset="2">
+    <ion-row>
+      <ion-button expand="flex" (click)="scheduleNotification()">Shedule</ion-button>
+    </ion-row>
+    <ion-row>
+      <ion-button expand="flex" (click)="recurringNotification()">Every Minute</ion-button>
+    </ion-row>
+    <ion-row>
+      <ion-button expand="flex" (click)="repeatingDaily()">Daily</ion-button>
+    </ion-row>
+    <ion-row>
+      <ion-button expand="flex" (click)="getAll()">Shedule</ion-button>
+    </ion-row>
+    <ion-row>
+      <ion-button expand="flex" (click)="getAll()">Journal de bord</ion-button>
+    </ion-row>
+    <ion-row>
+      <ion-button expand="flex" (click)="getAll()">Evènements</ion-button>
+    </ion-row>
+  </ion-row>
+</ion-grid>
 
 <ion-list>
   <ion-item *ngFor="let n of scheduled">
