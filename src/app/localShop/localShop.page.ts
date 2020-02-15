@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { AngularFireStorage } from '@angular/fire/storage';
-
+import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
 
 @Component({
   selector: 'app-localSop',

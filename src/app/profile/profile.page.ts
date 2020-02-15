@@ -17,8 +17,6 @@ import * as firebase from 'firebase';
   styleUrls: ['profile.page.scss']
 })
 
-
-
 export class ProfilePage {
   [x: string]: any;
   userId: string;
@@ -60,8 +58,6 @@ export class ProfilePage {
         });
     });
   }
-
-
 // ========================================================//
   // tslint:disable-next-line:semicolon
   async addPhoto(source: string) {
