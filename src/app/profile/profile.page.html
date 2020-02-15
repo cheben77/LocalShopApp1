@@ -13,11 +13,8 @@
       <ion-fab-button>
         <img src="./assets/icon/logoProfile.ico" alt="Profil">
       </ion-fab-button>
-      <ion-fab-list side="top">
-        <ion-fab-button><ion-icon name="log-out" color="danger" (click)="logout()" [routerLink]="['/tabs/login']"></ion-icon></ion-fab-button>
-      </ion-fab-list>
       <ion-fab-list side="bottom">
-        <ion-fab-button (click)="addPhoto('camera')" color="primary"><ion-icon name="camera">Camera</ion-icon></ion-fab-button>
+        <ion-fab-button><ion-icon name="log-out" color="danger" (click)="logout()" [routerLink]="['/tabs/login']"></ion-icon></ion-fab-button>
       </ion-fab-list>
       <ion-fab-list side="end">
         <ion-fab-button (click)="addPhoto('library')" color="tertiary"><ion-icon name="image">Bibliothèque</ion-icon></ion-fab-button>
@@ -71,7 +68,8 @@
   </div>
 
 <ion-progress-bar type="indeterminate"></ion-progress-bar>
-  
+
+<!--------------Envoi de l'image function upload---------------------------------------------->
 <div>
     <div>
       <img [src]="image" alt="image">
@@ -80,6 +78,7 @@
       <ion-icon slot="start" name="cloud-upload">Envoyer</ion-icon>
     </ion-button>
 </div>
+<!--------------Envoi de l'image function upload---------------------------------------------->
 
 <ion-grid color="dark" class="ion-align">
   <ion-row size="2" offset="2">
@@ -104,14 +103,14 @@
   </ion-row>
 </ion-grid>
 
-<ion-list>
+<!-- <ion-list>
   <ion-item *ngFor="let n of scheduled">
     <ion-label text-wrap>
       {{ n.id }} -- {{ n.title }}
       <p>Trigger: {{ n.trigger | json }} </p>
     </ion-label>
   </ion-item>
-</ion-list>
+</ion-list>-->
 
 
   <ion-card>

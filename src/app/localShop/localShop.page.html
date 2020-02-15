@@ -1,10 +1,8 @@
 <ion-header>
   <ion-toolbar>
-    
     <ion-title size="large" class="ion-text-center">
       Local Shop
-    </ion-title>
-      
+    </ion-title>  
       <!-- <ion-menu side="start" menuId="first">
       <ion-header>
       <ion-toolbar color="primary">
@@ -57,9 +55,9 @@
     </ion-toolbar> 
   </ion-header>
 <!--------------------------FIN HEADER Content------------------------------------------------------------->
-
 <!---------------------------CONTENT Content------------------------------------------------------------>
     <ion-content class="ion-padding" scroll-y="false" color="dark"> 
+<!-------------------------SLIDES PUBS--------------------------------------------------------------------------------->
       <ion-slides> 
         <ion-slide> 
           <ion-grid>
@@ -128,18 +126,92 @@
       <ion-button fill="clear" [routerLink]="['/tabs/profile']" routerLinkActive="router-link-active" >Continue <ion-icon slot="end" name="arrow-forward"></ion-icon></ion-button> 
         </ion-slide> 
       </ion-slides> 
+<!------------1er Slide Content---------------------------------------------->
+<!------------2ieme Slide Content----------------------------------------------->
+      <ion-slides> 
+  <ion-slide> 
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12" style="background: var(--ion-color-primary);"
+           size>
+              Ok
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12" style="background: var(--ion-color-primary);"
+           size>
+              Let's GO !!
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <!-- <ion-card>
+      <ion-card-header>
+        <ion-item>
+          <ion-icon name="pin" slot="start"></ion-icon>
+          <ion-label>Aller à la découverte de votre environement</ion-label>
+          <ion-button fill="outline" slot="end" routerLink="/tabs/geoCatching">Maps</ion-button>
+        </ion-item>
+        <ion-img width="90" height="90" src="./assets/img/h.jfif"></ion-img>
+      </ion-card-header>
+    
+      <ion-card-content>
+        Maintenant c'est possible d'apprendre en jouant Bonus gagnez des points pour accéder à différentes offres de votre secteur
+      </ion-card-content>
+    </ion-card>
+  </ion-slide> 
+
+
+  <ion-slide> 
+    <ion-card>
+      <ion-card-header>
+        <ion-item>
+          <ion-icon name="pin" slot="start"></ion-icon>
+          <ion-label>Scanner directement chez le partenaire pour votre offre </ion-label>
+          <ion-button fill="outline" slot="end">View</ion-button>
+        </ion-item>
+        <ion-img width="90" height="90" src="./assets/img/htdx.jfif"></ion-img>
+      </ion-card-header>
+    
+      <ion-card-content>
+        Une fois un certain nombre de QRCode collecter, sur votre profil ce trouverons des badges auquel seront associer à des points, il y aura plus qu'a choisir les commerces Partenaires de l'application
+      </ion-card-content>
+    </ion-card> -->
+  </ion-slide>
+  <ion-slide>
+    <ion-card>
+      <ion-card-header>
+        <ion-item>
+        <ion-icon name="pin" slot="start"></ion-icon>
+        <ion-label>Aller à la découverte de votre environement</ion-label>
+        <ion-button fill="outline" slot="end" routerLink="/tabs/geoCatching">Maps</ion-button>
+        </ion-item>
+        <ion-img width="80" height="80" src="./assets/img/undraw_a_day_off_w9ex.png"></ion-img>
+    </ion-card-header>
+  </ion-card> 
+
+  </ion-slide>
+  <ion-slide> 
+<img src="1280px-Ionic_Logo.svg.png"> 
+<h2>Ready to Start?</h2> 
+<ion-button fill="clear" [routerLink]="['/tabs/profile']" routerLinkActive="router-link-active" >Continue <ion-icon slot="end" name="arrow-forward"></ion-icon></ion-button> 
+  </ion-slide> 
+      </ion-slides>
+<!------------Fin slide Pubs------------------------------------------------------------------->
+<!------------------------------------------------------------------------------->
     </ion-content>
-<!---------------------------SLIDE------------------------------------------------------------>
+
+
+<!---------------------------SLIDE Pub Fixe------------------------------------------------------------>
       <ion-slides>
 <!--------------------------------------------------------------------------------------->
         <ion-card>
-    <ion-card-header>
+          <ion-card-header>
 <!--------------------------------------------------------------------------------------->
-      <ion-item>
-        <ion-icon name="card" slot="start"></ion-icon>
-      </ion-item>
-      <ion-img width="90" height="90" src="./assets/img/htdx.jfif"></ion-img>
-    </ion-card-header>
+          <ion-item>
+            <ion-icon name="card" slot="start"></ion-icon>
+          </ion-item>
+            <ion-img width="90" height="90" src="./assets/img/htdx.jfif"></ion-img>
+          </ion-card-header>
 <!--------------------------------------------------------------------------------------->
     <ion-card-content>
      Transformer vos efforts en points, on dit que l'effort paye et bien c'est presque le cas,
@@ -159,17 +231,9 @@
         </ion-card>
 <!--------------------------------------------------------------------------------------->
       </ion-slides>
-<!---------------------------CARD Tableau ?------------------------------------------------------------> 
-    <!-- <ion-card *ngFor="let image of images">
-    <ion-img [src]="image.url"></ion-img>
-    <ion-card-header>
-      <ion-card-subtitle>{{ image.name }}</ion-card-subtitle>
-    </ion-card-header>
-    </ion-card> -->
-<!---------------------------FIN Caed Tableau------------------------------------------------------------------------>
-    
+<!---------------------------FIN Slide Pub Fixe------------------------------------------------------------------------>
 <!---------------------------CARD Menu------------------------------------------------------------->
-  <ion-card>
+      <ion-card>
     <ion-item href="#" class="activated">
       <ion-icon name="wifi" slot="start"></ion-icon>
       <ion-label>Tuto</ion-label>
@@ -189,6 +253,6 @@
       <ion-icon slot="start" name="card"></ion-icon>
       <ion-label>Echange avec partenaires</ion-label>
     </ion-item>
-  </ion-card>
+      </ion-card>
 <!---------------------------FIN Card Menu------------------------------------------------------------>
 </ion-content>

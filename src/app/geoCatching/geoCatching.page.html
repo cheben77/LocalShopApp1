@@ -12,13 +12,6 @@
 </ion-header>
 
 <ion-content>
-  <div id="map_canvas"></div>
-  <ion-fab vertical="bottom" horizontal="start" slot="fixed">
-    <ion-fab-button color="success" (click)="mapOptions()">
-      <ion-icon name="map"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
-
   <ion-fab vertical="top" horizontal="end" slot="fixed">
     <ion-fab-button>
       <ion-icon name="share"></ion-icon>
@@ -32,8 +25,13 @@
     <ion-fab-list side="start">
       <ion-fab-button><ion-icon name="logo-instagram"></ion-icon></ion-fab-button>
     </ion-fab-list>
-    <ion-fab-list side="end">
-      <ion-fab-button><ion-icon name="logo-twitter"></ion-icon></ion-fab-button>
-    </ion-fab-list>
   </ion-fab>
+  
+  <div id="map_canvas">
+    <ion-fab vertical="bottom" horizontal="start" slot="fixed">
+      <ion-fab-button color="success" (click)="mapOptions()">
+        <ion-icon name="map"></ion-icon>
+    </ion-fab-button>
+    </ion-fab>
+  </div>
 </ion-content>
