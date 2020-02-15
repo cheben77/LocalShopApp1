@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n <ion-toolbar>\r\n   <ion-title class=\"ion-text-center\">\r\n            Profil\r\n    </ion-title>\r\n\r\n      <ion-toggle checked slot=\"end\">\r\n      <ion-icon name=\"moon\" slot=\"end\"></ion-icon>\r\n    </ion-toggle>\r\n</ion-toolbar>\r\n\r\n</ion-header>\r\n\r\n<ion-content>\r\n  \r\n  <ion-fab vertical=\"top\" horizontal=\"start\" slot=\"fixed\">\r\n    <ion-fab-button>\r\n      <ion-icon name=\"share\"></ion-icon>\r\n    </ion-fab-button>\r\n    <ion-fab-list side=\"top\">\r\n      <ion-fab-button><ion-icon name=\"log-out\" color=\"danger\" (click)=\"logout()\" [routerLink]=\"['/tabs/login']\"></ion-icon></ion-fab-button>\r\n    </ion-fab-list>\r\n    <ion-fab-list side=\"bottom\">\r\n      <ion-fab-button (click)=\"addPhoto('camera')\" color=\"primary\"><ion-icon name=\"camera\">Camera</ion-icon></ion-fab-button>\r\n    </ion-fab-list>\r\n    <ion-fab-list side=\"end\">\r\n      <ion-fab-button (click)=\"addPhoto('library')\" color=\"tertiary\"><ion-icon name=\"image\">Bibliothèque</ion-icon></ion-fab-button>\r\n    </ion-fab-list>\r\n  </ion-fab>\r\n  <!-- <ion-item>\r\n    <ion-label>\r\n      <p>Méthode de connexion</p>\r\n      <h2><b>{{ method }}</b></h2>\r\n    </ion-label>\r\n  </ion-item>\r\n  \r\n  <ion-item>\r\n    <ion-label>\r\n      <p>Identifiant</p>\r\n      <h2><b>{{ userId }}</b></h2>\r\n    </ion-label>\r\n  </ion-item>\r\n  \r\n  <ion-item>\r\n    <ion-label>\r\n      <p>Adresse email</p>\r\n      <h2><b>{{ mail }}</b></h2>\r\n    </ion-label>\r\n  </ion-item>\r\n  \r\n  <div class=\"ion-padding\">\r\n    \r\n  </div> -->\r\n  <div class=\"header\">\r\n    <h2>Elon Musk</h2>\r\n    <div class=\"space-between\">\r\n      <div class=\"followings\">\r\n        <ion-badge color=\"primary\" mode=\"ios\">42</ion-badge>\r\n        <p>Badges</p>\r\n      </div>\r\n      <div class=\"followings\">\r\n        <ion-avatar>\r\n          <img src=\"./assets/img/a4cdbb2e20df441931275b8acaebd5d0.jpg\">\r\n        </ion-avatar>\r\n      </div>\r\n      <div class=\"followings\">\r\n        <ion-badge color=\"primary\" mode=\"ios\">42</ion-badge>\r\n        <p>QR Codes\r\n        </p>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n<ion-progress-bar type=\"indeterminate\"></ion-progress-bar>\r\n  \r\n<div>\r\n    <div>\r\n      <img [src]=\"image\" alt=\"image\">\r\n    </div>\r\n    <ion-button expand=\"block\" color=\"warning\" (click)=\"uploadFirebase()\">\r\n      <ion-icon slot=\"start\" name=\"cloud-upload\">Envoyer</ion-icon>\r\n    </ion-button>\r\n  </div>\r\n\r\n\r\n  <ion-card>\r\n    <ion-item lines=\"none\">\r\n      <ion-avatar slot=\"start\">\r\n        <img src=\"../assets/img/a4cdbb2e20df441931275b8acaebd5d0.jpg\" />\r\n      </ion-avatar>\r\n      <ion-label>\r\n        <h2><b>Elon Musk</b></h2>\r\n        <p>Il y a 14 heures</p>\r\n      </ion-label>\r\n    </ion-item>\r\n    \r\n \r\n    <ion-item lines=\"none\" class=\"tweet\">\r\n      <ion-label text-wrap>Production version will be a lot more polished than this prototype, but still fun to see</ion-label>\r\n    </ion-item>\r\n </ion-card>\r\n \r\n \r\n <ion-card>\r\n  <img class=\"tweet-img\" src=\"../assets/img/n.jfif\">\r\n </ion-card>\r\n <ion-card>\r\n  <img class=\"tweet-img\" src=\"../assets/img/htdx.jfif\">\r\n </ion-card>\r\n <ion-item lines=\"none\">\r\n  <ion-avatar slot=\"start\">\r\n    <img src=\"../assets/img/a4cdbb2e20df441931275b8acaebd5d0.jpg\" />\r\n  </ion-avatar>\r\n  <ion-label>\r\n    <h2><b>Elon Musk</b></h2>\r\n    <p>Il y a 5 minutes</p>\r\n  </ion-label>\r\n</ion-item>\r\n    <ion-item lines=\"none\" class=\"tweet\">\r\n      <ion-label text-wrap>Le temps est venu, alors changeons le !</ion-label>\r\n    </ion-item>\r\n</ion-content>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n <ion-toolbar class=\"padding\">\r\n   <ion-title class=\"ion-text-center\">\r\n            Profil\r\n    </ion-title>\r\n\r\n      <ion-toggle checked slot=\"end\">\r\n      <ion-icon name=\"moon\" slot=\"end\"></ion-icon>\r\n    </ion-toggle>\r\n    \r\n</ion-toolbar>\r\n<ion-fab vertical=\"top\" horizontal=\"start\" slot=\"fixed\">\r\n      <ion-fab-button>\r\n        <img src=\"./assets/icon/logoProfile.ico\" alt=\"Profil\">\r\n      </ion-fab-button>\r\n      <ion-fab-list side=\"top\">\r\n        <ion-fab-button><ion-icon name=\"log-out\" color=\"danger\" (click)=\"logout()\" [routerLink]=\"['/tabs/login']\"></ion-icon></ion-fab-button>\r\n      </ion-fab-list>\r\n      <ion-fab-list side=\"bottom\">\r\n        <ion-fab-button (click)=\"addPhoto('camera')\" color=\"primary\"><ion-icon name=\"camera\">Camera</ion-icon></ion-fab-button>\r\n      </ion-fab-list>\r\n      <ion-fab-list side=\"end\">\r\n        <ion-fab-button (click)=\"addPhoto('library')\" color=\"tertiary\"><ion-icon name=\"image\">Bibliothèque</ion-icon></ion-fab-button>\r\n      </ion-fab-list>\r\n    </ion-fab>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <!-- <ion-item>\r\n    <ion-label>\r\n      <p>Méthode de connexion</p>\r\n      <h2><b>{{ method }}</b></h2>\r\n    </ion-label>\r\n  </ion-item>\r\n  \r\n  <ion-item>\r\n    <ion-label>\r\n      <p>Identifiant</p>\r\n      <h2><b>{{ userId }}</b></h2>\r\n    </ion-label>\r\n  </ion-item>\r\n  \r\n  <ion-item>\r\n    <ion-label>\r\n      <p>Adresse email</p>\r\n      <h2><b>{{ mail }}</b></h2>\r\n    </ion-label>\r\n  </ion-item>\r\n  \r\n  <div class=\"ion-padding\">\r\n    \r\n  </div> -->\r\n  <div class=\"header\">\r\n    <h2>Elon Musk</h2>\r\n    <div class=\"space-between\">\r\n      <div class=\"followings\">\r\n        <ion-badge color=\"primary\" mode=\"ios\">46</ion-badge>\r\n        <p>Badges</p>\r\n      </div>\r\n      <div class=\"followings\">\r\n        <ion-avatar>\r\n          <img src=\"./assets/img/a4cdbb2e20df441931275b8acaebd5d0.jpg\">\r\n        </ion-avatar>\r\n      </div>\r\n      <div class=\"followings\">\r\n        <ion-badge color=\"primary\" mode=\"ios\">102</ion-badge>\r\n        <p>QR Codes\r\n        </p>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n<ion-progress-bar type=\"indeterminate\"></ion-progress-bar>\r\n  \r\n<div>\r\n    <div>\r\n      <img [src]=\"image\" alt=\"image\">\r\n    </div>\r\n    <ion-button expand=\"block\" color=\"warning\" (click)=\"uploadFirebase()\">\r\n      <ion-icon slot=\"start\" name=\"cloud-upload\">Envoyer</ion-icon>\r\n    </ion-button>\r\n</div>\r\n\r\n<ion-grid color=\"dark\" class=\"ion-align\">\r\n  <ion-row size=\"2\" offset=\"2\">\r\n    <ion-row>\r\n      <ion-button expand=\"flex\" (click)=\"scheduleNotification()\">Shedule</ion-button>\r\n    </ion-row>\r\n    <ion-row>\r\n      <ion-button expand=\"flex\" (click)=\"recurringNotification()\">Every Minute</ion-button>\r\n    </ion-row>\r\n    <ion-row>\r\n      <ion-button expand=\"flex\" (click)=\"repeatingDaily()\">Daily</ion-button>\r\n    </ion-row>\r\n    <ion-row>\r\n      <ion-button expand=\"flex\" (click)=\"getAll()\">Shedule</ion-button>\r\n    </ion-row>\r\n    <ion-row>\r\n      <ion-button expand=\"flex\" (click)=\"getAll()\">Journal de bord</ion-button>\r\n    </ion-row>\r\n    <ion-row>\r\n      <ion-button expand=\"flex\" (click)=\"getAll()\">Evènements</ion-button>\r\n    </ion-row>\r\n  </ion-row>\r\n</ion-grid>\r\n\r\n<ion-list>\r\n  <ion-item *ngFor=\"let n of scheduled\">\r\n    <ion-label text-wrap>\r\n      {{ n.id }} -- {{ n.title }}\r\n      <p>Trigger: {{ n.trigger | json }} </p>\r\n    </ion-label>\r\n  </ion-item>\r\n</ion-list>\r\n\r\n\r\n  <ion-card>\r\n    <ion-item lines=\"none\">\r\n      <ion-avatar slot=\"start\">\r\n        <img src=\"../assets/img/a4cdbb2e20df441931275b8acaebd5d0.jpg\" />\r\n      </ion-avatar>\r\n      <ion-label>\r\n        <h2><b>Elon Musk</b></h2>\r\n        <p>Il y a 14 heures</p>\r\n      </ion-label>\r\n    </ion-item>\r\n    \r\n \r\n    <ion-item lines=\"none\" class=\"tweet\">\r\n      <ion-label text-wrap>Production version will be a lot more polished than this prototype, but still fun to see</ion-label>\r\n    </ion-item>\r\n </ion-card>\r\n <ion-card>\r\n  <img class=\"tweet-img\" src=\"../assets/img/n.jfif\">\r\n </ion-card>\r\n <ion-card>\r\n  <img class=\"tweet-img\" src=\"../assets/img/htdx.jfif\">\r\n </ion-card>\r\n <ion-item lines=\"none\">\r\n  <ion-avatar slot=\"start\">\r\n    <img src=\"../assets/img/a4cdbb2e20df441931275b8acaebd5d0.jpg\" />\r\n  </ion-avatar>\r\n  <ion-label>\r\n    <h2><b>Elon Musk</b></h2>\r\n    <p>Il y a 5 minutes</p>\r\n  </ion-label>\r\n</ion-item>\r\n    <ion-item lines=\"none\" class=\"tweet\">\r\n      <ion-label text-wrap>Le temps est venu, alors changeons le !</ion-label>\r\n    </ion-item>\r\n</ion-content>\r\n");
 
 /***/ }),
 
@@ -95,16 +95,19 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+// ========================================================//
+// ========================================================//
 var ProfilePage = /** @class */ (function () {
-    function ProfilePage(loadingController, alertController, 
+    // ========================================================//
+    function ProfilePage(afAuth, 
     // badge: Badge,
-    afDB, afAuth, afSG, camera) {
+    afDB, afSG, loadingController, alertController, camera) {
         var _this = this;
+        this.afAuth = afAuth;
+        this.afDB = afDB;
+        this.afSG = afSG;
         this.loadingController = loadingController;
         this.alertController = alertController;
-        this.afDB = afDB;
-        this.afAuth = afAuth;
-        this.afSG = afSG;
         this.camera = camera;
         this.image = 'https://www.kasterencultuur.nl/editor/placeholder.jpg';
         this.afAuth.authState.subscribe(function (auth) {
@@ -120,8 +123,15 @@ var ProfilePage = /** @class */ (function () {
                 // this.badge.increase();
                 // this.badge.clear();
             }
+            _this.plt.ready().then(function () {
+                _this.localNotification.on('click').subscribe(function (res) {
+                });
+                _this.localNotification.on('trigger').subscribe(function (res) {
+                });
+            });
         });
     }
+    // ========================================================//
     // tslint:disable-next-line:semicolon
     ProfilePage.prototype.addPhoto = function (source) {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
@@ -148,6 +158,8 @@ var ProfilePage = /** @class */ (function () {
             });
         });
     };
+    // ========================================================//
+    // ========================================================//
     ProfilePage.prototype.openCamera = function () {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
             var options;
@@ -169,6 +181,8 @@ var ProfilePage = /** @class */ (function () {
             });
         });
     };
+    // ========================================================//
+    // ========================================================//
     ProfilePage.prototype.openLibrary = function () {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
             var options;
@@ -190,9 +204,13 @@ var ProfilePage = /** @class */ (function () {
             });
         });
     };
+    // ========================================================//
+    // ========================================================//
     ProfilePage.prototype.logout = function () {
         this.afAuth.auth.signOut();
     };
+    // ========================================================//
+    // ========================================================//
     ProfilePage.prototype.uploadFirebase = function () {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
             var loading;
@@ -237,11 +255,11 @@ var ProfilePage = /** @class */ (function () {
         });
     };
     ProfilePage.ctorParameters = function () { return [
+        { type: _angular_fire_auth__WEBPACK_IMPORTED_MODULE_2__["AngularFireAuth"] },
+        { type: _angular_fire_database__WEBPACK_IMPORTED_MODULE_3__["AngularFireDatabase"] },
+        { type: _angular_fire_storage__WEBPACK_IMPORTED_MODULE_6__["AngularFireStorage"] },
         { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["LoadingController"] },
         { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["AlertController"] },
-        { type: _angular_fire_database__WEBPACK_IMPORTED_MODULE_3__["AngularFireDatabase"] },
-        { type: _angular_fire_auth__WEBPACK_IMPORTED_MODULE_2__["AngularFireAuth"] },
-        { type: _angular_fire_storage__WEBPACK_IMPORTED_MODULE_6__["AngularFireStorage"] },
         { type: _ionic_native_camera_ngx__WEBPACK_IMPORTED_MODULE_4__["Camera"] }
     ]; };
     ProfilePage = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -250,11 +268,11 @@ var ProfilePage = /** @class */ (function () {
             template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./profile.page.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/profile/profile.page.html")).default,
             styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./profile.page.scss */ "./src/app/profile/profile.page.scss")).default]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_5__["LoadingController"],
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["AlertController"],
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_fire_auth__WEBPACK_IMPORTED_MODULE_2__["AngularFireAuth"],
             _angular_fire_database__WEBPACK_IMPORTED_MODULE_3__["AngularFireDatabase"],
-            _angular_fire_auth__WEBPACK_IMPORTED_MODULE_2__["AngularFireAuth"],
             _angular_fire_storage__WEBPACK_IMPORTED_MODULE_6__["AngularFireStorage"],
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["LoadingController"],
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["AlertController"],
             _ionic_native_camera_ngx__WEBPACK_IMPORTED_MODULE_4__["Camera"]])
     ], ProfilePage);
     return ProfilePage;
