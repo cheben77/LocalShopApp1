@@ -112,14 +112,14 @@ async openLibrary() {
 
 // ================Function UpLoad_FireBase========================================//
   async uploadFirebase() {
+    
     // ==================Mise en place de l'image dans le Profile User FireBase==================================//
     const loading = await this.loadingController.create();
     await loading.present();
     this.imagePath = 'Images/User/img/' + new Date().getTime() + '.jpg';
     this.upload = this.afSG.ref(this.imagePath).putString(this.image, 'data_url');
 // ==========================================================//
-
-// =========================================================//
+// ===============Alert par message==========================================//
     this.upload.then(async () => { 
       this.image = 'https://www.kasterencultuur.nl/editor/placeholder.jpg';
       await loading.dismiss();
