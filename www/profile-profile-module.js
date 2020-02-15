@@ -210,7 +210,7 @@ var ProfilePage = /** @class */ (function () {
         this.afAuth.auth.signOut();
     };
     // ========================================================//
-    // ========================================================//
+    // ================Function UpLoad_FireBase========================================//
     ProfilePage.prototype.uploadFirebase = function () {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
             var loading;
@@ -223,9 +223,10 @@ var ProfilePage = /** @class */ (function () {
                         return [4 /*yield*/, loading.present()];
                     case 2:
                         _a.sent();
-                        this.imagePath = // 'User/'
-                            new Date().getTime() + '.jpg';
+                        this.imagePath = 'Images/User/img/' + new Date().getTime() + '.jpg';
                         this.upload = this.afSG.ref(this.imagePath).putString(this.image, 'data_url');
+                        // ==========================================================//
+                        // =========================================================//
                         this.upload.then(function () { return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this, void 0, void 0, function () {
                             var alert;
                             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {

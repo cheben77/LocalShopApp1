@@ -38,7 +38,7 @@
       </ion-title>
 <!--------------------------GRID Notifs------------------------------------------------------------------------------>
       <ion-row>
-        <ion-col class="ion-align-self-start" (click)="scheduleNotification()">
+        <ion-col class="ion-align-self-start" [routerLink]="['/localShop']" routerLinkActive="router-link-active" >
          LocalShop 
         </ion-col>
         <ion-col class="ion-align-self-start" (click)="recurringNotification()">
