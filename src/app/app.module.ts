@@ -19,7 +19,7 @@ import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 import { QRCodeModule } from 'angularx-qrcode';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 
-import { environment } from '../environments/environment';
+import { environment } from 'src/environments/environment';
 
 
 

@@ -43,7 +43,6 @@ platforms/
 plugins/
 jspm_packages/
 www/
-src/environments/
 
 # TypeScript v1 declaration files
 typings/
@@ -75,6 +74,8 @@ typings/
 # dotenv environment variables file
 .env
 .env.test
+src/environments/
+
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache

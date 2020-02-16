@@ -45,9 +45,15 @@ export class GeoCatchingPage {
       const watch = this.geolocation.watchPosition();
       watch.subscribe((data) => {
         this.loadMap(data.coords);
+        this.map.addMarker({
+          icon: 'red',
+          animation: 'DROP',
+          position: { lat:data.coords.latitude, lng:data.coords.longitude }
+        });
       });
     }
   }
+
   loadMap(coords) {
     Environment.setEnv({
       API_KEY_FOR_BROWSER_RELEASE: 'AIzaSyAJjXyc0-8x1DSdbnS0FhnkmskZ5hHvzlQ',
