@@ -42,6 +42,8 @@ node_modules/
 platforms/
 plugins/
 jspm_packages/
+www/
+src/environments/
 
 # TypeScript v1 declaration files
 typings/
