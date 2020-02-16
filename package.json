@@ -26,10 +26,7 @@
     "@ionic-native/geolocation": "^5.21.5",
     "@ionic-native/google-maps": "^5.5.0",
     "@ionic-native/in-app-browser": "^5.21.5",
-<<<<<<< HEAD
     "@ionic-native/local-notifications": "^5.21.5",
-=======
->>>>>>> geocatching
     "@ionic-native/qr-scanner": "^5.21.5",
     "@ionic-native/splash-screen": "^5.21.5",
     "@ionic-native/status-bar": "^5.21.5",
@@ -42,7 +39,7 @@
     "cordova-plugin-badge": "^0.8.8",
     "cordova-plugin-camera": "^4.1.0",
     "cordova-plugin-geolocation": "^4.0.2",
-    "cordova-plugin-googlemaps": "^2.6.2",
+    "cordova-plugin-googlemaps": "git+https://github.com/mapsplugin/cordova-plugin-googlemaps.git#multiple_maps",
     "cordova-plugin-inappbrowser": "^3.2.0",
     "cordova-plugin-qrscanner": "^3.0.1",
     "core-js": "^2.5.4",
