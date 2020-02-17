@@ -45,7 +45,7 @@ export class GeoCatchingPage {
       const watch = this.geolocation.watchPosition();
       watch.subscribe((data) => {
         this.loadMap(data.coords);
-        this.map.addMarker({
+        this.map.addMarkerSync({          
           icon: 'red',
           animation: 'DROP',
           position: { lat:data.coords.latitude, lng:data.coords.longitude }
