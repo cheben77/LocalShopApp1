@@ -8,7 +8,7 @@ import { LoginPage } from './login.page';
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-import { firebaseConfig } from 'src/app/app.module';
+// import { firebaseConfig } from 'src/app/app.module';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
@@ -17,7 +17,7 @@ import { RouterModule } from '@angular/router';
     FormsModule,
     IonicModule,
     RouterModule.forChild([{ path: '', component: LoginPage }]),
-    AngularFireModule.initializeApp(firebaseConfig),
+    // AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
   ],
   declarations: [LoginPage]

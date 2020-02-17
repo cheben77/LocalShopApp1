@@ -31,6 +31,7 @@ export class GeoCatchingPage {
     public actionCtrl: ActionSheetController,
     public platform: Platform
   ) {
+    console.log(this.platform,'plop')
     if (this.platform.is('cordova')) {
       // this.geolocation.getCurrentPosition().then((resp) => {
       //  // resp.coords.latitude
