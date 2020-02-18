@@ -20,9 +20,6 @@ import { QRCodeModule } from 'angularx-qrcode';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
 
-<<<<<<< HEAD
-import { environment } from 'src/environments/environment';
-=======
 
 
 
@@ -36,7 +33,6 @@ export const firebaseConfig = {
     appId: '1:279119677501:web:91d699c056a5869f92c254',
     measurementId: 'G-SRN9Q6HXGX'
 };
->>>>>>> 9522675e2c59572603a360e97e2f53b77759015b
 
 
 
