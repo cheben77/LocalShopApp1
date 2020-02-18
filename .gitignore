@@ -42,6 +42,10 @@ node_modules/
 platforms/
 plugins/
 jspm_packages/
+<<<<<<< HEAD
+=======
+www/
+>>>>>>> 2ec8c2af2df3bf365053a4a899d01f55ecc1320c
 
 # TypeScript v1 declaration files
 typings/
@@ -73,6 +77,8 @@ typings/
 # dotenv environment variables file
 .env
 .env.test
+src/environments/
+
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache

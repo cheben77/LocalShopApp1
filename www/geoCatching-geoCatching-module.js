@@ -2091,6 +2091,7 @@ var GeoCatchingPage = /** @class */ (function () {
         this.alertController = alertController;
         this.actionCtrl = actionCtrl;
         this.platform = platform;
+        console.log(this.platform, 'plop');
         if (this.platform.is('cordova')) {
             // this.geolocation.getCurrentPosition().then((resp) => {
             //  // resp.coords.latitude
@@ -2103,6 +2104,11 @@ var GeoCatchingPage = /** @class */ (function () {
             var watch = this.geolocation.watchPosition();
             watch.subscribe(function (data) {
                 _this.loadMap(data.coords);
+                _this.map.addMarkerSync({
+                    icon: 'red',
+                    animation: 'DROP',
+                    position: { lat: data.coords.latitude, lng: data.coords.longitude }
+                });
             });
         }
     }

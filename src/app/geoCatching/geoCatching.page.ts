@@ -31,6 +31,7 @@ export class GeoCatchingPage {
     public actionCtrl: ActionSheetController,
     public platform: Platform
   ) {
+    console.log(this.platform,'plop')
     if (this.platform.is('cordova')) {
       // this.geolocation.getCurrentPosition().then((resp) => {
       //  // resp.coords.latitude
@@ -45,9 +46,15 @@ export class GeoCatchingPage {
       const watch = this.geolocation.watchPosition();
       watch.subscribe((data) => {
         this.loadMap(data.coords);
+        this.map.addMarkerSync({          
+          icon: 'red',
+          animation: 'DROP',
+          position: { lat:data.coords.latitude, lng:data.coords.longitude }
+        });
       });
     }
   }
+
   loadMap(coords) {
     Environment.setEnv({
       API_KEY_FOR_BROWSER_RELEASE: 'AIzaSyAJjXyc0-8x1DSdbnS0FhnkmskZ5hHvzlQ',
