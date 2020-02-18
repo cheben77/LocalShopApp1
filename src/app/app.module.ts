@@ -18,8 +18,25 @@ import { QRScanner } from '@ionic-native/qr-scanner/ngx';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 import { QRCodeModule } from 'angularx-qrcode';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
+import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
 
+<<<<<<< HEAD
 import { environment } from 'src/environments/environment';
+=======
+
+
+
+export const firebaseConfig = {
+    apiKey: 'AIzaSyCcyuFkXAqca0vcsLIQRG2UociZGr2oUrA',
+    authDomain: 'geoapp-a10da.firebaseapp.com',
+    databaseURL: 'https://geoapp-a10da.firebaseio.com',
+    projectId: 'geoapp-a10da',
+    storageBucket: 'geoapp-a10da.appspot.com',
+    messagingSenderId: '279119677501',
+    appId: '1:279119677501:web:91d699c056a5869f92c254',
+    measurementId: 'G-SRN9Q6HXGX'
+};
+>>>>>>> 9522675e2c59572603a360e97e2f53b77759015b
 
 
 
@@ -31,7 +48,7 @@ import { environment } from 'src/environments/environment';
     IonicModule.forRoot(),
     QRCodeModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     AngularFireStorageModule
@@ -44,7 +61,8 @@ import { environment } from 'src/environments/environment';
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     Camera,
     InAppBrowser,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+   // { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    LocalNotifications
   ],
   bootstrap: [AppComponent]
 })

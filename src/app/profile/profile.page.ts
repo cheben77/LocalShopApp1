@@ -5,13 +5,20 @@ import { Badge } from '@ionic-native/badge/ngx';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { LoadingController, AlertController } from '@ionic/angular';
 import { AngularFireStorage } from '@angular/fire/storage';
+import { Injectable } from '@angular/core';
+import * as firebase from 'firebase';
+// ========================================================//
 
+
+// ========================================================//
 @Component({
   selector: 'app-profile',
   templateUrl: 'profile.page.html',
   styleUrls: ['profile.page.scss']
 })
+
 export class ProfilePage {
+  [x: string]: any;
   userId: string;
   mail: string;
   method: any;
@@ -19,14 +26,14 @@ export class ProfilePage {
   imagePath: string;
   upload: any;
 
-
+// ========================================================//
   constructor(
-    public loadingController: LoadingController,
-    public alertController: AlertController,
+    public afAuth: AngularFireAuth,
     // badge: Badge,
     public afDB: AngularFireDatabase,
-    public afAuth: AngularFireAuth,
     public afSG: AngularFireStorage,
+    public loadingController: LoadingController,
+    public alertController: AlertController,
     private camera: Camera
   ) {
     this.afAuth.authState.subscribe(auth => {
@@ -41,9 +48,17 @@ export class ProfilePage {
        // this.badge.increase();
        // this.badge.clear();
       }
+      this.plt.ready().then(() =>{
+          this.localNotification.on('click').subscribe(res =>{
+
+          });
+          this.localNotification.on('trigger').subscribe(res => {
+            
+          });
+        });
     });
   }
-
+// ========================================================//
   // tslint:disable-next-line:semicolon
   async addPhoto(source: string) {
     if  (source === 'library') {
@@ -57,8 +72,10 @@ export class ProfilePage {
 
     }
   }
+// ========================================================//
 
-  async openCamera() {
+// ========================================================//
+async openCamera() {
     const options: CameraOptions = {
       quality: 100,
       destinationType: this.camera.DestinationType.DATA_URL,
@@ -70,8 +87,9 @@ export class ProfilePage {
     };
     return await this.camera.getPicture(options);
   }
+// ========================================================//
 
-
+// ========================================================//
 async openLibrary() {
   const options: CameraOptions = {
     quality: 100,
@@ -84,19 +102,24 @@ async openLibrary() {
   };
   return await this.camera.getPicture(options);
 }
+// ========================================================//
 
+// ========================================================//
   logout() {
     this.afAuth.auth.signOut();
   }
+// ========================================================//
 
+// ================Function UpLoad_FireBase========================================//
   async uploadFirebase() {
+    // ==================Mise en place de l'image dans le Profile User FireBase==================================//
     const loading = await this.loadingController.create();
     await loading.present();
-    this.imagePath = // 'User/'
-     new Date().getTime() + '.jpg';
-
-
+    this.imagePath = 'Images/User/img/' + new Date().getTime() + '.jpg';
     this.upload = this.afSG.ref(this.imagePath).putString(this.image, 'data_url');
+// ==========================================================//
+
+// =========================================================//
     this.upload.then(async () => { 
       this.image = 'https://www.kasterencultuur.nl/editor/placeholder.jpg';
       await loading.dismiss();
@@ -107,5 +130,8 @@ async openLibrary() {
       });
       await alert.present();
   });
+// ========================================================//
+
+// ========================================================//
   }
 }

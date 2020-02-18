@@ -46,8 +46,13 @@
     "cordova-plugin-qrscanner": "^3.0.1",
     "core-js": "^2.5.4",
 <<<<<<< HEAD
+<<<<<<< HEAD
     "firebase": "^7.8.1",
     "magic.css": "^1.4.5",
+=======
+    "firebase": "^7.8.2",
+    "ngmap": "^1.18.5",
+>>>>>>> 9522675e2c59572603a360e97e2f53b77759015b
 =======
     "firebase": "^7.8.2",
     "ngmap": "^1.18.5",

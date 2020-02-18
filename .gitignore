@@ -42,7 +42,10 @@ node_modules/
 platforms/
 plugins/
 jspm_packages/
+<<<<<<< HEAD
 www/
+=======
+>>>>>>> 9522675e2c59572603a360e97e2f53b77759015b
 
 # TypeScript v1 declaration files
 typings/
