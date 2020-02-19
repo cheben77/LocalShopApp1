@@ -829,11 +829,12 @@ var AppComponent = /** @class */ (function () {
 /*!*******************************!*\
   !*** ./src/app/app.module.ts ***!
   \*******************************/
-/*! exports provided: AppModule */
+/*! exports provided: firebaseConfig, AppModule */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "firebaseConfig", function() { return firebaseConfig; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppModule", function() { return AppModule; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
@@ -852,11 +853,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ionic_native_in_app_browser_ngx__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @ionic-native/in-app-browser/ngx */ "./node_modules/@ionic-native/in-app-browser/ngx/index.js");
 /* harmony import */ var angularx_qrcode__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! angularx-qrcode */ "./node_modules/angularx-qrcode/fesm5/angularx-qrcode.js");
 /* harmony import */ var _ionic_native_camera_ngx__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @ionic-native/camera/ngx */ "./node_modules/@ionic-native/camera/ngx/index.js");
-<<<<<<< HEAD
 /* harmony import */ var _ionic_native_local_notifications_ngx__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @ionic-native/local-notifications/ngx */ "./node_modules/@ionic-native/local-notifications/ngx/index.js");
-=======
-/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
->>>>>>> 2ec8c2af2df3bf365053a4a899d01f55ecc1320c
 
 
 
@@ -875,6 +872,16 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+var firebaseConfig = {
+    apiKey: 'AIzaSyCcyuFkXAqca0vcsLIQRG2UociZGr2oUrA',
+    authDomain: 'geoapp-a10da.firebaseapp.com',
+    databaseURL: 'https://geoapp-a10da.firebaseio.com',
+    projectId: 'geoapp-a10da',
+    storageBucket: 'geoapp-a10da.appspot.com',
+    messagingSenderId: '279119677501',
+    appId: '1:279119677501:web:91d699c056a5869f92c254',
+    measurementId: 'G-SRN9Q6HXGX'
+};
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -887,7 +894,7 @@ var AppModule = /** @class */ (function () {
                 _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"].forRoot(),
                 angularx_qrcode__WEBPACK_IMPORTED_MODULE_15__["QRCodeModule"],
                 _app_routing_module__WEBPACK_IMPORTED_MODULE_7__["AppRoutingModule"],
-                _angular_fire__WEBPACK_IMPORTED_MODULE_9__["AngularFireModule"].initializeApp(src_environments_environment__WEBPACK_IMPORTED_MODULE_17__["environment"].firebase),
+                _angular_fire__WEBPACK_IMPORTED_MODULE_9__["AngularFireModule"].initializeApp(firebaseConfig),
                 _angular_fire_database__WEBPACK_IMPORTED_MODULE_10__["AngularFireDatabaseModule"],
                 _angular_fire_auth__WEBPACK_IMPORTED_MODULE_11__["AngularFireAuthModule"],
                 _angular_fire_storage__WEBPACK_IMPORTED_MODULE_12__["AngularFireStorageModule"]
@@ -929,17 +936,7 @@ __webpack_require__.r(__webpack_exports__);
 // The list of file replacements can be found in `angular.json`.
 
 var environment = {
-    production: false,
-    firebase: {
-        apiKey: 'AIzaSyCcyuFkXAqca0vcsLIQRG2UociZGr2oUrA',
-        authDomain: 'geoapp-a10da.firebaseapp.com',
-        databaseURL: 'https://geoapp-a10da.firebaseio.com',
-        projectId: 'geoapp-a10da',
-        storageBucket: 'geoapp-a10da.appspot.com',
-        messagingSenderId: '279119677501',
-        appId: '1:279119677501:web:91d699c056a5869f92c254',
-        measurementId: 'G-SRN9Q6HXGX'
-    }
+    production: false
 };
 /*
  * For easier debugging in development mode, you can import the following file
