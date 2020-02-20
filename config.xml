@@ -11,8 +11,8 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
-    <préférence name="GOOGLE_MAPS_ANDROID_API_KEY" value="AIzaSyAJjXyc0-8x1DSdbnS0FhnkmskZ5hHvzlQ" />
-    <preference name="GOOGLE_MAPS_IOS_API_KEY" value=" ('AIzaSyAJjXyc0-8x1DSdbnS0FhnkmskZ5hHvzlQ') " />
+    <préférence name="GOOGLE_MAPS_ANDROID_API_KEY" value="AIzaSyBJX-gnG_U4pJqWY24Ed0-G5wa7msWQuFw" />
+    <preference name="GOOGLE_MAPS_IOS_API_KEY" value=" ('AIzaSyBJX-gnG_U4pJqWY24Ed0-G5wa7msWQuFw') " />
     <preference name="ScrollEnabled" value="false" />
     <preference name="android-minSdkVersion" value="19" />
     <preference name="BackupWebStorage" value="none" />
