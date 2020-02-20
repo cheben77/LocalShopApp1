@@ -13,9 +13,6 @@ import {
 import { ActionSheetController, Platform, AlertController } from '@ionic/angular';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 
-
-
-
 @Component({
   selector: 'app-geoCatching',
   templateUrl: 'geoCatching.page.html',
@@ -57,8 +54,8 @@ export class GeoCatchingPage {
 
   loadMap(coords) {
     Environment.setEnv({
-      API_KEY_FOR_BROWSER_RELEASE: 'AIzaSyAJjXyc0-8x1DSdbnS0FhnkmskZ5hHvzlQ',
-      API_KEY_FOR_BROWSER_DEBUG: ''
+      API_KEY_FOR_BROWSER_RELEASE: 'AIzaSyBJX-gnG_U4pJqWY24Ed0-G5wa7msWQuFw',
+      API_KEY_FOR_BROWSER_DEBUG: 'AIzaSyBJX-gnG_U4pJqWY24Ed0-G5wa7msWQuFw'
     });
     this.map = GoogleMaps.create('map_canvas', {
       camera: {
@@ -110,7 +107,7 @@ export class GeoCatchingPage {
   placeMarker(markerTitle: string) {
     const marker: Marker = this.map.addMarkerSync({
        title: markerTitle,
-       icon: 'red',
+       icon: 'green',
        animation: 'DROP',
        position: this.map.getCameraPosition().target
     });
