@@ -25,7 +25,7 @@ export class LocalShopPage {
     this.afDB.list('Images/').snapshotChanges(['child_added']).subscribe(images => {
       console.log(images);
       images.forEach(image => {
-        console.log('Référence Images: ' + image.payload.exportVal().ref);
+        //console.log('Référence Images: ' + image.payload.exportVal().ref);
         this.getImagesStorage(image);
       });
     });
