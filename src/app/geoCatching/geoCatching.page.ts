@@ -12,6 +12,19 @@ import {
 } from '@ionic-native/google-maps';
 import { ActionSheetController, Platform, AlertController } from '@ionic/angular';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
+//import { ModalPage } from '../modal/modal.page';
+
+// export class ModalExample {
+//   constructor(public modalController: ModalController) {
+
+//   }
+
+//   async presentModal() {
+//     const modal = await this.modalController.create({
+//       component: ModalPage
+//     });
+//     return await modal.present();
+//   }
 
 
 

@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { ToastController } from '@ionic/angular';
-
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
