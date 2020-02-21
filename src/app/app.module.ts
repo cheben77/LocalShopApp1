@@ -20,7 +20,22 @@ import { QRCodeModule } from 'angularx-qrcode';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 
 import { environment } from 'src/environments/environment';
+import { Component } from '@angular/core';
+import { ModalController } from '@ionic/angular';
+//import { ModalPage } from '../modal/modal.page';
 
+// export class ModalExample {
+//   constructor(public modalController: ModalController) {
+
+//   }
+
+//   async presentModal() {
+//     const modal = await this.modalController.create({
+//       component: ModalPage
+//     });
+//     return await modal.present();
+//   }
+// }
 export const firebaseConfig = {
   apiKey: 'AIzaSyCcyuFkXAqca0vcsLIQRG2UociZGr2oUrA',
   authDomain: 'geoapp-a10da.firebaseapp.com',
