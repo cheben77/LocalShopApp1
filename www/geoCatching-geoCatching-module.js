@@ -2104,6 +2104,7 @@ var GeoCatchingPage = /** @class */ (function () {
             this.geolocation = new _ionic_native_geolocation_ngx__WEBPACK_IMPORTED_MODULE_4__["Geolocation"];
         }
     }
+    // tslint:disable-next-line:use-lifecycle-interface
     GeoCatchingPage.prototype.ngOnInit = function () {
         var _this = this;
         console.log(this.platform, 'plop');
