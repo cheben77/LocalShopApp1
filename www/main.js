@@ -461,7 +461,7 @@ module.exports = webpackAsyncContext;
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\r\n\r\n<ion-app>\r\n  <!-- <input type = \"text\" class = \"form-control\" id = \"name\" \r\n  obligatoire\r\n  [(ngModel)] = \"data.name\" />\r\n\r\n<p> Bonjour {{data.name}}! </p> -->\r\n  <ion-router-outlet></ion-router-outlet>\r\n</ion-app>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("\n\n<ion-app>\n  <!-- <input type = \"text\" class = \"form-control\" id = \"name\" \n  obligatoire\n  [(ngModel)] = \"data.name\" />\n\n<p> Bonjour {{data.name}}! </p> -->\n  <ion-router-outlet></ion-router-outlet>\n</ion-app>\n");
 
 /***/ }),
 
@@ -740,7 +740,7 @@ var AppRoutingModule = /** @class */ (function () {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("::-webkit-scrollbar {\n  display: none;\n}\n\nbody {\n  -webkit-user-select: text;\n  -moz-user-select: text;\n   -ms-user-select: text;\n       user-select: text;\n}\n\n.flex {\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-pack: justify;\n          justify-content: space-between;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvQzpcXFVzZXJzXFxUaG9tYXNcXGRldlxcTG9jYWxTaG9wQXBwMS9zcmNcXGFwcFxcYXBwLmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC9hcHAuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxhQUFBO0FDQ0o7O0FEQ0E7RUFDSSx5QkFBQTtFQUNBLHNCQUFBO0dBQUEscUJBQUE7T0FBQSxpQkFBQTtBQ0VKOztBREFBO0VBQ0ksb0JBQUE7RUFBQSxhQUFBO0VBQ0EseUJBQUE7VUFBQSw4QkFBQTtBQ0dKIiwiZmlsZSI6InNyYy9hcHAvYXBwLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiOjotd2Via2l0LXNjcm9sbGJhcntcclxuICAgIGRpc3BsYXk6IG5vbmU7XHJcbn1cclxuYm9keXtcclxuICAgIC13ZWJraXQtdXNlci1zZWxlY3Q6IHRleHQ7XHJcbiAgICB1c2VyLXNlbGVjdDogdGV4dDtcclxufVxyXG4uZmxleCB7XHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xyXG59XHJcbiIsIjo6LXdlYmtpdC1zY3JvbGxiYXIge1xuICBkaXNwbGF5OiBub25lO1xufVxuXG5ib2R5IHtcbiAgLXdlYmtpdC11c2VyLXNlbGVjdDogdGV4dDtcbiAgdXNlci1zZWxlY3Q6IHRleHQ7XG59XG5cbi5mbGV4IHtcbiAgZGlzcGxheTogZmxleDtcbiAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xufSJdfQ== */");
+/* harmony default export */ __webpack_exports__["default"] = ("::-webkit-scrollbar {\n  display: none;\n}\n\nbody {\n  -webkit-user-select: text;\n  -moz-user-select: text;\n   -ms-user-select: text;\n       user-select: text;\n}\n\n.flex {\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-pack: justify;\n          justify-content: space-between;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvQzpcXFVzZXJzXFxDaGVCZW5cXE9uZURyaXZlXFxCdXJlYXVcXFByb2pldCBOdW3DqXJpcXVlc1xcUHJvamV0IElPTklDXFxQcm9qZXQgQXBwU1xcTG9jYWxTaG9wXFxFbiBjb3VyXFxMb2NhbFNob3BBcHAxXFxMb2NhbFNob3BBcHAxXFxBcHAxL3NyY1xcYXBwXFxhcHAuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2FwcC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGFBQUE7QUNDSjs7QURDQTtFQUNJLHlCQUFBO0VBQ0Esc0JBQUE7R0FBQSxxQkFBQTtPQUFBLGlCQUFBO0FDRUo7O0FEQUE7RUFDSSxvQkFBQTtFQUFBLGFBQUE7RUFDQSx5QkFBQTtVQUFBLDhCQUFBO0FDR0oiLCJmaWxlIjoic3JjL2FwcC9hcHAuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyI6Oi13ZWJraXQtc2Nyb2xsYmFye1xyXG4gICAgZGlzcGxheTogbm9uZTtcclxufVxyXG5ib2R5e1xyXG4gICAgLXdlYmtpdC11c2VyLXNlbGVjdDogdGV4dDtcclxuICAgIHVzZXItc2VsZWN0OiB0ZXh0O1xyXG59XHJcbi5mbGV4IHtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XHJcbn1cclxuIiwiOjotd2Via2l0LXNjcm9sbGJhciB7XG4gIGRpc3BsYXk6IG5vbmU7XG59XG5cbmJvZHkge1xuICAtd2Via2l0LXVzZXItc2VsZWN0OiB0ZXh0O1xuICB1c2VyLXNlbGVjdDogdGV4dDtcbn1cblxuLmZsZXgge1xuICBkaXNwbGF5OiBmbGV4O1xuICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XG59Il19 */");
 
 /***/ }),
 
@@ -783,6 +783,7 @@ var AppComponent = /** @class */ (function () {
     AppComponent.prototype.initializeApp = function () {
         var _this = this;
         this.platform.ready().then(function () {
+            // tslint:disable-next-line:no-shadowed-variable
             _this.afAuth.authState.subscribe(function (auth) {
                 if (!auth) {
                     console.log('non connecté');
@@ -829,11 +830,12 @@ var AppComponent = /** @class */ (function () {
 /*!*******************************!*\
   !*** ./src/app/app.module.ts ***!
   \*******************************/
-/*! exports provided: AppModule */
+/*! exports provided: firebaseConfig, AppModule */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "firebaseConfig", function() { return firebaseConfig; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppModule", function() { return AppModule; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
@@ -871,6 +873,16 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+var firebaseConfig = {
+    apiKey: 'AIzaSyCcyuFkXAqca0vcsLIQRG2UociZGr2oUrA',
+    authDomain: 'geoapp-a10da.firebaseapp.com',
+    databaseURL: 'https://geoapp-a10da.firebaseio.com',
+    projectId: 'geoapp-a10da',
+    storageBucket: 'geoapp-a10da.appspot.com',
+    messagingSenderId: '279119677501',
+    appId: '1:279119677501:web:91d699c056a5869f92c254',
+    measurementId: 'G-SRN9Q6HXGX'
+};
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -983,7 +995,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Thomas\dev\LocalShopApp1\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\CheBen\OneDrive\Bureau\Projet Numériques\Projet IONIC\Projet AppS\LocalShop\En cour\LocalShopApp1\LocalShopApp1\App1\src\main.ts */"./src/main.ts");
 
 
 /***/ })

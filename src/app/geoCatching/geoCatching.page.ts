@@ -79,19 +79,19 @@ export class GeoCatchingPage {
   async mapOptions() {
     const actionSheet = await this.actionCtrl.create({
       buttons: [{
-        text: 'Satellite',
+        text: 'Aventures',
         handler: () => {
           console.log('Satellite clicked');
           this.map.setMapTypeId(GoogleMapsMapTypeId.SATELLITE);
         }
       }, {
-        text: 'Plan',
+        text: 'Partenaires',
         handler: () => {
           console.log('Plan clicked');
           this.map.setMapTypeId(GoogleMapsMapTypeId.NORMAL);
         }
       }, {
-        text: 'Terrain',
+        text: 'Quetes',
         handler: () => {
           console.log('Terrain clicked');
           this.map.setMapTypeId(GoogleMapsMapTypeId.TERRAIN);

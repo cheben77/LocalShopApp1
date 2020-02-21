@@ -2061,7 +2061,7 @@ var GeoCatchingPageModule = /** @class */ (function () {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("#map_canvas {\n  width: 100%;\n  height: 100%;\n}\n\n.map-container {\n  position: absolute;\n  top: 0px;\n  bottom: 0px;\n  left: 0px;\n  right: 0px;\n}\n\n.map-container .map {\n  height: 100%;\n  width: 100%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZ2VvQ2F0Y2hpbmcvQzpcXFVzZXJzXFxUaG9tYXNcXGRldlxcTG9jYWxTaG9wQXBwMS9zcmNcXGFwcFxcZ2VvQ2F0Y2hpbmdcXGdlb0NhdGNoaW5nLnBhZ2Uuc2NzcyIsInNyYy9hcHAvZ2VvQ2F0Y2hpbmcvZ2VvQ2F0Y2hpbmcucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUNBO0VBQ0ksV0FBQTtFQUNBLFlBQUE7QUNBSjs7QURFRTtFQUVBLGtCQUFBO0VBQ0EsUUFBQTtFQUNBLFdBQUE7RUFDQSxTQUFBO0VBQ0EsVUFBQTtBQ0FGOztBREVFO0VBRUUsWUFBQTtFQUNBLFdBQUE7QUNESiIsImZpbGUiOiJzcmMvYXBwL2dlb0NhdGNoaW5nL2dlb0NhdGNoaW5nLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIlxyXG4jbWFwX2NhbnZhcyB7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIGhlaWdodDogMTAwJTtcclxuICB9XHJcbiAgLm1hcC1jb250YWluZXJcclxue1xyXG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICB0b3A6IDBweDtcclxuICBib3R0b206IDBweDtcclxuICBsZWZ0OiAwcHg7XHJcbiAgcmlnaHQ6IDBweDtcclxuXHJcbiAgLm1hcFxyXG4gIHtcclxuICAgIGhlaWdodDogMTAwJTtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gIH1cclxufVxyXG4gICIsIiNtYXBfY2FudmFzIHtcbiAgd2lkdGg6IDEwMCU7XG4gIGhlaWdodDogMTAwJTtcbn1cblxuLm1hcC1jb250YWluZXIge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHRvcDogMHB4O1xuICBib3R0b206IDBweDtcbiAgbGVmdDogMHB4O1xuICByaWdodDogMHB4O1xufVxuLm1hcC1jb250YWluZXIgLm1hcCB7XG4gIGhlaWdodDogMTAwJTtcbiAgd2lkdGg6IDEwMCU7XG59Il19 */");
+/* harmony default export */ __webpack_exports__["default"] = ("#map_canvas {\n  width: 100%;\n  height: 100%;\n}\n\n.map-container {\n  position: absolute;\n  top: 0px;\n  bottom: 0px;\n  left: 0px;\n  right: 0px;\n}\n\n.map-container .map {\n  height: 100%;\n  width: 100%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZ2VvQ2F0Y2hpbmcvQzpcXFVzZXJzXFxDaGVCZW5cXE9uZURyaXZlXFxCdXJlYXVcXFByb2pldCBOdW3DqXJpcXVlc1xcUHJvamV0IElPTklDXFxQcm9qZXQgQXBwU1xcTG9jYWxTaG9wXFxFbiBjb3VyXFxMb2NhbFNob3BBcHAxXFxMb2NhbFNob3BBcHAxXFxBcHAxL3NyY1xcYXBwXFxnZW9DYXRjaGluZ1xcZ2VvQ2F0Y2hpbmcucGFnZS5zY3NzIiwic3JjL2FwcC9nZW9DYXRjaGluZy9nZW9DYXRjaGluZy5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQ0E7RUFDSSxXQUFBO0VBQ0EsWUFBQTtBQ0FKOztBREVFO0VBRUEsa0JBQUE7RUFDQSxRQUFBO0VBQ0EsV0FBQTtFQUNBLFNBQUE7RUFDQSxVQUFBO0FDQUY7O0FERUU7RUFFRSxZQUFBO0VBQ0EsV0FBQTtBQ0RKIiwiZmlsZSI6InNyYy9hcHAvZ2VvQ2F0Y2hpbmcvZ2VvQ2F0Y2hpbmcucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiXG4jbWFwX2NhbnZhcyB7XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgaGVpZ2h0OiAxMDAlO1xuICB9XG4gIC5tYXAtY29udGFpbmVyXG57XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgdG9wOiAwcHg7XG4gIGJvdHRvbTogMHB4O1xuICBsZWZ0OiAwcHg7XG4gIHJpZ2h0OiAwcHg7XG5cbiAgLm1hcFxuICB7XG4gICAgaGVpZ2h0OiAxMDAlO1xuICAgIHdpZHRoOiAxMDAlO1xuICB9XG59XG4gICIsIiNtYXBfY2FudmFzIHtcbiAgd2lkdGg6IDEwMCU7XG4gIGhlaWdodDogMTAwJTtcbn1cblxuLm1hcC1jb250YWluZXIge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHRvcDogMHB4O1xuICBib3R0b206IDBweDtcbiAgbGVmdDogMHB4O1xuICByaWdodDogMHB4O1xufVxuLm1hcC1jb250YWluZXIgLm1hcCB7XG4gIGhlaWdodDogMTAwJTtcbiAgd2lkdGg6IDEwMCU7XG59Il19 */");
 
 /***/ }),
 
@@ -2139,19 +2139,19 @@ var GeoCatchingPage = /** @class */ (function () {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.actionCtrl.create({
                             buttons: [{
-                                    text: 'Satellite',
+                                    text: 'Aventures',
                                     handler: function () {
                                         console.log('Satellite clicked');
                                         _this.map.setMapTypeId(_ionic_native_google_maps__WEBPACK_IMPORTED_MODULE_2__["GoogleMapsMapTypeId"].SATELLITE);
                                     }
                                 }, {
-                                    text: 'Plan',
+                                    text: 'Partenaires',
                                     handler: function () {
                                         console.log('Plan clicked');
                                         _this.map.setMapTypeId(_ionic_native_google_maps__WEBPACK_IMPORTED_MODULE_2__["GoogleMapsMapTypeId"].NORMAL);
                                     }
                                 }, {
-                                    text: 'Terrain',
+                                    text: 'Quetes',
                                     handler: function () {
                                         console.log('Terrain clicked');
                                         _this.map.setMapTypeId(_ionic_native_google_maps__WEBPACK_IMPORTED_MODULE_2__["GoogleMapsMapTypeId"].TERRAIN);

@@ -80,58 +80,6 @@ module.exports = [
         "runs": true
     },
     {
-        "file": "plugins/cordova-plugin-badge/www/badge.js",
-        "id": "cordova-plugin-badge.Badge",
-        "pluginId": "cordova-plugin-badge",
-        "clobbers": [
-            "cordova.plugins.notification.badge"
-        ]
-    },
-    {
-        "file": "plugins/cordova-plugin-badge/src/browser/favico.min.js",
-        "id": "cordova-plugin-badge.Badge.Favico",
-        "pluginId": "cordova-plugin-badge",
-        "clobbers": [
-            "cordova.plugins.notification.badge.Favico"
-        ]
-    },
-    {
-        "file": "plugins/cordova-plugin-badge/src/browser/BadgeProxy.js",
-        "id": "cordova-plugin-badge.Badge.Proxy",
-        "pluginId": "cordova-plugin-badge",
-        "runs": true
-    },
-    {
-        "file": "plugins/cordova-plugin-camera/www/CameraConstants.js",
-        "id": "cordova-plugin-camera.Camera",
-        "pluginId": "cordova-plugin-camera",
-        "clobbers": [
-            "Camera"
-        ]
-    },
-    {
-        "file": "plugins/cordova-plugin-camera/www/CameraPopoverOptions.js",
-        "id": "cordova-plugin-camera.CameraPopoverOptions",
-        "pluginId": "cordova-plugin-camera",
-        "clobbers": [
-            "CameraPopoverOptions"
-        ]
-    },
-    {
-        "file": "plugins/cordova-plugin-camera/www/Camera.js",
-        "id": "cordova-plugin-camera.camera",
-        "pluginId": "cordova-plugin-camera",
-        "clobbers": [
-            "navigator.camera"
-        ]
-    },
-    {
-        "file": "plugins/cordova-plugin-camera/src/browser/CameraProxy.js",
-        "id": "cordova-plugin-camera.CameraProxy",
-        "pluginId": "cordova-plugin-camera",
-        "runs": true
-    },
-    {
         "file": "plugins/cordova-plugin-googlemaps/www/Promise.js",
         "id": "cordova-plugin-googlemaps.Promise",
         "pluginId": "cordova-plugin-googlemaps"
@@ -443,23 +391,75 @@ module.exports = [
         "id": "cordova-plugin-googlemaps.PluginEnvironment",
         "pluginId": "cordova-plugin-googlemaps",
         "runs": true
+    },
+    {
+        "file": "plugins/cordova-plugin-badge/www/badge.js",
+        "id": "cordova-plugin-badge.Badge",
+        "pluginId": "cordova-plugin-badge",
+        "clobbers": [
+            "cordova.plugins.notification.badge"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-badge/src/browser/favico.min.js",
+        "id": "cordova-plugin-badge.Badge.Favico",
+        "pluginId": "cordova-plugin-badge",
+        "clobbers": [
+            "cordova.plugins.notification.badge.Favico"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-badge/src/browser/BadgeProxy.js",
+        "id": "cordova-plugin-badge.Badge.Proxy",
+        "pluginId": "cordova-plugin-badge",
+        "runs": true
+    },
+    {
+        "file": "plugins/cordova-plugin-camera/www/CameraConstants.js",
+        "id": "cordova-plugin-camera.Camera",
+        "pluginId": "cordova-plugin-camera",
+        "clobbers": [
+            "Camera"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-camera/www/CameraPopoverOptions.js",
+        "id": "cordova-plugin-camera.CameraPopoverOptions",
+        "pluginId": "cordova-plugin-camera",
+        "clobbers": [
+            "CameraPopoverOptions"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-camera/www/Camera.js",
+        "id": "cordova-plugin-camera.camera",
+        "pluginId": "cordova-plugin-camera",
+        "clobbers": [
+            "navigator.camera"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-camera/src/browser/CameraProxy.js",
+        "id": "cordova-plugin-camera.CameraProxy",
+        "pluginId": "cordova-plugin-camera",
+        "runs": true
     }
 ];
 module.exports.metadata = 
 // TOP OF METADATA
 {
-    "cordova-plugin-whitelist": "1.3.4",
-    "cordova-plugin-statusbar": "2.4.3",
-    "cordova-plugin-device": "2.0.3",
-    "cordova-plugin-splashscreen": "5.0.3",
+    "cordova-plugin-whitelist": "1.3.3",
+    "cordova-plugin-statusbar": "2.4.2",
+    "cordova-plugin-device": "2.0.2",
+    "cordova-plugin-splashscreen": "5.0.2",
     "cordova-plugin-ionic-webview": "4.1.3",
     "cordova-plugin-ionic-keyboard": "2.2.0",
     "cordova-plugin-qrscanner": "3.0.1",
     "cordova-plugin-inappbrowser": "3.2.0",
     "cordova-plugin-geolocation": "4.0.2",
+    "cordova-plugin-googlemaps": "2.7.0-20191107-1035",
     "cordova-plugin-badge": "0.8.8",
-    "cordova-plugin-camera": "4.1.0",
-    "cordova-plugin-googlemaps": "2.7.0-20191107-1035"
+    "cordova-plugin-camera": "4.1.0"
 }
 // BOTTOM OF METADATA
 });
