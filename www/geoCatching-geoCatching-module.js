@@ -2080,18 +2080,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ionic_native_google_maps__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic-native/google-maps */ "./node_modules/@ionic-native/google-maps/index.js");
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
 /* harmony import */ var _ionic_native_geolocation_ngx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic-native/geolocation/ngx */ "./node_modules/@ionic-native/geolocation/ngx/index.js");
+/* harmony import */ var _services_firebase_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../services/firebase.service */ "./src/app/services/firebase.service.ts");
+
 
 
 
 
 
 var GeoCatchingPage = /** @class */ (function () {
-    function GeoCatchingPage(alertController, actionCtrl, platform) {
-        var _this = this;
+    function GeoCatchingPage(alertController, actionCtrl, platform, api) {
         this.alertController = alertController;
         this.actionCtrl = actionCtrl;
         this.platform = platform;
-        console.log(this.platform, 'plop');
+        this.api = api;
         if (this.platform.is('cordova')) {
             // this.geolocation.getCurrentPosition().then((resp) => {
             //  // resp.coords.latitude
@@ -2101,21 +2102,35 @@ var GeoCatchingPage = /** @class */ (function () {
             // });
             // tslint:disable-next-line:new-parens
             this.geolocation = new _ionic_native_geolocation_ngx__WEBPACK_IMPORTED_MODULE_4__["Geolocation"];
-            var watch = this.geolocation.watchPosition();
-            watch.subscribe(function (data) {
-                _this.loadMap(data.coords);
-                _this.map.addMarkerSync({
-                    icon: 'red',
-                    animation: 'DROP',
-                    position: { lat: data.coords.latitude, lng: data.coords.longitude }
-                });
-            });
         }
     }
+    GeoCatchingPage.prototype.ngOnInit = function () {
+        var _this = this;
+        console.log(this.platform, 'plop');
+        if (this.platform.is('cordova')) {
+            this.myPosition = this.geolocation.watchPosition();
+            this.myPosition.subscribe(function (data) {
+                _this.loadMap(data.coords);
+                _this.map.addMarker({
+                    icon: 'black',
+                    animation: 'BOUNCE',
+                    position: { lat: data.coords.latitude, lng: data.coords.longitude },
+                });
+                _this.api.getQRCodePosition().subscribe(function (list) { return list.forEach(function (QRCode) {
+                    var QRCodePosition = { lat: QRCode.data().lat, lng: QRCode.data().lng };
+                    _this.map.addMarker({
+                        icon: 'red',
+                        animation: 'DROP',
+                        position: QRCodePosition
+                    });
+                }); });
+            });
+        }
+    };
     GeoCatchingPage.prototype.loadMap = function (coords) {
         _ionic_native_google_maps__WEBPACK_IMPORTED_MODULE_2__["Environment"].setEnv({
             API_KEY_FOR_BROWSER_RELEASE: 'AIzaSyAJjXyc0-8x1DSdbnS0FhnkmskZ5hHvzlQ',
-            API_KEY_FOR_BROWSER_DEBUG: ''
+            API_KEY_FOR_BROWSER_DEBUG: 'AIzaSyAJjXyc0-8x1DSdbnS0FhnkmskZ5hHvzlQ'
         });
         this.map = _ionic_native_google_maps__WEBPACK_IMPORTED_MODULE_2__["GoogleMaps"].create('map_canvas', {
             camera: {
@@ -2227,7 +2242,8 @@ var GeoCatchingPage = /** @class */ (function () {
     GeoCatchingPage.ctorParameters = function () { return [
         { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["AlertController"] },
         { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["ActionSheetController"] },
-        { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["Platform"] }
+        { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["Platform"] },
+        { type: _services_firebase_service__WEBPACK_IMPORTED_MODULE_5__["FirebaseService"] }
     ]; };
     GeoCatchingPage = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -2237,7 +2253,8 @@ var GeoCatchingPage = /** @class */ (function () {
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_3__["AlertController"],
             _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["ActionSheetController"],
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["Platform"]])
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["Platform"],
+            _services_firebase_service__WEBPACK_IMPORTED_MODULE_5__["FirebaseService"]])
     ], GeoCatchingPage);
     return GeoCatchingPage;
 }());
