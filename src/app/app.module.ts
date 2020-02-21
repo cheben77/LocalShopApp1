@@ -20,6 +20,8 @@ import { QRCodeModule } from 'angularx-qrcode';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 
 import { environment } from 'src/environments/environment';
+import { FirebaseService } from './services/firebase.service';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 
 
@@ -34,9 +36,11 @@ import { environment } from 'src/environments/environment';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    AngularFirestoreModule,
   ],
   providers: [
+    FirebaseService,
     // Facebook,
     StatusBar,
     SplashScreen,

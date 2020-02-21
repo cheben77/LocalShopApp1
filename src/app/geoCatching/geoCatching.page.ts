@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {
   GoogleMaps,
   GoogleMap,
@@ -11,8 +11,9 @@ import {
   Environment
 } from '@ionic-native/google-maps';
 import { ActionSheetController, Platform, AlertController } from '@ionic/angular';
-import { Geolocation } from '@ionic-native/geolocation/ngx';
-
+import { Geolocation, Geoposition } from '@ionic-native/geolocation/ngx';
+import { fromEvent, Observable } from 'rxjs';
+import { FirebaseService } from '../services/firebase.service';
 
 
 
@@ -26,12 +27,14 @@ import { Geolocation } from '@ionic-native/geolocation/ngx';
 export class GeoCatchingPage {
   map: GoogleMap;
   private geolocation: Geolocation;
+  myPosition: Observable<Geoposition>;
   constructor(
     public alertController: AlertController,
     public actionCtrl: ActionSheetController,
-    public platform: Platform
+    public platform: Platform,
+    public api: FirebaseService,
+    
   ) {
-    console.log(this.platform,'plop')
     if (this.platform.is('cordova')) {
       // this.geolocation.getCurrentPosition().then((resp) => {
       //  // resp.coords.latitude
@@ -42,15 +45,31 @@ export class GeoCatchingPage {
 
       // tslint:disable-next-line:new-parens
       this.geolocation = new Geolocation;
+    }
+  }
 
-      const watch = this.geolocation.watchPosition();
-      watch.subscribe((data) => {
+  ngOnInit(){
+    console.log(this.platform,'plop')
+    if (this.platform.is('cordova')) {
+
+      this.myPosition = this.geolocation.watchPosition();
+
+      this.myPosition.subscribe(data => {
         this.loadMap(data.coords);
-        this.map.addMarkerSync({          
-          icon: 'red',
-          animation: 'DROP',
-          position: { lat:data.coords.latitude, lng:data.coords.longitude }
+        this.map.addMarker({
+          icon: 'black',
+          animation: 'BOUNCE',
+          position: { lat:data.coords.latitude, lng:data.coords.longitude },
         });
+        this.api.getQRCodePosition().subscribe(list => list.forEach(QRCode => {
+          const QRCodePosition = { lat:QRCode.data().lat, lng:QRCode.data().lng }
+          this.map.addMarker({
+            icon: 'red',
+            animation: 'DROP',
+            position: QRCodePosition
+          })
+          
+        }));
       });
     }
   }
@@ -58,7 +77,7 @@ export class GeoCatchingPage {
   loadMap(coords) {
     Environment.setEnv({
       API_KEY_FOR_BROWSER_RELEASE: 'AIzaSyAJjXyc0-8x1DSdbnS0FhnkmskZ5hHvzlQ',
-      API_KEY_FOR_BROWSER_DEBUG: ''
+      API_KEY_FOR_BROWSER_DEBUG: 'AIzaSyAJjXyc0-8x1DSdbnS0FhnkmskZ5hHvzlQ'
     });
     this.map = GoogleMaps.create('map_canvas', {
       camera: {
