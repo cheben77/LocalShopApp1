@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n  <ion-toolbar>\r\n    <ion-title>login</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <ion-item>\r\n    <ion-label><b>Email</b></ion-label>\r\n    <ion-input [(ngModel)]=\"loginData.email\" placeholder=\"Entrez votre email\"></ion-input>\r\n  </ion-item>\r\n  \r\n  <ion-item>\r\n    <ion-label><b>Mot de passe</b></ion-label>\r\n    <ion-input [(ngModel)]=\"loginData.password\" type=\"password\" placeholder=\"Entrez votre mot de passe\"></ion-input>\r\n  </ion-item>\r\n  \r\n  <div class=\"ion-padding\">\r\n    <ion-button (click)=\"login()\" expand=\"block\" color=\"primary\">Connexion</ion-button>\r\n  </div>\r\n\r\n \r\nInput with value\r\n<ion-input value=\"custom\"></ion-input>\r\n \r\n Input with placeholder \r\n<ion-input placeholder=\"Enter Input\"></ion-input>\r\n Input with clear button when there is a value\r\n<ion-input clearInput value=\"clear me\"></ion-input>\r\n<ion-input value=\"Disabled\" disabled></ion-input>\r\n Readonly input\r\n<ion-input value=\"Readonly\" readonly></ion-input>\r\n\r\n <form  *ngIf=\"!connected\">\r\n  <ion-item  color=\"success\">\r\n    <ion-label position=\"floating\" class=\"ion-text-center\">Création du compte</ion-label>\r\n    <ion-input placeholder=\"Pseudo\" color=\"dark\"></ion-input>\r\n  </ion-item>\r\n  \r\n  <ion-item>\r\n    <ion-label position=\"floating\" >Prénom</ion-label>\r\n    <ion-input aria-required=\"name\" [(ngModel)]=\"text\"></ion-input>\r\n  </ion-item>\r\n  \r\n  <ion-item>\r\n    <ion-label position=\"floating\">Age</ion-label>\r\n    <ion-in<ion-input aria-required=\"name\" [(ngModel)]=\"number\" value=\"333\"></ion-input>\r\n  </ion-item>\r\n  \r\n  <ion-item>\r\n    <ion-label position=\"floating\">email</ion-label>\r\n    <ion-input aria-required=\"email\" [(ngModel)]=\"email\"></ion-input>\r\n  </ion-item>\r\n  \r\n  <ion-item>\r\n    <ion-label position=\"floating\">Mot de passe</ion-label>\r\n    <ion-input required=\"password\" type=\"password\" [(ngModel)]=\"password\"></ion-input>\r\n  </ion-item>\r\n  \r\n  <ion-item>\r\n    <ion-label position=\"floating\" >confirmer votre mot de passe</ion-label>\r\n    <ion-input aria-required=\"password\" type=\"password\" ></ion-input>\r\n  </ion-item>\r\n\r\n  <ion-button (click)=\"signup()\" expand=\"block\" color=\"dark\">Inscription</ion-button>\r\n   \r\n  </form> -->\r\n\r\n\r\n</ion-content>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n  <ion-toolbar>\r\n    <ion-title>login</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <ion-item>\r\n    <ion-label><b>Email</b></ion-label>\r\n    <ion-input [(ngModel)]=\"loginData.email\" placeholder=\"Entrez votre email\"></ion-input>\r\n  </ion-item>\r\n  \r\n  <ion-item>\r\n    <ion-label><b>Mot de passe</b></ion-label>\r\n    <ion-input [(ngModel)]=\"loginData.password\" type=\"password\" placeholder=\"Entrez votre mot de passe\"></ion-input>\r\n  </ion-item>\r\n\r\n    <ion-button (click)=\"login('')\" expand=\"block\" color=\"primary\">Connexion</ion-button>\r\n  \r\n\r\n <form  *ngIf=\"!connected\">\r\n  <ion-item  color=\"success\">\r\n    <ion-label position=\"floating\" class=\"ion-text-center\">Création du compte</ion-label>\r\n    <ion-input placeholder=\"Pseudo\" color=\"dark\"></ion-input>\r\n  </ion-item>\r\n  \r\n  <ion-item>\r\n    <ion-label position=\"floating\" >Prénom</ion-label>\r\n    <ion-input aria-required=\"name\" [(ngModel)]=\"text\"></ion-input>\r\n  </ion-item>\r\n  \r\n  <ion-item>\r\n    <ion-label position=\"floating\">Age</ion-label>\r\n    <ion-input  aria-required=\"name\" [(ngModel)]=\"number\"></ion-input>\r\n  </ion-item>\r\n  \r\n  <ion-item>\r\n    <ion-label position=\"floating\">email</ion-label>\r\n    <ion-input aria-required=\"email\" [(ngModel)]=\"email\"></ion-input>\r\n  </ion-item>\r\n  \r\n  <ion-item>\r\n    <ion-label position=\"floating\">Mot de passe</ion-label>\r\n    <ion-input required=\"password\" type=\"password\" [(ngModel)]=\"password\"></ion-input>\r\n  </ion-item>\r\n  \r\n  <ion-item>\r\n    <ion-label position=\"floating\" >confirmer votre mot de passe</ion-label>\r\n    <ion-input aria-required=\"password\" type=\"password\" ></ion-input>\r\n  </ion-item>\r\n  <ion-button (click)=\"signup()\" expand=\"block\" color=\"dark\">Inscription</ion-button>\r\n</form>\r\n<br> \r\n\r\n\r\n</ion-content>\r\n");
 
 /***/ }),
 
@@ -117,14 +117,30 @@ var LoginPage = /** @class */ (function () {
         });
     };
     LoginPage.prototype.login = function () {
-        var _this = this;
-        this.afAuth.auth.signInWithEmailAndPassword(this.loginData.email, this.loginData.password)
-            .then(function (auth) {
-            console.log('utilisateur connecté');
-        })
-            .catch(function (err) {
-            console.log('Erreur: ' + err);
-            _this.errorMail();
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var toastLog;
+            var _this = this;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.toastController.create({
+                            message: 'Ravi de terevoir !!',
+                            duration: 2000,
+                            position: 'top'
+                        })];
+                    case 1:
+                        toastLog = _a.sent();
+                        toastLog.present();
+                        this.afAuth.auth.signInWithEmailAndPassword(this.loginData.email, this.loginData.password)
+                            .then(function (auth) {
+                            console.log('utilisateur connecté');
+                        })
+                            .catch(function (err) {
+                            console.log('Erreur: ' + err);
+                            _this.errorMail();
+                        });
+                        return [2 /*return*/];
+                }
+            });
         });
     };
     LoginPage.prototype.errorMail = function () {
@@ -146,14 +162,19 @@ var LoginPage = /** @class */ (function () {
         });
     };
     LoginPage.prototype.signUp = function () {
-        var _this = this;
-        this.afAuth.auth.createUserWithEmailAndPassword(this.loginData.email, this.loginData.password)
-            .then(function (auth) {
-            console.log('utilisateur connecté');
-        })
-            .catch(function (err) {
-            console.log('Erreur: ' + err);
-            _this.errorMail();
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var _this = this;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                this.afAuth.auth.createUserWithEmailAndPassword(this.loginData.email, this.loginData.password)
+                    .then(function (auth) {
+                    console.log('utilisateur créer');
+                })
+                    .catch(function (err) {
+                    console.log('Erreur: ' + err);
+                    _this.errorMail();
+                });
+                return [2 /*return*/];
+            });
         });
     };
     LoginPage.ctorParameters = function () { return [

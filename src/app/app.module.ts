@@ -13,15 +13,16 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireStorageModule } from '@angular/fire/storage';
-
-import { QRScanner } from '@ionic-native/qr-scanner/ngx';
-import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
-import { QRCodeModule } from 'angularx-qrcode';
-import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
-
-import { environment } from 'src/environments/environment';
 import { FirebaseService } from './services/firebase.service';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+
+import { QRCodeModule } from 'angularx-qrcode';
+import { QRScanner } from '@ionic-native/qr-scanner/ngx';
+import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
+
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
+import { environment } from 'src/environments/environment';
+
 
 @NgModule({
   declarations: [AppComponent],

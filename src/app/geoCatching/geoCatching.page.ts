@@ -100,26 +100,26 @@ export class GeoCatchingPage {
       buttons: [{
         text: 'Aventures',
         handler: () => {
-          console.log('Satellite clicked');
+          console.log('Mode Aventure');
           this.map.setMapTypeId(GoogleMapsMapTypeId.SATELLITE);
         }
       }, {
         text: 'Partenaires',
         handler: () => {
-          console.log('Plan clicked');
+          console.log('LocalShop');
           this.map.setMapTypeId(GoogleMapsMapTypeId.NORMAL);
         }
       }, {
         text: 'Quetes',
         handler: () => {
-          console.log('Terrain clicked');
+          console.log('Mode Conquête');
           this.map.setMapTypeId(GoogleMapsMapTypeId.TERRAIN);
         }
       }, {
         text: 'Annuler',
         role: 'cancel',
         handler: () => {
-          console.log('Cancel clicked');
+          console.log('Annuler');
         }
       }]
     });

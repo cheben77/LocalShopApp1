@@ -59,7 +59,7 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: '/tabs/localShop',
+        redirectTo: '/tabs/profile',
         pathMatch: 'full'
       }
     ]

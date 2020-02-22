@@ -2157,26 +2157,26 @@ var GeoCatchingPage = /** @class */ (function () {
                             buttons: [{
                                     text: 'Aventures',
                                     handler: function () {
-                                        console.log('Satellite clicked');
+                                        console.log('Mode Aventure');
                                         _this.map.setMapTypeId(_ionic_native_google_maps__WEBPACK_IMPORTED_MODULE_2__["GoogleMapsMapTypeId"].SATELLITE);
                                     }
                                 }, {
                                     text: 'Partenaires',
                                     handler: function () {
-                                        console.log('Plan clicked');
+                                        console.log('LocalShop');
                                         _this.map.setMapTypeId(_ionic_native_google_maps__WEBPACK_IMPORTED_MODULE_2__["GoogleMapsMapTypeId"].NORMAL);
                                     }
                                 }, {
                                     text: 'Quetes',
                                     handler: function () {
-                                        console.log('Terrain clicked');
+                                        console.log('Mode Conquête');
                                         _this.map.setMapTypeId(_ionic_native_google_maps__WEBPACK_IMPORTED_MODULE_2__["GoogleMapsMapTypeId"].TERRAIN);
                                     }
                                 }, {
                                     text: 'Annuler',
                                     role: 'cancel',
                                     handler: function () {
-                                        console.log('Cancel clicked');
+                                        console.log('Annuler');
                                     }
                                 }]
                         })];

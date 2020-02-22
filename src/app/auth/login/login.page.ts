@@ -31,7 +31,14 @@ export class LoginPage implements OnInit {
       Age: '',
     });
   }
-  login() {
+
+  async login() {
+    const toastLog = await this.toastController.create({
+      message: 'Ravi de terevoir !!',
+      duration: 2000,
+      position: 'top'
+    });
+    toastLog.present();
     this.afAuth.auth.signInWithEmailAndPassword(this.loginData.email, this.loginData.password)
     .then(auth => {
       console.log('utilisateur connecté');
@@ -41,6 +48,8 @@ export class LoginPage implements OnInit {
       this.errorMail();
     });
   }
+
+
   async errorMail() {
     const toast = await this.toastController.create({
       message: 'Email ou mot de passe incorrect',
@@ -49,10 +58,11 @@ export class LoginPage implements OnInit {
     });
     toast.present();
   }
-  signUp() {
+
+  async signUp() {
     this.afAuth.auth.createUserWithEmailAndPassword(this.loginData.email, this.loginData.password)
     .then(auth => {
-      console.log('utilisateur connecté');
+      console.log('utilisateur créer');
     })
     .catch(err => {
       console.log('Erreur: ' + err);
