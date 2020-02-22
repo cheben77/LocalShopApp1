@@ -149,17 +149,17 @@
   
     <ion-item href="#">
       <ion-icon name="walk" slot="start"></ion-icon>
-      <ion-label>Géocatching</ion-label>
+      <ion-label><ion-button [routerLink]="['/geo-aventure']" routerLinkActive="router-link-active" >Géocatching</ion-button></ion-label>
     </ion-item>
   
     <ion-item class="activated">
       <ion-icon name="qr-scanner" slot="start"></ion-icon>
-      <ion-label>QR Code</ion-label>
+      <ion-label><ion-button> QR Code</ion-button></ion-label>
     </ion-item>
   
     <ion-item>
       <ion-icon slot="start" name="card"></ion-icon>
-      <ion-label>Echange avec partenaires</ion-label>
+      <ion-label><ion-button [routerLink]="['/partenaires']" routerLinkActive="router-link-active" >Echange avec partenaires</ion-button></ion-label>
     </ion-item>
   </ion-card>
 

@@ -5,6 +5,10 @@ const routes: Routes = [
   { path: '', loadChildren: './tabs/tabs.module#TabsPageModule' },  {
     path: 'geo-aventure',
     loadChildren: () => import('./geo-aventure/geo-aventure.module').then( m => m.GeoAventurePageModule)
+  },
+  {
+    path: 'partenaires',
+    loadChildren: () => import('./partenaires/partenaires.module').then( m => m.PartenairesPageModule)
   }
 
 ];

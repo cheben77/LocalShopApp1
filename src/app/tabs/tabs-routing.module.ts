@@ -65,6 +65,26 @@ const routes: Routes = [
     ]
   },
   {
+    path: 'geo-aventure',
+    children: [
+      {
+        path: '',
+        loadChildren: () =>
+          import('../geo-aventure/geo-aventure.module').then(m => m.GeoAventurePageModule)
+      }
+    ]
+  },
+  {
+  path: 'partenaires',
+  children: [
+    {
+      path: '',
+      loadChildren: () =>
+        import('../partenaires/partenaires.module').then(m => m.PartenairesPageModule)
+    }
+  ]
+},
+  {
     path: '',
     redirectTo: '/tabs/localShop',
     pathMatch: 'full'
