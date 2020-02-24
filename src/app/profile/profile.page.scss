@@ -23,12 +23,17 @@ ion-header {
     font-weight: bold;
 }
 .space-between {
+    margin-left: 0px;
     display: flex;
     justify-content: space-between;
-    padding: 10px 10px 0px 10px;
 }
 .space-between2 {
-    margin-left: 89px ;
+    width: 89px;
+    display: -ms-grid;
+}
+
+.space-between3 {
+display: grid;
 }
 
 .followings {
@@ -77,11 +82,13 @@ ion-header {
     margin-left: 2.5%;
 }
 
-//   .img-box {
-//     height: 200px;
-//     overflow: hidden;
-//   }
-//   img {
-//     height: 200px;
-//   }
+   .img-box {
+     height: 200px;
+     overflow: hidden;
+  }
+
+.avatarProfile {
+     width: 100%;
+
+   }
 
