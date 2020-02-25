@@ -14,7 +14,10 @@
 <ion-content>
   <div id="map_canvas"></div>
   <ion-fab vertical="bottom" horizontal="start" slot="fixed">
-    <ion-fab-button color="success" (click)="mapOptions()">
+    <ion-fab-button color="success" [routerLink]="['/aventure']" routerLinkActive="router-link-active" >
+      <ion-icon name="map"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button color="success" [routerLink]="['/aventure']" routerLinkActive="router-link-active" >
       <ion-icon name="map"></ion-icon>
     </ion-fab-button>
   </ion-fab>

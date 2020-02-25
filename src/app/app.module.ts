@@ -22,6 +22,12 @@ import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 import { environment } from 'src/environments/environment';
+import { ActivatedRoute } from '@angular/router';
+
+import { Injectable } from '@angular/core';
+import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+import { Observable } from 'rxjs';
+
 
 
 @NgModule({

@@ -14,7 +14,7 @@ import { ActionSheetController, Platform, AlertController } from '@ionic/angular
 import { Geolocation, Geoposition } from '@ionic-native/geolocation/ngx';
 import { fromEvent, Observable } from 'rxjs';
 import { FirebaseService } from '../services/firebase.service';
-
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -95,36 +95,36 @@ export class GeoCatchingPage {
     this.map.setMapTypeId(GoogleMapsMapTypeId.SATELLITE);
   }
 
-  async mapOptions() {
-    const actionSheet = await this.actionCtrl.create({
-      buttons: [{
-        text: 'Aventures',
-        handler: () => {
-          console.log('Mode Aventure');
-          this.map.setMapTypeId(GoogleMapsMapTypeId.SATELLITE);
-        }
-      }, {
-        text: 'Partenaires',
-        handler: () => {
-          console.log('LocalShop');
-          this.map.setMapTypeId(GoogleMapsMapTypeId.NORMAL);
-        }
-      }, {
-        text: 'Quetes',
-        handler: () => {
-          console.log('Mode Conquête');
-          this.map.setMapTypeId(GoogleMapsMapTypeId.TERRAIN);
-        }
-      }, {
-        text: 'Annuler',
-        role: 'cancel',
-        handler: () => {
-          console.log('Annuler');
-        }
-      }]
-    });
-    await actionSheet.present();
-  }
+  // async mapOptions() {
+  //   const actionSheet = await this.actionCtrl.create({
+  //     buttons: [{
+  //       text: 'Aventures',
+  //       handler: () => {
+  //         console.log('Mode Aventure');
+  //         this.map.setMapTypeId(GoogleMapsMapTypeId.SATELLITE);
+  //       }
+  //     }, {
+  //       text: 'Partenaires',
+  //       handler: () => {
+  //         console.log('LocalShop');
+  //         this.map.setMapTypeId(GoogleMapsMapTypeId.NORMAL);
+  //       }
+  //     }, {
+  //       text: 'Quetes',
+  //       handler: () => {
+  //         console.log('Mode Conquête');
+  //         this.map.setMapTypeId(GoogleMapsMapTypeId.TERRAIN);
+  //       }
+  //     }, {
+  //       text: 'Annuler',
+  //       role: 'cancel',
+  //       handler: () => {
+  //         console.log('Annuler');
+  //       }
+  //     }]
+  //   });
+  //   await actionSheet.present();
+  // }
 
   placeMarker(markerTitle: string) {
     const marker: Marker = this.map.addMarkerSync({
@@ -163,5 +163,17 @@ export class GeoCatchingPage {
       ]
     });
     await alert.present();
+  }
+
+  async mapOptions() {
+    const actionSheet = await this.actionCtrl.create({
+      buttons: [{
+        text: 'Aventures',
+        handler: () => {
+          console.log('Mode Aventure');
+          this.map.setMapTypeId(GoogleMapsMapTypeId.SATELLITE);
+        }}]
+           });
+    await actionSheet.present();
   }
 }
