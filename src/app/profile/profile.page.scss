@@ -23,17 +23,12 @@ ion-header {
     font-weight: bold;
 }
 .space-between {
-    margin-left: 0px;
     display: flex;
     justify-content: space-between;
 }
 .space-between2 {
     width: 89px;
     display: -ms-grid;
-}
-
-.space-between3 {
-display: grid;
 }
 
 .followings {
@@ -48,8 +43,8 @@ display: grid;
 .img-box {
     border-radius: 50%;
     overflow: hidden;
-    height: 130px;
-    width: 130px;
+    height: 233px;
+    width: 233px;
 }
 .border-white {
     border: white solid 4px;
@@ -77,13 +72,13 @@ display: grid;
     margin-top: -10px!important;
 }
 .tweet-img {
-    border-radius: 10px;
+    border-radius: 13px;
     width: 95%;
     margin-left: 2.5%;
 }
 
    .img-box {
-     height: 200px;
+     height: 144px;
      overflow: hidden;
   }
 
