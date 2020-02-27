@@ -6,6 +6,19 @@ import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { LoadingController, AlertController } from '@ionic/angular';
 import { AngularFireStorage } from '@angular/fire/storage';
 
+// tslint:disable-next-line:component-class-suffix
+export class RefresherExample {
+  constructor() {}
+
+  doRefresh(event) {
+    console.log('Begin async operation');
+
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      event.target.complete();
+    }, 2000);
+  }
+}
 @Component({
   selector: 'app-profile',
   templateUrl: 'profile.page.html',
