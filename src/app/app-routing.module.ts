@@ -17,6 +17,14 @@ const routes: Routes = [
   {
     path: 'aventure',
     loadChildren: () => import('./aventure/aventure.module').then( m => m.AventurePageModule)
+  },
+  {
+    path: 'quetes',
+    loadChildren: () => import('./quetes/quetes.module').then( m => m.QuetesPageModule)
+  },
+  {
+    path: 'partenaires-maps',
+    loadChildren: () => import('./partenaires-maps/partenaires-maps.module').then( m => m.PartenairesMapsPageModule)
   }
 
 ];
