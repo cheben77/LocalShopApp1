@@ -8,23 +8,23 @@ const routes: Routes = [
   { path: '', loadChildren: './tabs/tabs.module#TabsPageModule' },
   {
     path: 'geo-aventure',
-    loadChildren: () => import('./geo-aventure/geo-aventure.module').then( m => m.GeoAventurePageModule)
+    loadChildren: () => import('./page/geo-aventure/geo-aventure.module').then( m => m.GeoAventurePageModule)
   },
   {
     path: 'partenaires',
-    loadChildren: () => import('./partenaires/partenaires.module').then( m => m.PartenairesPageModule)
+    loadChildren: () => import('./page/partenaires/partenaires.module').then( m => m.PartenairesPageModule)
   },
   {
     path: 'aventure',
-    loadChildren: () => import('./aventure/aventure.module').then( m => m.AventurePageModule)
+    loadChildren: () => import('./page/aventure/aventure.module').then( m => m.AventurePageModule)
   },
   {
     path: 'quetes',
-    loadChildren: () => import('./quetes/quetes.module').then( m => m.QuetesPageModule)
+    loadChildren: () => import('./page/quetes/quetes.module').then( m => m.QuetesPageModule)
   },
   {
     path: 'partenaires-maps',
-    loadChildren: () => import('./partenaires-maps/partenaires-maps.module').then( m => m.PartenairesMapsPageModule)
+    loadChildren: () => import('./page/partenaires-maps/partenaires-maps.module').then( m => m.PartenairesMapsPageModule)
   }
 
 ];

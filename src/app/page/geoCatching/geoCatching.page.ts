@@ -13,7 +13,7 @@ import {
 import { ActionSheetController, Platform, AlertController } from '@ionic/angular';
 import { Geolocation, Geoposition } from '@ionic-native/geolocation/ngx';
 import { fromEvent, Observable } from 'rxjs';
-import { FirebaseService } from '../services/firebase.service';
+import { FirebaseService } from '../../services/firebase.service';
 import { ActivatedRoute } from '@angular/router';
 
 
@@ -28,6 +28,7 @@ export class GeoCatchingPage {
   map: GoogleMap;
   private geolocation: Geolocation;
   myPosition: Observable<Geoposition>;
+
   constructor(
     public alertController: AlertController,
     public actionCtrl: ActionSheetController,

@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <div class="part1">
+      <ion-label i18n>
+        {{oneSkill.name}}
+      </ion-label>
+      <ion-toggle [(ngModel)]="oneSkill.selected" (ionChange)="updateSkill(oneSkill)"></ion-toggle>
+    </div>
+
+    <div class="part2">
+      <ion-label id="links" (click)="presentModal()"><ion-icon name="quote"></ion-icon></ion-label>
+      <ion-label id="links" [routerLink]="['/tabs/profile']"><ion-icon name="basket"></ion-icon></ion-label>
+    </div>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <h1 i18n>All About it</h1>
+  <!-- innerHtml for displaying <br> -->
+  <p i18n [innerHtml]='oneSkill.descriptions'></p> 
+  <h1 i18n>Linked Skills</h1>
+  <ion-item *ngFor="let item of userSkills" (click)="goToSkills(item)" [routerLink]="['/tabs/profile']" detail>
+    <ion-text>{{item.name}}</ion-text>
+  </ion-item>
+</ion-content>
