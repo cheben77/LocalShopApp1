@@ -12,7 +12,7 @@
 
 <ion-content>
   
-  <ion-fab vertical="top" horizontal="start" slot="fixed" class="outils">
+  <ion-fab vertical="top" horizontal="end" slot="fixed" class="outils">
     <ion-fab-button>
       <ion-icon name="share"></ion-icon>
     </ion-fab-button>
@@ -22,7 +22,7 @@
     <ion-fab-list side="bottom">
       <ion-fab-button (click)="addPhoto('camera')" color="primary"><ion-icon name="camera">Camera</ion-icon></ion-fab-button>
     </ion-fab-list>
-    <ion-fab-list side="end">
+    <ion-fab-list side="start">
       <ion-fab-button (click)="addPhoto('library')" color="tertiary"><ion-icon name="image">Bibliothèque</ion-icon></ion-fab-button>
     </ion-fab-list>
   </ion-fab>
