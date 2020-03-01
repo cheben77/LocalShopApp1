@@ -5,7 +5,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 
 const routes: Routes = [
-  { path: '', loadChildren: './tabs/tabs.module#TabsPageModule' },
+  { path: '', loadChildren: './page/tabs/tabs.module#TabsPageModule' },
   {
     path: 'geo-aventure',
     loadChildren: () => import('./page/geo-aventure/geo-aventure.module').then( m => m.GeoAventurePageModule)
