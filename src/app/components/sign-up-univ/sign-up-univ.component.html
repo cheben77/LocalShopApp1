@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <div>
+      <ion-label i18n color="primary">
+        Where are you from?
+      </ion-label>
+      <ion-icon style="float: right" name="close-circle" (click)="dismiss()"></ion-icon>
+    </div>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card *ngFor="let item of referential | async as list" (click)="dismiss(item)">
+    <ion-item>
+      <ion-img [src]=item.icon></ion-img>
+    </ion-item>
+    <ion-card-content>
+      {{ item.name }}
+    </ion-card-content>
+  </ion-card>
+</ion-content>
