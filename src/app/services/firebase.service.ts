@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
-import 'firebase/firestore'
+import 'firebase/firestore';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FirebaseService {
 
-  constructor(private db:AngularFirestore ) {}
+  constructor(private db: AngularFirestore ) {}
 
-  getQRCodePosition(){
+  getQRCodePosition() {
     return this.db.collection('QRCode').get();
   }
 }
