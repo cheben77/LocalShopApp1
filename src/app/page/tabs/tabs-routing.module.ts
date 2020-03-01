@@ -23,7 +23,7 @@ const routes: Routes = [
           {
             path: '',
             loadChildren: () =>
-              import('../page/localShop/localShop.module').then(m => m.LocalShopPageModule)
+              import('../localShop/localShop.module').then(m => m.LocalShopPageModule)
           }
         ]
       },
@@ -43,7 +43,7 @@ const routes: Routes = [
           {
             path: '',
             loadChildren: () =>
-              import('../page/geoCatching/geoCatching.module').then(m => m.GeoCatchingPageModule)
+              import('../geoCatching/geoCatching.module').then(m => m.GeoCatchingPageModule)
           }
         ]
       },
@@ -70,7 +70,7 @@ const routes: Routes = [
       {
         path: '',
         loadChildren: () =>
-          import('../page/geo-aventure/geo-aventure.module').then(m => m.GeoAventurePageModule)
+          import('../geo-aventure/geo-aventure.module').then(m => m.GeoAventurePageModule)
       }
     ]
   },
@@ -80,7 +80,7 @@ const routes: Routes = [
     {
       path: '',
       loadChildren: () =>
-        import('../page/partenaires/partenaires.module').then(m => m.PartenairesPageModule)
+        import('../partenaires/partenaires.module').then(m => m.PartenairesPageModule)
     }
   ]
 },

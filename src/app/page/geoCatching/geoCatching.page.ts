@@ -165,16 +165,4 @@ export class GeoCatchingPage {
     });
     await alert.present();
   }
-
-  async mapOptions() {
-    const actionSheet = await this.actionCtrl.create({
-      buttons: [{
-        text: 'Aventures',
-        handler: () => {
-          console.log('Mode Aventure');
-          this.map.setMapTypeId(GoogleMapsMapTypeId.SATELLITE);
-        }}]
-           });
-    await actionSheet.present();
-  }
 }

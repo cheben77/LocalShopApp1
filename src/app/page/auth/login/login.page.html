@@ -1,0 +1,144 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title class="ion-text-center">login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- <form [formGroup]="validationsForm" (ngSubmit)="btnClicked(university)">
+  <ion-item>
+    <ion-label><b>Email</b></ion-label>
+    <ion-input [(ngModel)]="loginData.email" placeholder="Entrez votre email"></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label><b>Mot de passe</b></ion-label>
+    <ion-input [(ngModel)]="loginData.password" type="password" placeholder="Entrez votre mot de passe"></ion-input>
+  </ion-item>
+
+    <ion-button (click)="login('')" expand="block" color="primary" [routerLink]="['/profile']" routerLinkActive="router-link-active" >Connexion</ion-button>
+  
+
+ <form  *ngIf="!connected">
+  <ion-item  color="success">
+    <ion-label position="floating" class="ion-text-center">Création du compte</ion-label>
+    <ion-input placeholder="Pseudo" color="dark"></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label position="floating" >Prénom</ion-label>
+    <ion-input aria-required="name" [(ngModel)]="text"></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label position="floating">Age</ion-label>
+    <ion-input  aria-required="name" [(ngModel)]="number"></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label position="floating">email</ion-label>
+    <ion-input aria-required="email" [(ngModel)]="email"></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label position="floating">Mot de passe</ion-label>
+    <ion-input required="password" type="password" [(ngModel)]="password"></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label position="floating" >confirmer votre mot de passe</ion-label>
+    <ion-input aria-required="password" type="password" ></ion-input>
+  </ion-item>
+  <ion-button (click)="signup()" expand="block" color="dark">Inscription</ion-button>
+</form> -->
+  <!-- <br>  -->
+
+  <ion-header>
+    <ion-toolbar>
+      <ion-title i18n color="primary" class="ion-text-center">
+        Login
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+    <ion-content>
+      <ion-img src="/assets/icon/logoApp.jpg" alt="text"></ion-img>
+        <form [formGroup]="validationsForm" (ngSubmit)="btnClicked()">
+          <ion-item>
+            <ion-label position="floating" i18n>Email</ion-label>
+            <ion-input type="email" type="email" formControlName="email" [(ngModel)]="dataUser.email" placeholder="Email" type="email"></ion-input>
+             <!-- [(ngModel)]="userCredential.email" -->
+            </ion-item>
+  
+      <div>
+        <ng-container *ngFor="let validation of validationMessages.email">
+          <div
+            id="errorMessage"
+            *ngIf="
+              validationsForm.get('email').hasError(validation.type) &&
+              (validationsForm.get('email').dirty ||
+                validationsForm.get('email').touched)">
+            {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+  
+      <ng-container>
+        <ion-item>
+          <ion-label>
+            <ion-label *ngIf="!this.university" (click)="presentModal()" i18n>
+              Choix<ion-icon name="arrow-dropdown"></ion-icon>
+            </ion-label>
+  
+            <!-- <p *ngIf="this.university"> -->
+              <!-- <img [src]="university.icon" />{{ university.name }} -->
+            <!-- </p> -->
+          </ion-label>
+        </ion-item>
+      </ng-container>
+  
+      <ion-item>
+        <ion-label position="floating" color="light" type="password" placeholder="Mot de passe" ioncolor="light"></ion-label>
+        <ion-input type="password" formControlName="password" [(ngModel)]="userCredential.password"></ion-input>
+      </ion-item>
+      
+      <div>
+        <ng-container *ngFor="let validation of validationMessages.password">
+          <div
+            id="errorMessage"
+              *ngIf="
+                validationsForm.get('password').hasError(validation.type) &&
+                (validationsForm.get('password').dirty ||
+                validationsForm.get('password').touched)">
+                {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+  
+      <!----------------------Message Non Authentification------------------------------------>
+      <ion-text color="danger" *ngIf="alert" class="error">
+        {{ alert }}
+      </ion-text>
+  
+      <ion-button type="submit" color="primary" [disabled]="!validationsForm.valid"i18n>
+        Let's go !
+      </ion-button>
+    
+  
+      <ion-button shape="round" (click)="facebookLogin()">
+        <ion-icon slot="start" name="logo-facebook"></ion-icon>
+          Connexion avec Facebook
+        </ion-button>
+      <ion-button color="google" color="youtube" shape="round">
+        <ion-icon slot="start" name="logo-google"></ion-icon>
+          Google
+      </ion-button>
+  
+    <a [routerLink]="['/tabs/signup']" i18n class="padding">
+      Create your account
+    </a>
+    </form>
+  </ion-content>
+  
+
+
+</ion-content>
