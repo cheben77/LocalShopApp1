@@ -139,4 +139,7 @@ ngOnInit() {
       this.errorMail();
     });
   }
+  logout() {
+    this.afAuth.auth.signOut();
+  }
 }
