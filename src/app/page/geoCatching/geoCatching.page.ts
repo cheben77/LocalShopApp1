@@ -16,7 +16,6 @@ import { fromEvent, Observable } from 'rxjs';
 import { FirebaseService } from '../../services/firebase.service';
 import { ActivatedRoute } from '@angular/router';
 
-
 @Component({
   selector: 'app-geoCatching',
   templateUrl: 'geoCatching.page.html',
@@ -28,6 +27,7 @@ export class GeoCatchingPage {
   map: GoogleMap;
   private geolocation: Geolocation;
   myPosition: Observable<Geoposition>;
+  afAuth: any;
 
   constructor(
     public alertController: AlertController,
@@ -164,5 +164,9 @@ export class GeoCatchingPage {
       ]
     });
     await alert.present();
+  }
+  logout() {
+    this.afAuth.auth.signOut();
+    console.log('déconnécté !!');
   }
 }
