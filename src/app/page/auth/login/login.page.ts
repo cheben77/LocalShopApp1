@@ -72,10 +72,10 @@ export class LoginPage implements OnInit {
     }
   // tslint:disable-next-line:max-line-length
   constructor(authService: AuthService, router: Router, skillService: SkillService, public modalController: ModalController, public formBuilder: FormBuilder)
-   {  this.skillService = skillService;
-      this.authService = authService;
+   {  //this.skillService = skillService;
+      //this.authService = authService;
       // this.user = authService.user;
-      this.userCredential = new UserCredential();
+      //this.userCredential = new UserCredential();
       this.router = router;
      // this.university = null;
   }
