@@ -28,7 +28,7 @@ import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
 
-
+import { Facebook } from '@ionic-native/facebook/ngx';
 
 
 @NgModule({
@@ -47,11 +47,10 @@ import { Observable } from 'rxjs';
   ],
   providers: [
     FirebaseService,
-    // Facebook,
+    Facebook,
     StatusBar,
     SplashScreen,
     QRScanner,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     Camera,
     InAppBrowser,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
