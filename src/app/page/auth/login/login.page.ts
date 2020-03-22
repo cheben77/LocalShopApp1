@@ -71,7 +71,11 @@ export class LoginPage implements OnInit {
     ],
     }
   // tslint:disable-next-line:max-line-length
-  constructor(authService: AuthService, router: Router, skillService: SkillService, public modalController: ModalController, public formBuilder: FormBuilder)
+  constructor(
+    authService: AuthService, 
+    router: Router, skillService: SkillService, 
+    public modalController: ModalController, 
+    public formBuilder: FormBuilder)
    {  //this.skillService = skillService;
       //this.authService = authService;
       // this.user = authService.user;
@@ -94,7 +98,6 @@ ngOnInit() {
     ]))
   });
 }
-  // tslint:disable-next-line:align
 
 // add() {
 //     this.afDG.list('User/').push({
@@ -141,5 +144,6 @@ ngOnInit() {
   }
   logout() {
     this.afAuth.auth.signOut();
+    console.log('User Deconnecter');
   }
 }

@@ -13,7 +13,7 @@ import {
   Circle
 } from '@ionic-native/google-maps';
 import { ActionSheetController, Platform, AlertController } from '@ionic/angular';
-import { Geolocation, Geoposition } from '@ionic-native/geolocation/ngx';
+//import { Geolocation, Geoposition } from '@ionic-native/geolocation/ngx';
 import { fromEvent, Observable } from 'rxjs';
 import { FirebaseService } from '../../services/firebase.service';
 import { ActivatedRoute } from '@angular/router';
