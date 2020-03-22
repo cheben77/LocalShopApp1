@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label><b>Email</b></ion-label>
+    <ion-input [(ngModel)]="loginData.email" placeholder="Entrez votre email"></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label><b>Mot de passe</b></ion-label>
+    <ion-input [(ngModel)]="loginData.password" type="password" placeholder="Entrez votre mot de passe"></ion-input>
+  </ion-item>
+  
+  <div class="ion-padding">
+    <ion-button (click)="login()" expand="block" color="primary">Connexion</ion-button>
+  </div>
+
+  <a>Mot de passe oublié ?! :'(</a>
+
+ 
+<!-- Input with value
+<ion-input value="custom"></ion-input>
+ -->
+<!-- Input with placeholder 
+<ion-input placeholder="Enter Input"></ion-input>
+-->
+<!-- Input with clear button when there is a value
+<ion-input clearInput value="clear me"></ion-input>
+ -->
+<!-- Number type input
+<ion-input type="number" value="333"></ion-input>
+ -->
+<!-- Disabled input
+<ion-input value="Disabled" disabled></ion-input>
+ -->
+<!-- Readonly input
+<ion-input value="Readonly" readonly></ion-input>
+ -->
+ 
+ <!-- <form  *ngIf="!connected">
+  <ion-item  color="success">
+    <ion-label position="floating" class="ion-text-center">Création du compte</ion-label>
+    <ion-input placeholder="Pseudo" color="dark"></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label position="floating" >Prénom</ion-label>
+    <ion-input aria-required="name" [(ngModel)]="text"></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label position="floating">Age</ion-label>
+    <ion-input aria-required="name" [(ngModel)]="number"></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label position="floating">email</ion-label>
+    <ion-input aria-required="email" [(ngModel)]="email"></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label position="floating">Mot de passe</ion-label>
+    <ion-input required="password" type="password" [(ngModel)]="password"></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label position="floating" >confirmer votre mot de passe</ion-label>
+    <ion-input aria-required="password" type="password" ></ion-input>
+    
+  </ion-item>
+
+  <ion-button (click)="signup()" expand="ion-padding" color="dark">Inscription</ion-button>
+   
+  </form> -->
+
+
+</ion-content>

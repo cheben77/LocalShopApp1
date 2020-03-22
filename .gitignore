@@ -42,6 +42,7 @@ node_modules/
 platforms/
 plugins/
 jspm_packages/
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 www/
 =======
@@ -53,6 +54,8 @@ www/
 >>>>>>> 2ec8c2af2df3bf365053a4a899d01f55ecc1320c
 >>>>>>> b5302a84f66ce77e570becc624080fb28e97adf6
 >>>>>>> Stashed changes
+=======
+>>>>>>> GeoYann
 
 # TypeScript v1 declaration files
 typings/

@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-title class="ion-text-center">
+      GéoCatching Game !!
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="addMarker()">
+        <ion-icon slot="icon-only" name="add-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="share"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button><ion-icon name="log-out" color="danger" (click)="logout()" [routerLink]="['/tabs/login']"></ion-icon></ion-fab-button>
+    </ion-fab-list>
+    <ion-fab-list side="bottom">
+      <ion-fab-button><ion-icon name="qr-scanner" color="tertiary" [routerLink]="['/tabs/qrCode']" routerLinkActive="router-link-active" ></ion-icon></ion-fab-button>
+    </ion-fab-list>
+    <ion-fab-list side="start">
+      <ion-fab-button><ion-icon name="logo-instagram"></ion-icon></ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+  
+  <div id="map_canvas">
+    <ion-fab vertical="bottom" horizontal="start" slot="fixed">
+      <ion-fab-button color="success" (click)="mapOptions()">
+        <ion-icon name="map"></ion-icon>
+    </ion-fab-button>
+    </ion-fab>
+  </div>
+</ion-content>
