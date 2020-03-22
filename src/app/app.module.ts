@@ -21,7 +21,6 @@ import { QRScanner } from '@ionic-native/qr-scanner/ngx';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 //import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
 
-<<<<<<< HEAD
 
 
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
@@ -35,8 +34,6 @@ import { Observable } from 'rxjs';
 import { Facebook } from '@ionic-native/facebook/ngx';
 
 
-=======
->>>>>>> b5302a84f66ce77e570becc624080fb28e97adf6
 export const firebaseConfig = {
     apiKey: 'AIzaSyCcyuFkXAqca0vcsLIQRG2UociZGr2oUrA',
     authDomain: 'geoapp-a10da.firebaseapp.com',

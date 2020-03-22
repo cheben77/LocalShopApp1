@@ -13,7 +13,7 @@ import { University } from 'src/app/models/university';
 //import { UnivModalComponent } from 'src/app/components/univ-modal/univ-modal.component';
 import { NavController } from '@ionic/angular';
 import * as firebase from 'firebase/app';
-//import { Facebook } from '@ionic-native/facebook/ngx';
+import { Facebook } from '@ionic-native/facebook/ngx';
 import { Platform } from '@ionic/angular';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
@@ -29,40 +29,25 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-  // tslint:disable-next-line:member-ordering
   authService: AuthService;
-  // tslint:disable-next-line:member-ordering
   public userCredential: UserCredential;
-  // tslint:disable-next-line:member-ordering
   router: Router;
-  // tslint:disable-next-line:member-ordering
   public alert: string = null;
-  // tslint:disable-next-line: member-ordering
-  public user: User;
-  // tslint:disable-next-line: member-ordering
- // public error: AuthError;
-  // tslint:disable-next-line: member-ordering
+  //public user: User;
+  //public error: AuthError;
   //public university: University;
-  // tslint:disable-next-line:member-ordering
-  private skillService: SkillService;
-  // tslint:disable-next-line:member-ordering
+  //private skillService: SkillService;
   validationsForm: FormGroup;
-  // tslint:disable-next-line: member-ordering
   afDB: AngularFireDatabase;
-  // tslint:disable-next-line:member-ordering
   toastController: ToastController;
-  // tslint:disable-next-line:member-ordering
   public afAuth: AngularFireAuth;
   loginData: any;
-   // tslint:disable-next-line:member-ordering
   validationMessages = {
-    // tslint:disable-next-line: object-literal-key-quotes
     // Email types and messages error
     email: [
       { type: 'required', message: 'Email is required.' },
       { type: 'pattern', message: 'Please enter a valid email.' }
     ],
-    // tslint:disable-next-line: object-literal-key-quotes
     // Password types and messages error
     password: [
       { type: 'required', message: 'Password is required.' },
@@ -70,9 +55,15 @@ export class LoginPage implements OnInit {
       { type: 'pattern', message: 'Your password must contain at least one uppercase, one lowercase, and one number.' }
     ],
     }
-  // tslint:disable-next-line:max-line-length
-  constructor(authService: AuthService, router: Router, skillService: SkillService, public modalController: ModalController, public formBuilder: FormBuilder)
-   {  //this.skillService = skillService;
+  constructor(
+    authService: AuthService, 
+    router: Router, 
+    //skillService: SkillService, 
+    //public modalController: ModalController, 
+    //public formBuilder: FormBuilder
+    )
+   {
+     //this.skillService = skillService;
       //this.authService = authService;
       // this.user = authService.user;
       //this.userCredential = new UserCredential();
@@ -81,20 +72,19 @@ export class LoginPage implements OnInit {
   }
   
 ngOnInit() {
-    this.validationsForm = this.formBuilder.group({
-      email: new FormControl('', Validators.compose([
-      Validators.required,
-      Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
-    ])),
-    password: new FormControl('', Validators.compose([
-      Validators.required,
+    // this.validationsForm = this.formBuilder.group({
+      // email: new FormControl('', Validators.compose([
+      // Validators.required,
+      // Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
+    // ])),
+    // password: new FormControl('', Validators.compose([
+      // Validators.required,
       // validators deactivate for this first phase of projet
-      Validators.minLength(5),
-      Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$')
-    ]))
-  });
+      // Validators.minLength(5),
+      // Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$')
+    // ]))
+  // });
 }
-  // tslint:disable-next-line:align
 
 // add() {
 //     this.afDG.list('User/').push({
@@ -139,6 +129,7 @@ ngOnInit() {
       this.errorMail();
     });
   }
+
   logout() {
     this.afAuth.auth.signOut();
   }
