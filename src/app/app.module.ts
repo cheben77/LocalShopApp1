@@ -20,9 +20,12 @@ import { QRCodeModule } from 'angularx-qrcode';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 //import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
 
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> b5302a84f66ce77e570becc624080fb28e97adf6
 export const firebaseConfig = {
     apiKey: 'AIzaSyCcyuFkXAqca0vcsLIQRG2UociZGr2oUrA',
     authDomain: 'geoapp-a10da.firebaseapp.com',

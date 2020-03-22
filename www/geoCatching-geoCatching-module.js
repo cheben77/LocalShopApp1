@@ -2108,8 +2108,8 @@ var GeoCatchingPage = /** @class */ (function () {
     }
     GeoCatchingPage.prototype.loadMap = function (coords) {
         _ionic_native_google_maps__WEBPACK_IMPORTED_MODULE_2__["Environment"].setEnv({
-            API_KEY_FOR_BROWSER_RELEASE: 'AIzaSyAJjXyc0-8x1DSdbnS0FhnkmskZ5hHvzlQ',
-            API_KEY_FOR_BROWSER_DEBUG: ''
+            API_KEY_FOR_BROWSER_RELEASE: 'AIzaSyBJX-gnG_U4pJqWY24Ed0-G5wa7msWQuFw',
+            API_KEY_FOR_BROWSER_DEBUG: 'AIzaSyBJX-gnG_U4pJqWY24Ed0-G5wa7msWQuFw'
         });
         this.map = _ionic_native_google_maps__WEBPACK_IMPORTED_MODULE_2__["GoogleMaps"].create('map_canvas', {
             camera: {
