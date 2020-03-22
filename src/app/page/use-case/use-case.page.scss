@@ -1,0 +1,10 @@
+ion-slides {
+    --bullet-background: var(--ion-color-medium);
+    --bullet-background-active: var(--ion-color-primary);
+    display: block;
+  }
+  
+ion-slide {
+    padding: 10vh 7vw 20vh 7vw;
+    text-align: left;
+  }

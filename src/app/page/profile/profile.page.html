@@ -1,9 +1,21 @@
+<<<<<<< HEAD:src/app/page/profile/profile.page.html
 <ion-header>
  <ion-toolbar class="padding">
    <ion-title class="ion-text-center">
+=======
+<ion-header class="ion-padding" color="-ion-primary">
+  <div class="followings">
+    <ion-avatar>
+      <img src="./assets/icon/logo.jpg" class="avatarProfile">
+    </ion-avatar>
+  </div>
+    <ion-title class="ion-text-center">
+>>>>>>> c8ff69d5c4fb6675a78da729f4a107a973ffd616:src/app/profile/profile.page.html
             Profil
     </ion-title>
+    <ion-fab vertical="top" horizontal="end" slot="fixed" class="outils">
 
+<<<<<<< HEAD:src/app/page/profile/profile.page.html
       <ion-toggle checked slot="end">
       <ion-icon name="moon" slot="end"></ion-icon>
     </ion-toggle>
@@ -17,6 +29,19 @@
         <ion-fab-button><ion-icon name="log-out" color="danger" (click)="logout()" [routerLink]="['/tabs/login']"></ion-icon></ion-fab-button>
       </ion-fab-list>
       <ion-fab-list side="end">
+=======
+  
+      <ion-fab-button>
+        <ion-icon name="share"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-list side="top">
+        <ion-fab-button><ion-icon name="log-out" color="danger" (click)="logout()" [routerLink]="['/tabs/login']"></ion-icon></ion-fab-button>
+      </ion-fab-list>
+      <ion-fab-list side="bottom">
+        <ion-fab-button (click)="addPhoto('camera')" color="primary"><ion-icon name="camera">Camera</ion-icon></ion-fab-button>
+      </ion-fab-list>
+      <ion-fab-list side="start">
+>>>>>>> c8ff69d5c4fb6675a78da729f4a107a973ffd616:src/app/profile/profile.page.html
         <ion-fab-button (click)="addPhoto('library')" color="tertiary"><ion-icon name="image">Bibliothèque</ion-icon></ion-fab-button>
       </ion-fab-list>
     </ion-fab>
@@ -47,8 +72,8 @@
   <div class="ion-padding">
     
   </div> -->
-  <div class="header">
-    <h2>Elon Musk</h2>
+  <ion-header>
+    <h2 class="ion-text-center">Elon Musk</h2>
     <div class="space-between">
       <div class="followings">
         <ion-badge color="primary" mode="ios">46</ion-badge>
@@ -56,7 +81,7 @@
       </div>
       <div class="followings">
         <ion-avatar>
-          <img src="./assets/img/a4cdbb2e20df441931275b8acaebd5d0.jpg">
+          <img src="./assets/img/a4cdbb2e20df441931275b8acaebd5d0.jpg" class="avatarProfile">
         </ion-avatar>
       </div>
       <div class="followings">
@@ -65,14 +90,25 @@
         </p>
       </div>
     </div>
+  </ion-header>  
+  <div class="space-between">
+    <ion-button class="space-between3"><ion-icon name="scanner"></ion-icon></ion-button>
+    <ion-button class="space-between2"><ion-icon name="scanner"></ion-icon></ion-button>
+    <ion-button class="space-between3"><ion-icon name="scanner"></ion-icon></ion-button>
   </div>
 
+<<<<<<< HEAD:src/app/page/profile/profile.page.html
 <ion-progress-bar type="indeterminate"></ion-progress-bar>
 
 <!--------------Envoi de l'image function upload---------------------------------------------->
 <div>
+=======
+    <ion-progress-bar type="indeterminate"></ion-progress-bar>
+  
+  <div>
+>>>>>>> c8ff69d5c4fb6675a78da729f4a107a973ffd616:src/app/profile/profile.page.html
     <div>
-      <img [src]="image" alt="image">
+      <img src="" alt="image">
     </div>
     <ion-button expand="block" color="warning" (click)="uploadFirebase()">
       <ion-icon slot="start" name="cloud-upload">Envoyer</ion-icon>
@@ -165,4 +201,14 @@
     <ion-item lines="none" class="tweet">
       <ion-label text-wrap>Le temps est venu, alors changeons le !</ion-label>
     </ion-item>
+
+<ion-card *ngFor="let image of images">
+  <ion-img [src]="image.url" ></ion-img>
+  <ion-card-header><h2>Hey</h2>
+    <ion-card-subtitle> {{ image.name }}</ion-card-subtitle>
+  </ion-card-header>
+</ion-card>
+
+
+
 </ion-content>

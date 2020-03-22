@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {
   GoogleMaps,
   GoogleMap,
@@ -11,7 +11,14 @@ import {
   Environment
 } from '@ionic-native/google-maps';
 import { ActionSheetController, Platform, AlertController } from '@ionic/angular';
+<<<<<<< HEAD:src/app/page/geoCatching/geoCatching.page.ts
 import { Geolocation } from '@ionic-native/geolocation/ngx';
+=======
+import { Geolocation, Geoposition } from '@ionic-native/geolocation/ngx';
+import { fromEvent, Observable } from 'rxjs';
+import { FirebaseService } from '../../services/firebase.service';
+import { ActivatedRoute } from '@angular/router';
+>>>>>>> c8ff69d5c4fb6675a78da729f4a107a973ffd616:src/app/geoCatching/geoCatching.page.ts
 
 @Component({
   selector: 'app-geoCatching',
@@ -23,12 +30,15 @@ import { Geolocation } from '@ionic-native/geolocation/ngx';
 export class GeoCatchingPage {
   map: GoogleMap;
   private geolocation: Geolocation;
+  myPosition: Observable<Geoposition>;
+  afAuth: any;
+
   constructor(
     public alertController: AlertController,
     public actionCtrl: ActionSheetController,
-    public platform: Platform
+    public platform: Platform,
+    public api: FirebaseService
   ) {
-    console.log(this.platform,'plop')
     if (this.platform.is('cordova')) {
       // this.geolocation.getCurrentPosition().then((resp) => {
       //  // resp.coords.latitude
@@ -39,23 +49,45 @@ export class GeoCatchingPage {
 
       // tslint:disable-next-line:new-parens
       this.geolocation = new Geolocation;
+    }
+  }
 
-      const watch = this.geolocation.watchPosition();
-      watch.subscribe((data) => {
+  // tslint:disable-next-line:use-lifecycle-interface
+  ngOnInit() {
+    console.log(this.platform, 'plop');
+    if (this.platform.is('cordova')) {
+
+      this.myPosition = this.geolocation.watchPosition();
+
+      this.myPosition.subscribe(data => {
         this.loadMap(data.coords);
-        this.map.addMarkerSync({          
-          icon: 'red',
-          animation: 'DROP',
-          position: { lat:data.coords.latitude, lng:data.coords.longitude }
+        this.map.addMarker({
+          icon: 'black',
+          animation: 'BOUNCE',
+          position: { lat: data.coords.latitude, lng: data.coords.longitude },
         });
+        this.api.getQRCodePosition().subscribe(list => list.forEach(QRCode => {
+          const QRCodePosition = { lat: QRCode.data().lat, lng: QRCode.data().lng };
+          this.map.addMarker({
+            icon: 'red',
+            animation: 'DROP',
+            position: QRCodePosition
+          });
+
+        }));
       });
     }
   }
 
   loadMap(coords) {
     Environment.setEnv({
+<<<<<<< HEAD:src/app/page/geoCatching/geoCatching.page.ts
       API_KEY_FOR_BROWSER_RELEASE: 'AIzaSyBJX-gnG_U4pJqWY24Ed0-G5wa7msWQuFw',
       API_KEY_FOR_BROWSER_DEBUG: 'AIzaSyBJX-gnG_U4pJqWY24Ed0-G5wa7msWQuFw'
+=======
+      API_KEY_FOR_BROWSER_RELEASE: 'AIzaSyAJjXyc0-8x1DSdbnS0FhnkmskZ5hHvzlQ',
+      API_KEY_FOR_BROWSER_DEBUG: 'AIzaSyAJjXyc0-8x1DSdbnS0FhnkmskZ5hHvzlQ'
+>>>>>>> c8ff69d5c4fb6675a78da729f4a107a973ffd616:src/app/geoCatching/geoCatching.page.ts
     });
     this.map = GoogleMaps.create('map_canvas', {
       camera: {
@@ -73,36 +105,36 @@ export class GeoCatchingPage {
     this.map.setMapTypeId(GoogleMapsMapTypeId.SATELLITE);
   }
 
-  async mapOptions() {
-    const actionSheet = await this.actionCtrl.create({
-      buttons: [{
-        text: 'Satellite',
-        handler: () => {
-          console.log('Satellite clicked');
-          this.map.setMapTypeId(GoogleMapsMapTypeId.SATELLITE);
-        }
-      }, {
-        text: 'Plan',
-        handler: () => {
-          console.log('Plan clicked');
-          this.map.setMapTypeId(GoogleMapsMapTypeId.NORMAL);
-        }
-      }, {
-        text: 'Terrain',
-        handler: () => {
-          console.log('Terrain clicked');
-          this.map.setMapTypeId(GoogleMapsMapTypeId.TERRAIN);
-        }
-      }, {
-        text: 'Annuler',
-        role: 'cancel',
-        handler: () => {
-          console.log('Cancel clicked');
-        }
-      }]
-    });
-    await actionSheet.present();
-  }
+  // async mapOptions() {
+  //   const actionSheet = await this.actionCtrl.create({
+  //     buttons: [{
+  //       text: 'Aventures',
+  //       handler: () => {
+  //         console.log('Mode Aventure');
+  //         this.map.setMapTypeId(GoogleMapsMapTypeId.SATELLITE);
+  //       }
+  //     }, {
+  //       text: 'Partenaires',
+  //       handler: () => {
+  //         console.log('LocalShop');
+  //         this.map.setMapTypeId(GoogleMapsMapTypeId.NORMAL);
+  //       }
+  //     }, {
+  //       text: 'Quetes',
+  //       handler: () => {
+  //         console.log('Mode Conquête');
+  //         this.map.setMapTypeId(GoogleMapsMapTypeId.TERRAIN);
+  //       }
+  //     }, {
+  //       text: 'Annuler',
+  //       role: 'cancel',
+  //       handler: () => {
+  //         console.log('Annuler');
+  //       }
+  //     }]
+  //   });
+  //   await actionSheet.present();
+  // }
 
   placeMarker(markerTitle: string) {
     const marker: Marker = this.map.addMarkerSync({
@@ -141,5 +173,9 @@ export class GeoCatchingPage {
       ]
     });
     await alert.present();
+  }
+  logout() {
+    this.afAuth.auth.signOut();
+    console.log('déconnécté !!');
   }
 }

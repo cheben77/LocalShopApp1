@@ -9,8 +9,24 @@ import { Injectable } from '@angular/core';
 import * as firebase from 'firebase';
 // ========================================================//
 
+<<<<<<< HEAD:src/app/page/profile/profile.page.ts
 
 // ========================================================//
+=======
+// tslint:disable-next-line:component-class-suffix
+export class RefresherExample {
+  constructor() {}
+
+  doRefresh(event) {
+    console.log('Begin async operation');
+
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      event.target.complete();
+    }, 2000);
+  }
+}
+>>>>>>> c8ff69d5c4fb6675a78da729f4a107a973ffd616:src/app/profile/profile.page.ts
 @Component({
   selector: 'app-profile',
   templateUrl: 'profile.page.html',
@@ -25,6 +41,7 @@ export class ProfilePage {
   image = 'https://www.kasterencultuur.nl/editor/placeholder.jpg';
   imagePath: string;
   upload: any;
+  images = [];
 
 // ========================================================//
   constructor(
@@ -36,6 +53,7 @@ export class ProfilePage {
     public alertController: AlertController,
     private camera: Camera
   ) {
+    this.getImagesDatabase();
     this.afAuth.authState.subscribe(auth => {
       if (!auth) {
         console.log('non connecté');
@@ -58,7 +76,39 @@ export class ProfilePage {
         });
     });
   }
+<<<<<<< HEAD:src/app/page/profile/profile.page.ts
 // ========================================================//
+=======
+//========================================================//
+      getImagesDatabase() {
+        this.afDB.list('images').snapshotChanges(['child_added']).subscribe(images => {
+         console.log(images);
+         images.forEach(image => {
+           // tslint:disable-next-line:comment-format
+            console.log('Reference image: ' + image.payload.exportVal().name);
+            this.getImagesStorage(image);
+    });
+  });
+}
+//========================================================//
+
+
+//========================================================//    
+    getImagesStorage(image: any) {
+      const imgRef = image.payload.exportVal().ref;
+      // pour récupérer l'URL des images
+      this.afSG.ref(imgRef).getDownloadURL().subscribe(imgUrl => {
+          console.log(imgUrl);
+          this.images.push({
+            name: image.payload.exportVal().name,
+            url: imgUrl
+          });
+        });
+    }
+//========================================================//
+
+//========================================================//
+>>>>>>> c8ff69d5c4fb6675a78da729f4a107a973ffd616:src/app/profile/profile.page.ts
   // tslint:disable-next-line:semicolon
   async addPhoto(source: string) {
     if  (source === 'library') {
@@ -72,10 +122,17 @@ export class ProfilePage {
 
     }
   }
+<<<<<<< HEAD:src/app/page/profile/profile.page.ts
 // ========================================================//
 
 // ========================================================//
 async openCamera() {
+=======
+//========================================================//
+
+//========================================================//
+  async openCamera() {
+>>>>>>> c8ff69d5c4fb6675a78da729f4a107a973ffd616:src/app/profile/profile.page.ts
     const options: CameraOptions = {
       quality: 100,
       destinationType: this.camera.DestinationType.DATA_URL,
@@ -87,9 +144,16 @@ async openCamera() {
     };
     return await this.camera.getPicture(options);
   }
+<<<<<<< HEAD:src/app/page/profile/profile.page.ts
 // ========================================================//
 
 // ========================================================//
+=======
+//========================================================//
+
+
+//========================================================//
+>>>>>>> c8ff69d5c4fb6675a78da729f4a107a973ffd616:src/app/profile/profile.page.ts
 async openLibrary() {
   const options: CameraOptions = {
     quality: 100,
@@ -102,6 +166,7 @@ async openLibrary() {
   };
   return await this.camera.getPicture(options);
 }
+<<<<<<< HEAD:src/app/page/profile/profile.page.ts
 // ========================================================//
 
 // ========================================================//
@@ -111,11 +176,32 @@ async openLibrary() {
 // ========================================================//
 
 // ================Function UpLoad_FireBase========================================//
+=======
+//========================================================//
+
+
+//========================================================//
+  logout() {
+    this.afAuth.auth.signOut();
+  }
+  //========================================================//
+
+
+//========================================================//
+>>>>>>> c8ff69d5c4fb6675a78da729f4a107a973ffd616:src/app/profile/profile.page.ts
   async uploadFirebase() {
     // ==================Mise en place de l'image dans le Profile User FireBase==================================//
     const loading = await this.loadingController.create();
     await loading.present();
+<<<<<<< HEAD:src/app/page/profile/profile.page.ts
     this.imagePath = 'Images/User/img/' + new Date().getTime() + '.jpg';
+=======
+    // tslint:disable-next-line:no-unused-expression
+    this.imagePath = //'User/img'
+     new Date().getTime() + '.jpg';
+
+
+>>>>>>> c8ff69d5c4fb6675a78da729f4a107a973ffd616:src/app/profile/profile.page.ts
     this.upload = this.afSG.ref(this.imagePath).putString(this.image, 'data_url');
 // ==========================================================//
 
@@ -134,4 +220,5 @@ async openLibrary() {
 
 // ========================================================//
   }
+//========================================================//
 }
