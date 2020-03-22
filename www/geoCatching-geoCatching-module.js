@@ -2003,7 +2003,11 @@ var KmlOverlay = /** @class */ (function (_super) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+<<<<<<< Updated upstream
 /* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n  <ion-toolbar color=\"success\">\r\n    <ion-title class=\"ion-text-center\">\r\n      GéoCatching Game !!\r\n    </ion-title>\r\n    <ion-buttons slot=\"end\">\r\n      <ion-button (click)=\"addMarker()\">\r\n        <ion-icon slot=\"icon-only\" name=\"add-circle-outline\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <ion-fab vertical=\"top\" horizontal=\"end\" slot=\"fixed\">\r\n    <ion-fab-button>\r\n      <ion-icon name=\"share\"></ion-icon>\r\n    </ion-fab-button>\r\n    <ion-fab-list side=\"top\">\r\n      <ion-fab-button><ion-icon name=\"log-out\" color=\"danger\" (click)=\"logout()\" [routerLink]=\"['/tabs/login']\"></ion-icon></ion-fab-button>\r\n    </ion-fab-list>\r\n    <ion-fab-list side=\"bottom\">\r\n      <ion-fab-button><ion-icon name=\"qr-scanner\" color=\"tertiary\" [routerLink]=\"['/tabs/qrCode']\" routerLinkActive=\"router-link-active\" ></ion-icon></ion-fab-button>\r\n    </ion-fab-list>\r\n    <ion-fab-list side=\"start\">\r\n      <ion-fab-button><ion-icon name=\"logo-instagram\"></ion-icon></ion-fab-button>\r\n    </ion-fab-list>\r\n  </ion-fab>\r\n  \r\n  <div id=\"map_canvas\">\r\n    <ion-fab vertical=\"bottom\" horizontal=\"start\" slot=\"fixed\">\r\n      <ion-fab-button color=\"success\" (click)=\"mapOptions()\">\r\n        <ion-icon name=\"map\"></ion-icon>\r\n    </ion-fab-button>\r\n    </ion-fab>\r\n  </div>\r\n</ion-content>\r\n");
+=======
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n  <ion-toolbar color=\"success\">\r\n    <ion-title class=\"ion-text-center\">\r\n      GéoCatching Game !!\r\n    </ion-title>\r\n    <ion-buttons slot=\"end\">\r\n      <ion-button (click)=\"addMarker()\">\r\n        <ion-icon slot=\"icon-only\" name=\"add-circle-outline\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <div id=\"map_canvas\"></div>\r\n  <ion-fab vertical=\"bottom\" horizontal=\"start\" slot=\"fixed\">\r\n    <ion-fab-button color=\"success\" (click)=\"mapOptions()\">\r\n      <ion-icon name=\"map\"></ion-icon>\r\n    </ion-fab-button>\r\n  </ion-fab>\r\n\r\n  <ion-fab vertical=\"top\" horizontal=\"end\" slot=\"fixed\">\r\n    <ion-fab-button>\r\n      <ion-icon name=\"share\"></ion-icon>\r\n    </ion-fab-button>\r\n    <ion-fab-list side=\"top\">\r\n      <ion-fab-button><ion-icon name=\"log-out\" color=\"danger\" (click)=\"logout()\" [routerLink]=\"['/tabs/login']\"></ion-icon></ion-fab-button>\r\n    </ion-fab-list>\r\n    <ion-fab-list side=\"bottom\">\r\n      <ion-fab-button><ion-icon name=\"qr-scanner\" color=\"tertiary\" [routerLink]=\"['/tabs/qrCode']\" routerLinkActive=\"router-link-active\" ></ion-icon></ion-fab-button>\r\n    </ion-fab-list>\r\n    <ion-fab-list side=\"start\">\r\n      <ion-fab-button><ion-icon name=\"logo-instagram\"></ion-icon></ion-fab-button>\r\n    </ion-fab-list>\r\n    <ion-fab-list side=\"end\">\r\n      <ion-fab-button><ion-icon name=\"logo-twitter\"></ion-icon></ion-fab-button>\r\n    </ion-fab-list>\r\n  </ion-fab>\r\n</ion-content>\r\n");
+>>>>>>> Stashed changes
 
 /***/ }),
 
@@ -2080,17 +2084,30 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ionic_native_google_maps__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic-native/google-maps */ "./node_modules/@ionic-native/google-maps/index.js");
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
 /* harmony import */ var _ionic_native_geolocation_ngx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic-native/geolocation/ngx */ "./node_modules/@ionic-native/geolocation/ngx/index.js");
+<<<<<<< Updated upstream
+=======
+/* harmony import */ var _services_firebase_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../services/firebase.service */ "./src/app/services/firebase.service.ts");
+
+>>>>>>> Stashed changes
 
 
 
 
 
 var GeoCatchingPage = /** @class */ (function () {
+<<<<<<< Updated upstream
     function GeoCatchingPage(alertController, actionCtrl, platform) {
         var _this = this;
         this.alertController = alertController;
         this.actionCtrl = actionCtrl;
         this.platform = platform;
+=======
+    function GeoCatchingPage(alertController, actionCtrl, platform, api) {
+        this.alertController = alertController;
+        this.actionCtrl = actionCtrl;
+        this.platform = platform;
+        this.api = api;
+>>>>>>> Stashed changes
         if (this.platform.is('cordova')) {
             // this.geolocation.getCurrentPosition().then((resp) => {
             //  // resp.coords.latitude
@@ -2100,6 +2117,7 @@ var GeoCatchingPage = /** @class */ (function () {
             // });
             // tslint:disable-next-line:new-parens
             this.geolocation = new _ionic_native_geolocation_ngx__WEBPACK_IMPORTED_MODULE_4__["Geolocation"];
+<<<<<<< Updated upstream
             var watch = this.geolocation.watchPosition();
             watch.subscribe(function (data) {
                 _this.loadMap(data.coords);
@@ -2110,6 +2128,38 @@ var GeoCatchingPage = /** @class */ (function () {
         _ionic_native_google_maps__WEBPACK_IMPORTED_MODULE_2__["Environment"].setEnv({
             API_KEY_FOR_BROWSER_RELEASE: 'AIzaSyBJX-gnG_U4pJqWY24Ed0-G5wa7msWQuFw',
             API_KEY_FOR_BROWSER_DEBUG: 'AIzaSyBJX-gnG_U4pJqWY24Ed0-G5wa7msWQuFw'
+=======
+        }
+    }
+    // tslint:disable-next-line:use-lifecycle-interface
+    GeoCatchingPage.prototype.ngOnInit = function () {
+        var _this = this;
+        console.log(this.platform, 'plop');
+        if (this.platform.is('cordova')) {
+            this.myPosition = this.geolocation.watchPosition();
+            this.myPosition.subscribe(function (data) {
+                _this.loadMap(data.coords);
+                _this.map.addMarker({
+                    icon: 'black',
+                    animation: 'BOUNCE',
+                    position: { lat: data.coords.latitude, lng: data.coords.longitude },
+                });
+                _this.api.getQRCodePosition().subscribe(function (list) { return list.forEach(function (QRCode) {
+                    var QRCodePosition = { lat: QRCode.data().lat, lng: QRCode.data().lng };
+                    _this.map.addMarker({
+                        icon: 'red',
+                        animation: 'DROP',
+                        position: QRCodePosition
+                    });
+                }); });
+            });
+        }
+    };
+    GeoCatchingPage.prototype.loadMap = function (coords) {
+        _ionic_native_google_maps__WEBPACK_IMPORTED_MODULE_2__["Environment"].setEnv({
+            API_KEY_FOR_BROWSER_RELEASE: 'AIzaSyAJjXyc0-8x1DSdbnS0FhnkmskZ5hHvzlQ',
+            API_KEY_FOR_BROWSER_DEBUG: 'AIzaSyAJjXyc0-8x1DSdbnS0FhnkmskZ5hHvzlQ'
+>>>>>>> Stashed changes
         });
         this.map = _ionic_native_google_maps__WEBPACK_IMPORTED_MODULE_2__["GoogleMaps"].create('map_canvas', {
             camera: {
@@ -2133,6 +2183,7 @@ var GeoCatchingPage = /** @class */ (function () {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.actionCtrl.create({
                             buttons: [{
+<<<<<<< Updated upstream
                                     text: 'Satellite',
                                     handler: function () {
                                         console.log('Satellite clicked');
@@ -2148,13 +2199,34 @@ var GeoCatchingPage = /** @class */ (function () {
                                     text: 'Terrain',
                                     handler: function () {
                                         console.log('Terrain clicked');
+=======
+                                    text: 'Aventures',
+                                    handler: function () {
+                                        console.log('Mode Aventure');
+                                        _this.map.setMapTypeId(_ionic_native_google_maps__WEBPACK_IMPORTED_MODULE_2__["GoogleMapsMapTypeId"].SATELLITE);
+                                    }
+                                }, {
+                                    text: 'Partenaires',
+                                    handler: function () {
+                                        console.log('LocalShop');
+                                        _this.map.setMapTypeId(_ionic_native_google_maps__WEBPACK_IMPORTED_MODULE_2__["GoogleMapsMapTypeId"].NORMAL);
+                                    }
+                                }, {
+                                    text: 'Quetes',
+                                    handler: function () {
+                                        console.log('Mode Conquête');
+>>>>>>> Stashed changes
                                         _this.map.setMapTypeId(_ionic_native_google_maps__WEBPACK_IMPORTED_MODULE_2__["GoogleMapsMapTypeId"].TERRAIN);
                                     }
                                 }, {
                                     text: 'Annuler',
                                     role: 'cancel',
                                     handler: function () {
+<<<<<<< Updated upstream
                                         console.log('Cancel clicked');
+=======
+                                        console.log('Annuler');
+>>>>>>> Stashed changes
                                     }
                                 }]
                         })];
@@ -2221,7 +2293,12 @@ var GeoCatchingPage = /** @class */ (function () {
     GeoCatchingPage.ctorParameters = function () { return [
         { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["AlertController"] },
         { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["ActionSheetController"] },
+<<<<<<< Updated upstream
         { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["Platform"] }
+=======
+        { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["Platform"] },
+        { type: _services_firebase_service__WEBPACK_IMPORTED_MODULE_5__["FirebaseService"] }
+>>>>>>> Stashed changes
     ]; };
     GeoCatchingPage = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -2231,7 +2308,12 @@ var GeoCatchingPage = /** @class */ (function () {
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_3__["AlertController"],
             _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["ActionSheetController"],
+<<<<<<< Updated upstream
             _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["Platform"]])
+=======
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["Platform"],
+            _services_firebase_service__WEBPACK_IMPORTED_MODULE_5__["FirebaseService"]])
+>>>>>>> Stashed changes
     ], GeoCatchingPage);
     return GeoCatchingPage;
 }());
