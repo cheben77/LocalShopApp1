@@ -756,7 +756,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var routes = [
-    { path: '', loadChildren: './tabs/tabs.module#TabsPageModule' }
+    { path: '', loadChildren: './tabs/tabs.module#TabsPageModule' },
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
