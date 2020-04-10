@@ -1,0 +1,111 @@
+
+ion-header {
+    --ion-background-color: black;
+}
+
+ion-header{
+	--ion-background-color: var(--ion-color-dark);
+}
+
+
+ion-header {
+    --ion-background-color: linear-gradient(#76b852, #8DC26F);
+}
+.header {
+    height: 180px;
+    background-color: #03A9F4;
+    width: 100%;
+    padding-top: 1px;
+}
+.header h2 {
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+.space-between {
+    display: flex;
+    justify-content: space-between;
+}
+.space-between2 {
+    width: 89px;
+    display: -ms-grid;
+}
+
+.followings {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.followings p {
+    color: white;
+    margin: 8px 0px 0px 0px;
+}
+.img-box {
+    border-radius: 50%;
+    overflow: hidden;
+    height: 233px;
+    width: 233px;
+}
+.border-white {
+    border: white solid 4px;
+    border-radius: 50%;
+    width: fit-content;
+}
+
+.border-blue {
+    border: 7px solid #006bbf;
+    border-radius: 50%;
+    width: fit-content;
+}
+.flex {
+    display: flex;
+    justify-content: center;
+    margin-top: -76px;
+}
+.tweet ion-label {
+    line-height: 1!important;
+    font-size: 15px;
+    margin: 6px 0px 6px 0px!important;
+    min-height: 34px;
+}
+.tweet {
+    margin-top: -10px!important;
+}
+.tweet-img {
+    border-radius: 13px;
+    width: 95%;
+    margin-left: 2.5%;
+}
+.titleProfile {
+ margin-left: 55px;
+ margin-bottom: -34px;
+}
+
+
+<<<<<<< HEAD:src/app/profile/profile.page.scss
+//   .img-box {
+//     height: 200px;
+//     overflow: hidden;
+//   }
+//   img {
+//     height: 200px;
+//   }
+=======
+   .img-box {
+     height: 144px;
+     overflow: hidden;
+  }
+
+.avatarProfile {
+     width: 100%;
+
+   }
+.outils {
+    margin-top: 55px;
+   }
+   
+.ion-padding {
+    color: #2c3e50;
+}
+
+>>>>>>> c8ff69d5c4fb6675a78da729f4a107a973ffd616:src/app/page/profile/profile.page.scss

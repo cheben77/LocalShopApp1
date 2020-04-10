@@ -1,0 +1,22 @@
+<ion-list>
+  <ion-label *ngIf="certificationDemand.date" i18n>Created: {{ certificationDemand.date | date:'y/MM/dd'}}</ion-label>
+  <ion-item i18n *ngFor="let skill of certificationDemand.skills" (click)="goToSkills(skill)" [routerLink]="['/tabs/selected-skill']">
+      {{ skill.name }}
+  </ion-item>
+</ion-list>
+<!--First button -->
+<ion-button i18n [hidden]="certificationDemand.skills.length === 0 || certificationDemand.files.length !== 0"
+  [routerLink]="['/tabs/attachements']">
+  Attachements
+</ion-button>
+<!--Second button -->
+<ion-button i18n *ngIf="certificationDemand.skills.length !== 0 && certificationDemand.files.length !== 0 && certificationDemand.state !==1 && certificationDemand.state !==2"
+  (click)="skillService.submitCertification()">
+  Submit
+</ion-button>
+<!--Third button -->
+<ion-button i18n *ngIf="certificationDemand.state === 1"
+  (click)="skillService.validatedCertification(certificationDemand)">
+  Validation
+</ion-button>
+

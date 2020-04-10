@@ -1,0 +1,56 @@
+.welcome-card img {
+  max-height: 35vh;
+  overflow: hidden;
+}
+
+:root { 
+  --ion-safe-area-top: 25px; 
+  --ion-safe-area-bottom: 27px; 
+  } 
+  .swiper-slide { 
+  display: block; 
+  } 
+  ion-slide > h2 { 
+  margin-top: 3.0rem; 
+  } 
+  ion-slide > img { 
+  max-height: 60%; 
+  max-width: 75%; 
+  margin: 42px 0; 
+  }
+
+<<<<<<< HEAD:src/app/localShop/localShop.page.scss
+ .ion-align-self-start {
+  background-color: #1e2023;
+  //--ion-color-dark-tint: #545454;
+}
+.ion-align-self-center {
+  background-color: #545454;
+}
+.colNotifs {
+  background-color: #76b852;
+}
+
+
+
+
+=======
+  .logo {
+    margin-left: 5px;
+    display: inline-flex;
+    justify-content: center;
+  }
+
+  .logo1{
+    border-radius: 5px;
+  }
+  .followings {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.avatarProfile {
+  width: 100%;
+
+}
+>>>>>>> c8ff69d5c4fb6675a78da729f4a107a973ffd616:src/app/page/localShop/localShop.page.scss

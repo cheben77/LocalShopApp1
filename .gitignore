@@ -43,9 +43,25 @@ platforms/
 plugins/
 jspm_packages/
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 www/
 >>>>>>> 2ec8c2af2df3bf365053a4a899d01f55ecc1320c
+=======
+<<<<<<< Updated upstream
+www/
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+www/
+>>>>>>> 2ec8c2af2df3bf365053a4a899d01f55ecc1320c
+>>>>>>> b5302a84f66ce77e570becc624080fb28e97adf6
+>>>>>>> Stashed changes
+=======
+>>>>>>> GeoYann
+>>>>>>> c8ff69d5c4fb6675a78da729f4a107a973ffd616
 
 # TypeScript v1 declaration files
 typings/
