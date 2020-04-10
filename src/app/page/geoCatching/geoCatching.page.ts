@@ -8,18 +8,16 @@ import {
   CameraPosition,
   MarkerOptions,
   Marker,
-  Environment
+  Environment,
+  ILatLng,
+  Circle
 } from '@ionic-native/google-maps';
 import { ActionSheetController, Platform, AlertController } from '@ionic/angular';
-<<<<<<< HEAD:src/app/geoCatching/geoCatching.page.ts
-import { Geolocation } from '@ionic-native/geolocation/ngx';
-=======
 import { Geolocation, Geoposition } from '@ionic-native/geolocation/ngx';
 import { fromEvent, Observable } from 'rxjs';
 import { FirebaseService } from '../../services/firebase.service';
 import { ActivatedRoute } from '@angular/router';
->>>>>>> c8ff69d5c4fb6675a78da729f4a107a973ffd616:src/app/page/geoCatching/geoCatching.page.ts
-
+import { async } from 'rxjs/internal/scheduler/async';
 @Component({
   selector: 'app-geoCatching',
   templateUrl: 'geoCatching.page.html',
@@ -78,32 +76,38 @@ export class GeoCatchingPage {
       });
     }
   }
-
+//===================================================//
   loadMap(coords) {
     Environment.setEnv({
-<<<<<<< HEAD:src/app/geoCatching/geoCatching.page.ts
       API_KEY_FOR_BROWSER_RELEASE: 'AIzaSyBJX-gnG_U4pJqWY24Ed0-G5wa7msWQuFw',
       API_KEY_FOR_BROWSER_DEBUG: 'AIzaSyBJX-gnG_U4pJqWY24Ed0-G5wa7msWQuFw'
-=======
-      API_KEY_FOR_BROWSER_RELEASE: 'AIzaSyAJjXyc0-8x1DSdbnS0FhnkmskZ5hHvzlQ',
-      API_KEY_FOR_BROWSER_DEBUG: 'AIzaSyAJjXyc0-8x1DSdbnS0FhnkmskZ5hHvzlQ'
->>>>>>> c8ff69d5c4fb6675a78da729f4a107a973ffd616:src/app/page/geoCatching/geoCatching.page.ts
     });
+    const GOOGLE: ILatLng = {lat : 37.422858, lng : -122.085065};
     this.map = GoogleMaps.create('map_canvas', {
-      camera: {
-        target: {
-          lat: coords.latitude,
-          lng: coords.longitude
-        },
-        zoom: 12,
-        tilt: 30
-      }
-    });
+            camera: {
+              target: {
+                lat: coords.latitude,
+                lng: coords.longitude
+              },
+              zoom: 12,
+              tilt: 30
+            }
+          });
+   
+  
+    // Fit the map camera to circle
+    // this.map.moveCamera({
+    //   target: circle.getBounds()
+    
+    // });
   }
+  //===================================================//
 
+  //===================================================//
   setMapTypeId() {
     this.map.setMapTypeId(GoogleMapsMapTypeId.SATELLITE);
   }
+ //===================================================//
 
   // async mapOptions() {
   //   const actionSheet = await this.actionCtrl.create({
@@ -136,7 +140,8 @@ export class GeoCatchingPage {
   //   await actionSheet.present();
   // }
 
-  placeMarker(markerTitle: string) {
+//===================================================//
+placeMarker(markerTitle: string) {
     const marker: Marker = this.map.addMarkerSync({
        title: markerTitle,
        icon: 'green',
@@ -144,7 +149,9 @@ export class GeoCatchingPage {
        position: this.map.getCameraPosition().target
     });
   }
+//===================================================//
 
+//===================================================//
   async addMarker() {
     const alert = await this.alertController.create({
       header: 'Ajouter un emplacement',
