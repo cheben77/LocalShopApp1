@@ -10,6 +10,7 @@ import { Observable } from 'rxjs';
 
 export abstract class AuthService {
   public abstract user: User;
+  static user: any;
   public abstract getAuth(userCredential: UserCredential): Observable<UserCredential>;
   public abstract getProfile(): Observable<User>;
   public abstract setUser(user: User): any;

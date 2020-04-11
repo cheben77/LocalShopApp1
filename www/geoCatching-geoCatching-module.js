@@ -1994,27 +1994,23 @@ var KmlOverlay = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/geoCatching/geoCatching.page.html":
-/*!*****************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/geoCatching/geoCatching.page.html ***!
-  \*****************************************************************************************/
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/page/geoCatching/geoCatching.page.html":
+/*!**********************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/page/geoCatching/geoCatching.page.html ***!
+  \**********************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-<<<<<<< Updated upstream
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n  <ion-toolbar color=\"success\">\r\n    <ion-title class=\"ion-text-center\">\r\n      GéoCatching Game !!\r\n    </ion-title>\r\n    <ion-buttons slot=\"end\">\r\n      <ion-button (click)=\"addMarker()\">\r\n        <ion-icon slot=\"icon-only\" name=\"add-circle-outline\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <ion-fab vertical=\"top\" horizontal=\"end\" slot=\"fixed\">\r\n    <ion-fab-button>\r\n      <ion-icon name=\"share\"></ion-icon>\r\n    </ion-fab-button>\r\n    <ion-fab-list side=\"top\">\r\n      <ion-fab-button><ion-icon name=\"log-out\" color=\"danger\" (click)=\"logout()\" [routerLink]=\"['/tabs/login']\"></ion-icon></ion-fab-button>\r\n    </ion-fab-list>\r\n    <ion-fab-list side=\"bottom\">\r\n      <ion-fab-button><ion-icon name=\"qr-scanner\" color=\"tertiary\" [routerLink]=\"['/tabs/qrCode']\" routerLinkActive=\"router-link-active\" ></ion-icon></ion-fab-button>\r\n    </ion-fab-list>\r\n    <ion-fab-list side=\"start\">\r\n      <ion-fab-button><ion-icon name=\"logo-instagram\"></ion-icon></ion-fab-button>\r\n    </ion-fab-list>\r\n  </ion-fab>\r\n  \r\n  <div id=\"map_canvas\">\r\n    <ion-fab vertical=\"bottom\" horizontal=\"start\" slot=\"fixed\">\r\n      <ion-fab-button color=\"success\" (click)=\"mapOptions()\">\r\n        <ion-icon name=\"map\"></ion-icon>\r\n    </ion-fab-button>\r\n    </ion-fab>\r\n  </div>\r\n</ion-content>\r\n");
-=======
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n  <ion-toolbar color=\"success\">\r\n    <ion-title class=\"ion-text-center\">\r\n      GéoCatching Game !!\r\n    </ion-title>\r\n    <ion-buttons slot=\"end\">\r\n      <ion-button (click)=\"addMarker()\">\r\n        <ion-icon slot=\"icon-only\" name=\"add-circle-outline\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <div id=\"map_canvas\"></div>\r\n  <ion-fab vertical=\"bottom\" horizontal=\"start\" slot=\"fixed\">\r\n    <ion-fab-button color=\"success\" (click)=\"mapOptions()\">\r\n      <ion-icon name=\"map\"></ion-icon>\r\n    </ion-fab-button>\r\n  </ion-fab>\r\n\r\n  <ion-fab vertical=\"top\" horizontal=\"end\" slot=\"fixed\">\r\n    <ion-fab-button>\r\n      <ion-icon name=\"share\"></ion-icon>\r\n    </ion-fab-button>\r\n    <ion-fab-list side=\"top\">\r\n      <ion-fab-button><ion-icon name=\"log-out\" color=\"danger\" (click)=\"logout()\" [routerLink]=\"['/tabs/login']\"></ion-icon></ion-fab-button>\r\n    </ion-fab-list>\r\n    <ion-fab-list side=\"bottom\">\r\n      <ion-fab-button><ion-icon name=\"qr-scanner\" color=\"tertiary\" [routerLink]=\"['/tabs/qrCode']\" routerLinkActive=\"router-link-active\" ></ion-icon></ion-fab-button>\r\n    </ion-fab-list>\r\n    <ion-fab-list side=\"start\">\r\n      <ion-fab-button><ion-icon name=\"logo-instagram\"></ion-icon></ion-fab-button>\r\n    </ion-fab-list>\r\n    <ion-fab-list side=\"end\">\r\n      <ion-fab-button><ion-icon name=\"logo-twitter\"></ion-icon></ion-fab-button>\r\n    </ion-fab-list>\r\n  </ion-fab>\r\n</ion-content>\r\n");
->>>>>>> Stashed changes
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header class=\"ion-padding\">\r\n  <div class=\"followings\">\r\n    <ion-avatar>\r\n      <img src=\"./assets/icon/logo.jpg\" class=\"avatarProfile\">\r\n    </ion-avatar>\r\n  </div>\r\n    <ion-title class=\"ion-text-center\">\r\n      Aventure Games\r\n    </ion-title> \r\n  <ion-toolbar color=\"success\">\r\n    <ion-toolbar>\r\n      <ion-item slot=\"start\">\r\n         <ion-label>Modes d'aventures</ion-label>\r\n           <ion-select value=\"brown\" okText=\"Ok\" cancelText=\"Annuler\">\r\n             <ion-select-option value=\"brown\">Missions</ion-select-option>\r\n             <ion-select-option value=\"blonde\">Partenaires</ion-select-option>\r\n             <ion-select-option value=\"black\">Quete de savoir</ion-select-option>\r\n           </ion-select>\r\n       </ion-item>\r\n   </ion-toolbar>\r\n    \r\n    <ion-buttons slot=\"end\">\r\n      <ion-button>\r\n        <ion-icon slot=\"icon-only\" name=\"add-circle-outline\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n    <div id=\"map_canvas\">\r\n      <ion-fab vertical=\"bottom\" horizontal=\"start\" slot=\"fixed\">\r\n        <ion-fab-button>\r\n          <ion-icon name=\"share\"></ion-icon>\r\n        </ion-fab-button>\r\n        <ion-fab-list side=\"top\">\r\n          <ion-fab-button><ion-icon name=\"log-out\" color=\"danger\" (click)=\"logout()\" [routerLink]=\"['/tabs/login']\"></ion-icon></ion-fab-button>\r\n        </ion-fab-list>\r\n        <ion-fab-list side=\"bottom\">\r\n          <ion-fab-button><ion-icon name=\"qr-scanner\" color=\"tertiary\" [routerLink]=\"['/tabs/qrCode']\" routerLinkActive=\"router-link-active\" ></ion-icon></ion-fab-button>\r\n        </ion-fab-list>\r\n        <ion-fab-list side=\"start\">\r\n          <ion-fab-button><ion-icon name=\"logo-instagram\"></ion-icon></ion-fab-button>\r\n        </ion-fab-list>\r\n      </ion-fab> \r\n    </div>\r\n    <!-- <ion-fab vertical=\"bottom\" horizontal=\"start\" slot=\"fixed\">\r\n    <ion-fab-button color=\"success\" [routerLink]=\"['/aventure']\" routerLinkActive=\"router-link-active\" >\r\n      <ion-icon name=\"cog\"></ion-icon>\r\n    </ion-fab-button>\r\n  </ion-fab> -->  \r\n    \r\n</ion-content>\r\n");
 
 /***/ }),
 
-/***/ "./src/app/geoCatching/geoCatching.module.ts":
-/*!***************************************************!*\
-  !*** ./src/app/geoCatching/geoCatching.module.ts ***!
-  \***************************************************/
+/***/ "./src/app/page/geoCatching/geoCatching.module.ts":
+/*!********************************************************!*\
+  !*** ./src/app/page/geoCatching/geoCatching.module.ts ***!
+  \********************************************************/
 /*! exports provided: GeoCatchingPageModule */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -2027,7 +2023,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-/* harmony import */ var _geoCatching_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./geoCatching.page */ "./src/app/geoCatching/geoCatching.page.ts");
+/* harmony import */ var _geoCatching_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./geoCatching.page */ "./src/app/page/geoCatching/geoCatching.page.ts");
 
 
 
@@ -2056,23 +2052,23 @@ var GeoCatchingPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/geoCatching/geoCatching.page.scss":
-/*!***************************************************!*\
-  !*** ./src/app/geoCatching/geoCatching.page.scss ***!
-  \***************************************************/
+/***/ "./src/app/page/geoCatching/geoCatching.page.scss":
+/*!********************************************************!*\
+  !*** ./src/app/page/geoCatching/geoCatching.page.scss ***!
+  \********************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("#map_canvas {\n  width: 100%;\n  height: 100%;\n}\n\n.map-container {\n  position: absolute;\n  top: 0px;\n  bottom: 0px;\n  left: 0px;\n  right: 0px;\n}\n\n.map-container .map {\n  height: 100%;\n  width: 100%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZ2VvQ2F0Y2hpbmcvQzpcXFVzZXJzXFxDaGVCZW5cXE9uZURyaXZlXFxCdXJlYXVcXFByb2pldCBOdW3DqXJpcXVlc1xcUHJvamV0IElPTklDXFxQcm9qZXQgQXBwU1xcTG9jYWxTaG9wXFxFbiBjb3VyXFxMb2NhbFNob3BBcHAxXFxMb2NhbFNob3BBcHAxXFxBcHAxL3NyY1xcYXBwXFxnZW9DYXRjaGluZ1xcZ2VvQ2F0Y2hpbmcucGFnZS5zY3NzIiwic3JjL2FwcC9nZW9DYXRjaGluZy9nZW9DYXRjaGluZy5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQ0E7RUFDSSxXQUFBO0VBQ0EsWUFBQTtBQ0FKOztBREVFO0VBRUEsa0JBQUE7RUFDQSxRQUFBO0VBQ0EsV0FBQTtFQUNBLFNBQUE7RUFDQSxVQUFBO0FDQUY7O0FERUU7RUFFRSxZQUFBO0VBQ0EsV0FBQTtBQ0RKIiwiZmlsZSI6InNyYy9hcHAvZ2VvQ2F0Y2hpbmcvZ2VvQ2F0Y2hpbmcucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiXG4jbWFwX2NhbnZhcyB7XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgaGVpZ2h0OiAxMDAlO1xuICB9XG4gIC5tYXAtY29udGFpbmVyXG57XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgdG9wOiAwcHg7XG4gIGJvdHRvbTogMHB4O1xuICBsZWZ0OiAwcHg7XG4gIHJpZ2h0OiAwcHg7XG5cbiAgLm1hcFxuICB7XG4gICAgaGVpZ2h0OiAxMDAlO1xuICAgIHdpZHRoOiAxMDAlO1xuICB9XG59XG4gICIsIiNtYXBfY2FudmFzIHtcbiAgd2lkdGg6IDEwMCU7XG4gIGhlaWdodDogMTAwJTtcbn1cblxuLm1hcC1jb250YWluZXIge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHRvcDogMHB4O1xuICBib3R0b206IDBweDtcbiAgbGVmdDogMHB4O1xuICByaWdodDogMHB4O1xufVxuLm1hcC1jb250YWluZXIgLm1hcCB7XG4gIGhlaWdodDogMTAwJTtcbiAgd2lkdGg6IDEwMCU7XG59Il19 */");
+/* harmony default export */ __webpack_exports__["default"] = ("#map_canvas {\n  width: 100%;\n  height: 100%;\n}\n\n.map-container {\n  position: absolute;\n  top: 0px;\n  bottom: 0px;\n  left: 0px;\n  right: 0px;\n}\n\n.map-container .map {\n  height: 100%;\n  width: 100%;\n}\n\n.map-container .bouttonsGeo {\n  justify-content: space-between;\n  display: inline-flex;\n}\n\n.map-container .imgMenu {\n  display: grid;\n  size: auto;\n}\n\n.avatarProfile {\n  width: 100%;\n}\n\n.followings {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZS9nZW9DYXRjaGluZy9DOlxcVXNlcnNcXENoZUJlblxcT25lRHJpdmVcXEJ1cmVhdVxcUHJvamV0IE51bcOpcmlxdWVzXFxQcm9qZXQgSU9OSUNcXFByb2pldCBBcHBTXFxMb2NhbFNob3BcXEVuIGNvdXJcXExvY2FsU2hvcEFwcDFcXExvY2FsU2hvcEFwcDFcXEFwcDEvc3JjXFxhcHBcXHBhZ2VcXGdlb0NhdGNoaW5nXFxnZW9DYXRjaGluZy5wYWdlLnNjc3MiLCJzcmMvYXBwL3BhZ2UvZ2VvQ2F0Y2hpbmcvZ2VvQ2F0Y2hpbmcucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUNBO0VBQ0ksV0FBQTtFQUNBLFlBQUE7QUNBSjs7QURFRTtFQUVBLGtCQUFBO0VBQ0EsUUFBQTtFQUNBLFdBQUE7RUFDQSxTQUFBO0VBQ0EsVUFBQTtBQ0FGOztBREVFO0VBRUUsWUFBQTtFQUNBLFdBQUE7QUNESjs7QURHRTtFQUNFLDhCQUFBO0VBQ0Esb0JBQUE7QUNESjs7QURHQTtFQUNFLGFBQUE7RUFDQSxVQUFBO0FDREY7O0FES0E7RUFDRSxXQUFBO0FDRkY7O0FESUU7RUFDQSxhQUFBO0VBQ0Esc0JBQUE7RUFDQSxtQkFBQTtBQ0RGIiwiZmlsZSI6InNyYy9hcHAvcGFnZS9nZW9DYXRjaGluZy9nZW9DYXRjaGluZy5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJcclxuI21hcF9jYW52YXMge1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBoZWlnaHQ6IDEwMCU7XHJcbiAgfVxyXG4gIC5tYXAtY29udGFpbmVyXHJcbntcclxuICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgdG9wOiAwcHg7XHJcbiAgYm90dG9tOiAwcHg7XHJcbiAgbGVmdDogMHB4O1xyXG4gIHJpZ2h0OiAwcHg7XHJcblxyXG4gIC5tYXBcclxuICB7XHJcbiAgICBoZWlnaHQ6IDEwMCU7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICB9XHJcbiAgLmJvdXR0b25zR2Vve1xyXG4gICAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xyXG4gICAgZGlzcGxheTppbmxpbmUtZmxleCA7XHJcbiAgfVxyXG4uaW1nTWVudXtcclxuICBkaXNwbGF5OiBncmlkO1xyXG4gIHNpemU6IGF1dG87XHJcblxyXG59XHJcbn1cclxuLmF2YXRhclByb2ZpbGUge1xyXG4gIHdpZHRoOiAxMDAlO1xyXG5cclxufSAuZm9sbG93aW5ncyB7XHJcbiAgZGlzcGxheTogZmxleDtcclxuICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xyXG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbn1cclxuICAiLCIjbWFwX2NhbnZhcyB7XG4gIHdpZHRoOiAxMDAlO1xuICBoZWlnaHQ6IDEwMCU7XG59XG5cbi5tYXAtY29udGFpbmVyIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICB0b3A6IDBweDtcbiAgYm90dG9tOiAwcHg7XG4gIGxlZnQ6IDBweDtcbiAgcmlnaHQ6IDBweDtcbn1cbi5tYXAtY29udGFpbmVyIC5tYXAge1xuICBoZWlnaHQ6IDEwMCU7XG4gIHdpZHRoOiAxMDAlO1xufVxuLm1hcC1jb250YWluZXIgLmJvdXR0b25zR2VvIHtcbiAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xuICBkaXNwbGF5OiBpbmxpbmUtZmxleDtcbn1cbi5tYXAtY29udGFpbmVyIC5pbWdNZW51IHtcbiAgZGlzcGxheTogZ3JpZDtcbiAgc2l6ZTogYXV0bztcbn1cblxuLmF2YXRhclByb2ZpbGUge1xuICB3aWR0aDogMTAwJTtcbn1cblxuLmZvbGxvd2luZ3Mge1xuICBkaXNwbGF5OiBmbGV4O1xuICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xufSJdfQ== */");
 
 /***/ }),
 
-/***/ "./src/app/geoCatching/geoCatching.page.ts":
-/*!*************************************************!*\
-  !*** ./src/app/geoCatching/geoCatching.page.ts ***!
-  \*************************************************/
+/***/ "./src/app/page/geoCatching/geoCatching.page.ts":
+/*!******************************************************!*\
+  !*** ./src/app/page/geoCatching/geoCatching.page.ts ***!
+  \******************************************************/
 /*! exports provided: GeoCatchingPage */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -2084,30 +2080,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ionic_native_google_maps__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic-native/google-maps */ "./node_modules/@ionic-native/google-maps/index.js");
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
 /* harmony import */ var _ionic_native_geolocation_ngx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic-native/geolocation/ngx */ "./node_modules/@ionic-native/geolocation/ngx/index.js");
-<<<<<<< Updated upstream
-=======
-/* harmony import */ var _services_firebase_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../services/firebase.service */ "./src/app/services/firebase.service.ts");
+/* harmony import */ var _services_firebase_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../services/firebase.service */ "./src/app/services/firebase.service.ts");
 
->>>>>>> Stashed changes
 
 
 
 
 
 var GeoCatchingPage = /** @class */ (function () {
-<<<<<<< Updated upstream
-    function GeoCatchingPage(alertController, actionCtrl, platform) {
-        var _this = this;
-        this.alertController = alertController;
-        this.actionCtrl = actionCtrl;
-        this.platform = platform;
-=======
     function GeoCatchingPage(alertController, actionCtrl, platform, api) {
         this.alertController = alertController;
         this.actionCtrl = actionCtrl;
         this.platform = platform;
         this.api = api;
->>>>>>> Stashed changes
         if (this.platform.is('cordova')) {
             // this.geolocation.getCurrentPosition().then((resp) => {
             //  // resp.coords.latitude
@@ -2117,18 +2102,6 @@ var GeoCatchingPage = /** @class */ (function () {
             // });
             // tslint:disable-next-line:new-parens
             this.geolocation = new _ionic_native_geolocation_ngx__WEBPACK_IMPORTED_MODULE_4__["Geolocation"];
-<<<<<<< Updated upstream
-            var watch = this.geolocation.watchPosition();
-            watch.subscribe(function (data) {
-                _this.loadMap(data.coords);
-            });
-        }
-    }
-    GeoCatchingPage.prototype.loadMap = function (coords) {
-        _ionic_native_google_maps__WEBPACK_IMPORTED_MODULE_2__["Environment"].setEnv({
-            API_KEY_FOR_BROWSER_RELEASE: 'AIzaSyBJX-gnG_U4pJqWY24Ed0-G5wa7msWQuFw',
-            API_KEY_FOR_BROWSER_DEBUG: 'AIzaSyBJX-gnG_U4pJqWY24Ed0-G5wa7msWQuFw'
-=======
         }
     }
     // tslint:disable-next-line:use-lifecycle-interface
@@ -2155,12 +2128,13 @@ var GeoCatchingPage = /** @class */ (function () {
             });
         }
     };
+    //===================================================//
     GeoCatchingPage.prototype.loadMap = function (coords) {
         _ionic_native_google_maps__WEBPACK_IMPORTED_MODULE_2__["Environment"].setEnv({
-            API_KEY_FOR_BROWSER_RELEASE: 'AIzaSyAJjXyc0-8x1DSdbnS0FhnkmskZ5hHvzlQ',
-            API_KEY_FOR_BROWSER_DEBUG: 'AIzaSyAJjXyc0-8x1DSdbnS0FhnkmskZ5hHvzlQ'
->>>>>>> Stashed changes
+            API_KEY_FOR_BROWSER_RELEASE: 'AIzaSyBJX-gnG_U4pJqWY24Ed0-G5wa7msWQuFw',
+            API_KEY_FOR_BROWSER_DEBUG: 'AIzaSyBJX-gnG_U4pJqWY24Ed0-G5wa7msWQuFw'
         });
+        var GOOGLE = { lat: 37.422858, lng: -122.085065 };
         this.map = _ionic_native_google_maps__WEBPACK_IMPORTED_MODULE_2__["GoogleMaps"].create('map_canvas', {
             camera: {
                 target: {
@@ -2171,83 +2145,58 @@ var GeoCatchingPage = /** @class */ (function () {
                 tilt: 30
             }
         });
+        // Fit the map camera to circle
+        // this.map.moveCamera({
+        //   target: circle.getBounds()
+        // });
     };
+    //===================================================//
+    //===================================================//
     GeoCatchingPage.prototype.setMapTypeId = function () {
         this.map.setMapTypeId(_ionic_native_google_maps__WEBPACK_IMPORTED_MODULE_2__["GoogleMapsMapTypeId"].SATELLITE);
     };
-    GeoCatchingPage.prototype.mapOptions = function () {
-        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-            var actionSheet;
-            var _this = this;
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.actionCtrl.create({
-                            buttons: [{
-<<<<<<< Updated upstream
-                                    text: 'Satellite',
-                                    handler: function () {
-                                        console.log('Satellite clicked');
-                                        _this.map.setMapTypeId(_ionic_native_google_maps__WEBPACK_IMPORTED_MODULE_2__["GoogleMapsMapTypeId"].SATELLITE);
-                                    }
-                                }, {
-                                    text: 'Plan',
-                                    handler: function () {
-                                        console.log('Plan clicked');
-                                        _this.map.setMapTypeId(_ionic_native_google_maps__WEBPACK_IMPORTED_MODULE_2__["GoogleMapsMapTypeId"].NORMAL);
-                                    }
-                                }, {
-                                    text: 'Terrain',
-                                    handler: function () {
-                                        console.log('Terrain clicked');
-=======
-                                    text: 'Aventures',
-                                    handler: function () {
-                                        console.log('Mode Aventure');
-                                        _this.map.setMapTypeId(_ionic_native_google_maps__WEBPACK_IMPORTED_MODULE_2__["GoogleMapsMapTypeId"].SATELLITE);
-                                    }
-                                }, {
-                                    text: 'Partenaires',
-                                    handler: function () {
-                                        console.log('LocalShop');
-                                        _this.map.setMapTypeId(_ionic_native_google_maps__WEBPACK_IMPORTED_MODULE_2__["GoogleMapsMapTypeId"].NORMAL);
-                                    }
-                                }, {
-                                    text: 'Quetes',
-                                    handler: function () {
-                                        console.log('Mode Conquête');
->>>>>>> Stashed changes
-                                        _this.map.setMapTypeId(_ionic_native_google_maps__WEBPACK_IMPORTED_MODULE_2__["GoogleMapsMapTypeId"].TERRAIN);
-                                    }
-                                }, {
-                                    text: 'Annuler',
-                                    role: 'cancel',
-                                    handler: function () {
-<<<<<<< Updated upstream
-                                        console.log('Cancel clicked');
-=======
-                                        console.log('Annuler');
->>>>>>> Stashed changes
-                                    }
-                                }]
-                        })];
-                    case 1:
-                        actionSheet = _a.sent();
-                        return [4 /*yield*/, actionSheet.present()];
-                    case 2:
-                        _a.sent();
-                        return [2 /*return*/];
-                }
-            });
-        });
-    };
+    //===================================================//
+    // async mapOptions() {
+    //   const actionSheet = await this.actionCtrl.create({
+    //     buttons: [{
+    //       text: 'Aventures',
+    //       handler: () => {
+    //         console.log('Mode Aventure');
+    //         this.map.setMapTypeId(GoogleMapsMapTypeId.SATELLITE);
+    //       }
+    //     }, {
+    //       text: 'Partenaires',
+    //       handler: () => {
+    //         console.log('LocalShop');
+    //         this.map.setMapTypeId(GoogleMapsMapTypeId.NORMAL);
+    //       }
+    //     }, {
+    //       text: 'Quetes',
+    //       handler: () => {
+    //         console.log('Mode Conquête');
+    //         this.map.setMapTypeId(GoogleMapsMapTypeId.TERRAIN);
+    //       }
+    //     }, {
+    //       text: 'Annuler',
+    //       role: 'cancel',
+    //       handler: () => {
+    //         console.log('Annuler');
+    //       }
+    //     }]
+    //   });
+    //   await actionSheet.present();
+    // }
+    //===================================================//
     GeoCatchingPage.prototype.placeMarker = function (markerTitle) {
         var marker = this.map.addMarkerSync({
             title: markerTitle,
-            icon: 'red',
+            icon: 'green',
             animation: 'DROP',
             position: this.map.getCameraPosition().target
         });
     };
+    //===================================================//
+    //===================================================//
     GeoCatchingPage.prototype.addMarker = function () {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
             var alert;
@@ -2290,30 +2239,26 @@ var GeoCatchingPage = /** @class */ (function () {
             });
         });
     };
+    GeoCatchingPage.prototype.logout = function () {
+        this.afAuth.auth.signOut();
+        console.log('déconnécté !!');
+    };
     GeoCatchingPage.ctorParameters = function () { return [
         { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["AlertController"] },
         { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["ActionSheetController"] },
-<<<<<<< Updated upstream
-        { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["Platform"] }
-=======
         { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["Platform"] },
         { type: _services_firebase_service__WEBPACK_IMPORTED_MODULE_5__["FirebaseService"] }
->>>>>>> Stashed changes
     ]; };
     GeoCatchingPage = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-geoCatching',
-            template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./geoCatching.page.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/geoCatching/geoCatching.page.html")).default,
-            styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./geoCatching.page.scss */ "./src/app/geoCatching/geoCatching.page.scss")).default]
+            template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./geoCatching.page.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/page/geoCatching/geoCatching.page.html")).default,
+            styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./geoCatching.page.scss */ "./src/app/page/geoCatching/geoCatching.page.scss")).default]
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_3__["AlertController"],
             _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["ActionSheetController"],
-<<<<<<< Updated upstream
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["Platform"]])
-=======
             _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["Platform"],
             _services_firebase_service__WEBPACK_IMPORTED_MODULE_5__["FirebaseService"]])
->>>>>>> Stashed changes
     ], GeoCatchingPage);
     return GeoCatchingPage;
 }());

@@ -11,5 +11,18 @@
         Connexion avec Facebook
     </ion-button>
   </div>
+
+
+  <!-- with name set -->
+<ion-item>
+  <ion-label>Todo</ion-label>
+  <ion-input type="text" [(ngModel)]="todo.title" name="title"></ion-input>
+</ion-item>
+
+<!-- or with standalone set to true -->
+<ion-item>
+  <ion-label>Todo</ion-label>
+  <ion-input type="text" [(ngModel)]="todo.title" [ngModelOptions]="{standalone: true}"></ion-input>
+</ion-item>
   
 </ion-content>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { OnInit } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { ToastController, ModalController } from '@ionic/angular';
@@ -13,15 +13,34 @@ import { University } from 'src/app/models/university';
 //import { UnivModalComponent } from 'src/app/components/univ-modal/univ-modal.component';
 import { NavController } from '@ionic/angular';
 import * as firebase from 'firebase/app';
-//import { Facebook } from '@ionic-native/facebook/ngx';
+import { Facebook } from '@ionic-native/facebook/ngx';
 import { Platform } from '@ionic/angular';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireStorageModule } from '@angular/fire/storage';
-
-
-
+import { Component } from '@angular/core';
+@Component({
+  template: `
+    <form (ngSubmit)="logForm()">
+      <ion-item>
+        <ion-label>Todo</ion-label>
+        <ion-input type="text" [(ngModel)]="todo.title" name="title"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Description</ion-label>
+        <ion-textarea [(ngModel)]="todo.description" name="description"></ion-textarea>
+      </ion-item>
+      <button ion-button type="submit" block>Add Todo</button>
+    </form>
+  `,
+})
+export class FormsPage {
+  todo = {};
+  logForm() {
+    console.log(this.todo);
+  }
+}
 
 @Component({
   selector: 'app-login',
@@ -29,32 +48,19 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-  // tslint:disable-next-line:member-ordering
-  authService: AuthService;
-  // tslint:disable-next-line:member-ordering
+         authService: AuthService;
   public userCredential: UserCredential;
-  // tslint:disable-next-line:member-ordering
-  router: Router;
-  // tslint:disable-next-line:member-ordering
+         router: Router;
   public alert: string = null;
-  // tslint:disable-next-line: member-ordering
   public user: User;
-  // tslint:disable-next-line: member-ordering
- // public error: AuthError;
-  // tslint:disable-next-line: member-ordering
+  public error: AuthError;
   //public university: University;
-  // tslint:disable-next-line:member-ordering
-  private skillService: SkillService;
-  // tslint:disable-next-line:member-ordering
+  //private skillService: SkillService;
   validationsForm: FormGroup;
-  // tslint:disable-next-line: member-ordering
   afDB: AngularFireDatabase;
-  // tslint:disable-next-line:member-ordering
   toastController: ToastController;
-  // tslint:disable-next-line:member-ordering
   public afAuth: AngularFireAuth;
   loginData: any;
-   // tslint:disable-next-line:member-ordering
   validationMessages = {
     // tslint:disable-next-line: object-literal-key-quotes
     // Email types and messages error
@@ -69,15 +75,21 @@ export class LoginPage implements OnInit {
       { type: 'minlength', message: 'Password must be at least 5 characters long.' },
       { type: 'pattern', message: 'Your password must contain at least one uppercase, one lowercase, and one number.' }
     ],
-    }
-  // tslint:disable-next-line:max-line-length
-  constructor(authService: AuthService, router: Router, skillService: SkillService, public modalController: ModalController, public formBuilder: FormBuilder)
-   {  //this.skillService = skillService;
-      //this.authService = authService;
-      // this.user = authService.user;
-      //this.userCredential = new UserCredential();
-      this.router = router;
-     // this.university = null;
+    };
+
+  constructor(
+        authService: AuthService, 
+        router: Router, skillService: SkillService, 
+        public modalController: ModalController, 
+        public formBuilder: FormBuilder
+    ) 
+                                    {  
+                                      //  this.skillService = skillService;
+                                       this.authService = AuthService;
+                                       this.user = AuthService.user;
+                                       this.userCredential = new UserCredential();
+                                       this.router = this.router;
+                                    // this.university = null;
   }
   
 ngOnInit() {
@@ -139,6 +151,7 @@ ngOnInit() {
       this.errorMail();
     });
   }
+
   logout() {
     this.afAuth.auth.signOut();
   }
