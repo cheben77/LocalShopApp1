@@ -5,15 +5,16 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { BrowserModule } from '@angular/platform-browser';
-//import { Facebook } from '@ionic-native/facebook/ngx';
-//import { QRScanner } from '@ionic-native/qr-scanner/ngx';
-//import { SplashScreen } from '@ionic-native/splash-screen/ngx';
+import { Facebook } from '@ionic-native/facebook/ngx';
+import { QRScanner } from '@ionic-native/qr-scanner/ngx';
+import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { IonicModule } from '@ionic/angular';
 import { QRCodeModule } from 'angularx-qrcode';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FirebaseService } from './services/firebase.service';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 
 
