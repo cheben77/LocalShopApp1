@@ -31,7 +31,7 @@ import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
 
-//import { Facebook } from '@ionic-native/facebook/ngx';
+import { Facebook } from '@ionic-native/facebook/ngx';
 
 
 export const firebaseConfig = {

@@ -20,6 +20,8 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { Component } from '@angular/core';
+
+
 @Component({
   template: `
     <form (ngSubmit)="logForm()">
@@ -36,11 +38,19 @@ import { Component } from '@angular/core';
   `,
 })
 export class FormsPage {
-  todo = {};
+  private todo: FormGroup;
+
+  constructor( private formBuilder: FormBuilder ) {
+    this.todo = this.formBuilder.group({
+      title: ['', Validators.required],
+      description: [''],
+    });
+  }
   logForm() {
-    console.log(this.todo);
+    console.log(this.todo.value)
   }
 }
+
 
 @Component({
   selector: 'app-login',

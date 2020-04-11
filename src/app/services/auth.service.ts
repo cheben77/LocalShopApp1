@@ -9,8 +9,8 @@ import { Observable } from 'rxjs';
 @Injectable()
 
 export abstract class AuthService {
-  public abstract user: User;
   static user: any;
+  public abstract user: User;
   public abstract getAuth(userCredential: UserCredential): Observable<UserCredential>;
   public abstract getProfile(): Observable<User>;
   public abstract setUser(user: User): any;
