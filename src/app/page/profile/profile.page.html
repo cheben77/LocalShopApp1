@@ -5,14 +5,20 @@
       <img src="./assets/icon/logo.jpg" class="avatarProfile">
     </ion-avatar>
   </div>
+
     <ion-title class="ion-text-center">
             Profil
     </ion-title>
-    <ion-fab vertical="top" horizontal="end" slot="fixed" class="outils">
 
+    <ion-fab 
+      vertical="top" 
+      horizontal="end" 
+      slot="fixed" 
+      class="outils">
       <ion-toggle checked slot="end">
       <ion-icon name="moon" slot="end"></ion-icon>
     </ion-toggle>
+    </ion-fab>
     
 <ion-fab vertical="top" horizontal="start" slot="fixed">
       <ion-fab-button>
@@ -25,7 +31,6 @@
         <ion-fab-button (click)="addPhoto('library')" color="tertiary"><ion-icon name="image">Bibliothèque</ion-icon></ion-fab-button>
       </ion-fab-list>
 </ion-fab>
-
 </ion-header>
 
 <ion-content>

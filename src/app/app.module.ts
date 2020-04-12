@@ -61,7 +61,7 @@ export const firebaseConfig = {
   ],
   providers: [
     FirebaseService,
-    // Facebook,
+    Facebook,
     StatusBar,
     SplashScreen,
     QRScanner,
