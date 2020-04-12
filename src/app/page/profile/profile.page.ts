@@ -44,7 +44,7 @@ export class ProfilePage {
         console.log('connecté: ' + auth.uid);
         this.userId = auth.uid;
         this.mail = auth.email;
-        this.method = auth.providerData[0].providerId;
+        // this.method = auth.providerData[0].providerId;
        // this.badge.set();
        // this.badge.increase();
        // this.badge.clear();

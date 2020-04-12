@@ -3,7 +3,7 @@ import { AngularFireDatabase } from '@angular/fire/database';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { ToastController, ModalController } from '@ionic/angular';
 import { Router } from '@angular/router';
-import { User, constructor } from 'firebase';
+import { User  } from 'src/app/models/user';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { SkillService } from 'src/app/services/skill.service';
 import { AuthService } from 'src/app/services/auth.service';
@@ -12,7 +12,7 @@ import { UserCredential } from 'src/app/models/user-credential';
 import { University } from 'src/app/models/university';
 //import { UnivModalComponent } from 'src/app/components/univ-modal/univ-modal.component';
 import { NavController } from '@ionic/angular';
-import * as firebase from 'firebase/app';
+// import * as firebase from 'firebase/app';
 import { Facebook } from '@ionic-native/facebook/ngx';
 import { Platform } from '@ionic/angular';
 import { AngularFireModule } from '@angular/fire';
@@ -92,13 +92,13 @@ export class LoginPage implements OnInit {
         router: Router, skillService: SkillService, 
         public modalController: ModalController, 
         public formBuilder: FormBuilder
-    ) 
-                                    {  
+    )
+                                    {
                                       //  this.skillService = skillService;
-                                       this.authService = AuthService;
-                                       this.user = AuthService.user;
-                                       this.userCredential = new UserCredential();
-                                       this.router = this.router;
+                                      //  this.authService = AuthService;
+                                      //  this.user = AuthService.user;
+                                      //  this.userCredential = new UserCredential();
+                                      //  this.router = this.router;
                                     // this.university = null;
   }
   
