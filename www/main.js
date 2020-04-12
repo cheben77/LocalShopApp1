@@ -907,6 +907,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ionic_native_qr_scanner_ngx__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @ionic-native/qr-scanner/ngx */ "./node_modules/@ionic-native/qr-scanner/ngx/index.js");
 /* harmony import */ var _ionic_native_camera_ngx__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @ionic-native/camera/ngx */ "./node_modules/@ionic-native/camera/ngx/index.js");
 /* harmony import */ var _ionic_native_in_app_browser_ngx__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @ionic-native/in-app-browser/ngx */ "./node_modules/@ionic-native/in-app-browser/ngx/index.js");
+/* harmony import */ var _ionic_native_facebook_ngx__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @ionic-native/facebook/ngx */ "./node_modules/@ionic-native/facebook/ngx/index.js");
 
 
 
@@ -927,7 +928,7 @@ __webpack_require__.r(__webpack_exports__);
 
 //import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
 
-//import { Facebook } from '@ionic-native/facebook/ngx';
+
 var firebaseConfig = {
     apiKey: 'AIzaSyCcyuFkXAqca0vcsLIQRG2UociZGr2oUrA',
     authDomain: 'geoapp-a10da.firebaseapp.com',
@@ -958,7 +959,7 @@ var AppModule = /** @class */ (function () {
             ],
             providers: [
                 _services_firebase_service__WEBPACK_IMPORTED_MODULE_13__["FirebaseService"],
-                // Facebook,
+                _ionic_native_facebook_ngx__WEBPACK_IMPORTED_MODULE_19__["Facebook"],
                 _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_6__["StatusBar"],
                 _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_5__["SplashScreen"],
                 _ionic_native_qr_scanner_ngx__WEBPACK_IMPORTED_MODULE_16__["QRScanner"],

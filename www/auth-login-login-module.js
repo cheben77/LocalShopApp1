@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n  <ion-toolbar color=\"primary\">\r\n    <ion-title class=\"ion-text-center\">login</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <div class=\"ion-padding\">\r\n    <ion-button shape=\"round\" (click)=\"FacebookLogin()\">\r\n      <ion-icon slot=\"start\" name=\"logo-facebook\"></ion-icon>\r\n        Connexion avec Facebook\r\n    </ion-button>\r\n  </div>\r\n  \r\n</ion-content>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n  <ion-toolbar color=\"primary\">\r\n    <ion-title class=\"ion-text-center\">login</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <div class=\"ion-padding\">\r\n    <ion-button shape=\"round\" (click)=\"FacebookLogin()\">\r\n      <ion-icon slot=\"start\" name=\"logo-facebook\"></ion-icon>\r\n        Connexion avec Facebook\r\n    </ion-button>\r\n  </div>\r\n\r\n\r\n  <!-- with name set -->\r\n<ion-item>\r\n  <ion-label>Todo</ion-label>\r\n  <ion-input type=\"text\" [(ngModel)]=\"todo.title\" name=\"title\"></ion-input>\r\n</ion-item>\r\n\r\n<!-- or with standalone set to true -->\r\n<ion-item>\r\n  <ion-label>Todo</ion-label>\r\n  <ion-input type=\"text\" [(ngModel)]=\"todo.title\" [ngModelOptions]=\"{standalone: true}\"></ion-input>\r\n</ion-item>\r\n  \r\n</ion-content>\r\n");
 
 /***/ }),
 
@@ -80,29 +80,55 @@ __webpack_require__.r(__webpack_exports__);
 /*!***********************************************!*\
   !*** ./src/app/page/auth/login/login.page.ts ***!
   \***********************************************/
-/*! exports provided: LoginPage */
+/*! exports provided: FormsPage, LoginPage */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FormsPage", function() { return FormsPage; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginPage", function() { return LoginPage; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var src_app_services_skill_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/services/skill.service */ "./src/app/services/skill.service.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 
 
+
+
+
+
+var FormsPage = /** @class */ (function () {
+    function FormsPage(formBuilder) {
+        this.formBuilder = formBuilder;
+        this.todo = this.formBuilder.group({
+            title: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required],
+            description: [''],
+        });
+    }
+    FormsPage.prototype.logForm = function () {
+        console.log(this.todo.value);
+    };
+    FormsPage.ctorParameters = function () { return [
+        { type: _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormBuilder"] }
+    ]; };
+    FormsPage = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_5__["Component"])({
+            template: "\n    <form (ngSubmit)=\"logForm()\">\n      <ion-item>\n        <ion-label>Todo</ion-label>\n        <ion-input type=\"text\" [(ngModel)]=\"todo.title\" name=\"title\"></ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-label>Description</ion-label>\n        <ion-textarea [(ngModel)]=\"todo.description\" name=\"description\"></ion-textarea>\n      </ion-item>\n      <button ion-button type=\"submit\" block>Add Todo</button>\n    </form>\n  ",
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormBuilder"]])
+    ], FormsPage);
+    return FormsPage;
+}());
 
 var LoginPage = /** @class */ (function () {
-    // tslint:disable-next-line:max-line-length
     function LoginPage(
     // authService: AuthService, 
-    // router: Router, skillService: SkillService, 
-    // public modalController: ModalController, 
-    // public formBuilder: FormBuilder
-    ) {
-        // tslint:disable-next-line:member-ordering
+    router, skillService, modalController, formBuilder) {
+        this.modalController = modalController;
+        this.formBuilder = formBuilder;
         this.alert = null;
-        // tslint:disable-next-line:member-ordering
         this.validationMessages = {
             // tslint:disable-next-line: object-literal-key-quotes
             // Email types and messages error
@@ -118,24 +144,24 @@ var LoginPage = /** @class */ (function () {
                 { type: 'pattern', message: 'Your password must contain at least one uppercase, one lowercase, and one number.' }
             ],
         };
-        //this.skillService = skillService;
-        // this.authService = AuthService;
-        // this.user = AuthService.user;
-        // this.userCredential = new UserCredential();
-        // this.router = router;
+        //  this.skillService = skillService;
+        //  this.authService = AuthService;
+        //  this.user = AuthService.user;
+        //  this.userCredential = new UserCredential();
+        //  this.router = this.router;
         // this.university = null;
     }
     LoginPage.prototype.ngOnInit = function () {
         this.validationsForm = this.formBuilder.group({
-            email: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].compose([
-                _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required,
-                _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
+            email: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].compose([
+                _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required,
+                _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
             ])),
-            password: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].compose([
-                _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required,
+            password: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].compose([
+                _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required,
                 // validators deactivate for this first phase of projet
-                _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(5),
-                _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$')
+                _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].minLength(5),
+                _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$')
             ]))
         });
     };
@@ -210,15 +236,50 @@ var LoginPage = /** @class */ (function () {
     LoginPage.prototype.logout = function () {
         this.afAuth.auth.signOut();
     };
+    LoginPage.ctorParameters = function () { return [
+        { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] },
+        { type: src_app_services_skill_service__WEBPACK_IMPORTED_MODULE_4__["SkillService"] },
+        { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_1__["ModalController"] },
+        { type: _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormBuilder"] }
+    ]; };
     LoginPage = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_5__["Component"])({
             selector: 'app-login',
             template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./login.page.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/page/auth/login/login.page.html")).default,
             styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./login.page.scss */ "./src/app/page/auth/login/login.page.scss")).default]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], src_app_services_skill_service__WEBPACK_IMPORTED_MODULE_4__["SkillService"],
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_1__["ModalController"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormBuilder"]])
     ], LoginPage);
     return LoginPage;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/skill.service.ts":
+/*!*******************************************!*\
+  !*** ./src/app/services/skill.service.ts ***!
+  \*******************************************/
+/*! exports provided: SkillService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SkillService", function() { return SkillService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var SkillService = /** @class */ (function () {
+    function SkillService() {
+    }
+    SkillService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])()
+    ], SkillService);
+    return SkillService;
 }());
 
 

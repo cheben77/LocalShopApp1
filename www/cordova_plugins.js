@@ -459,6 +459,14 @@ module.exports = [
         "clobbers": [
             "FirebasePlugin"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-calendar/www/Calendar.js",
+        "id": "cordova-plugin-calendar.Calendar",
+        "pluginId": "cordova-plugin-calendar",
+        "clobbers": [
+            "Calendar"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -477,7 +485,8 @@ module.exports.metadata =
     "cordova-plugin-badge": "0.8.8",
     "cordova-plugin-camera": "4.1.0",
     "cordova-plugin-facebook4": "6.4.0",
-    "cordova-plugin-firebase": "2.0.5"
+    "cordova-plugin-firebase": "2.0.5",
+    "cordova-plugin-calendar": "5.1.5"
 }
 // BOTTOM OF METADATA
 });
