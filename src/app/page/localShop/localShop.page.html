@@ -30,7 +30,7 @@
         <ion-col class="ion-align-self-start" [routerLink]="['/localShop']" routerLinkActive="router-link-active" >
          LocalShop 
         </ion-col>
-        <ion-col class="ion-align-self-start" (click)="recurringNotification()">
+        <ion-col class="ion-align-self-start" [routerLink]="['/aventure']" routerLinkActive="router-link-active" >
           Actualités 
         </ion-col>
         <ion-col class="ion-align-self-start" (click)="getAll()">
@@ -235,7 +235,7 @@
   
     <ion-item class="activated">
       <ion-icon name="qr-scanner" slot="start"></ion-icon>
-      <ion-label><ion-button [routerLink]="['/qr-code']" routerLinkActive="router-link-active"> QR Code</ion-button></ion-label>
+      <ion-label><ion-button [routerLink]="['/qrCode']" routerLinkActive="router-link-active"> QR Code</ion-button></ion-label>
     </ion-item>
   
     <ion-item>

@@ -44,7 +44,7 @@ export class ProfilePage {
         console.log('connecté: ' + auth.uid);
         this.userId = auth.uid;
         this.mail = auth.email;
-        // this.method = auth.providerData[0].providerId;
+        this.method = auth.providerData[0].providerId;
        // this.badge.set();
        // this.badge.increase();
        // this.badge.clear();
@@ -58,21 +58,10 @@ export class ProfilePage {
         });
     });
   }
-//========================================================//
-      getImagesDatabase() {
-        this.afDB.list('images').snapshotChanges(['child_added']).subscribe(images => {
-         console.log(images);
-         images.forEach(image => {
-           // tslint:disable-next-line:comment-format
-            //console.log('Reference image: ' + image.payload.exportVal().name);
-            this.getImagesStorage(image);
-    });
-  });
-}
-//========================================================//
+// ========================================================//
 
 
-//========================================================//    
+// ========================================================//    
     getImagesStorage(image: any) {
       const imgRef = image.payload.exportVal().ref;
       // pour récupérer l'URL des images
@@ -84,9 +73,9 @@ export class ProfilePage {
           });
         });
     }
-//========================================================//
+// ========================================================//
 
-//========================================================//
+// ========================================================//
   // tslint:disable-next-line:semicolon
   async addPhoto(source: string) {
     if  (source === 'library') {

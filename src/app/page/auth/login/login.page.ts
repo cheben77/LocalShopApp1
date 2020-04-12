@@ -88,7 +88,7 @@ export class LoginPage implements OnInit {
     };
 
   constructor(
-        authService: AuthService, 
+        // authService: AuthService, 
         router: Router, skillService: SkillService, 
         public modalController: ModalController, 
         public formBuilder: FormBuilder
