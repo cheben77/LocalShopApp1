@@ -20,6 +20,8 @@ export class User {
     // jim addition
     public email: any;
     public password: any;
+    uid: string;
+    providerData: any;
 
     constructor(firstName?, lastName?, city?, auth?, isNew?, hasNewBadge?, email?, password?) {
         this.firstName = firstName;
