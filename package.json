@@ -24,6 +24,7 @@
     "@ionic-native/camera": "^5.23.0",
     "@ionic-native/core": "^5.23.0",
     "@ionic-native/facebook": "^5.23.0",
+    "@ionic-native/firebase": "^5.23.0",
     "@ionic-native/geolocation": "^5.23.0",
     "@ionic-native/google-maps": "^5.5.0",
     "@ionic-native/in-app-browser": "^5.23.0",
@@ -43,6 +44,7 @@
     "cordova-plugin-camera": "^4.1.0",
     "cordova-plugin-geolocation": "^4.0.2",
     "cordova-plugin-googlemaps": "git+https://github.com/mapsplugin/cordova-plugin-googlemaps.git#multiple_maps",
+    "cordova-plugin-googlemaps-sdk": "git+https://github.com/mapsplugin/cordova-plugin-googlemaps-sdk.git",
     "cordova-plugin-inappbrowser": "^3.2.0",
     "cordova-plugin-qrscanner": "^3.0.1",
     "core-js": "^2.5.4"
@@ -93,7 +95,9 @@
       "cordova-plugin-inappbrowser": {},
       "cordova-plugin-geolocation": {},
       "cordova-plugin-badge": {},
-      "cordova-plugin-camera": {}
+      "cordova-plugin-camera": {},
+      "cordova-plugin-googlemaps": {},
+      "cordova-plugin-firebase": {}
     },
     "platforms": [
       "browser",
