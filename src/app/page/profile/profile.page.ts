@@ -64,7 +64,7 @@ export class ProfilePage {
          console.log(images);
          images.forEach(image => {
            // tslint:disable-next-line:comment-format
-            console.log('Reference image: ' + image.payload.exportVal().name);
+            // console.log('Reference image: ' + image.payload.exportVal().name);
             this.getImagesStorage(image);
     });
   });

@@ -12,7 +12,6 @@ import {
 } from '@ionic-native/google-maps';
 import { ActionSheetController, Platform, AlertController } from '@ionic/angular';
 import { Geolocation, Geoposition } from '@ionic-native/geolocation/ngx';
-import { fromEvent, Observable } from 'rxjs';
 import { FirebaseService } from '../../services/firebase.service';
 import { ActivatedRoute } from '@angular/router';
 
@@ -26,8 +25,9 @@ import { ActivatedRoute } from '@angular/router';
 export class GeoCatchingPage {
   map: GoogleMap;
   private geolocation: Geolocation;
-  myPosition: Observable<Geoposition>;
+  //myPosition: Observable<Geoposition>;
   afAuth: any;
+  myPosition: any;
 
   constructor(
     public alertController: AlertController,
@@ -36,17 +36,20 @@ export class GeoCatchingPage {
     public api: FirebaseService
   ) {
     if (this.platform.is('cordova')) {
-      // this.geolocation.getCurrentPosition().then((resp) => {
-      //  // resp.coords.latitude
-      //  // resp.coords.longitude
-      // }).catch((error) => {
-      //   console.log('Error getting location', error);
-      // });
+      this.geolocation.getCurrentPosition().then((resp) => {
+       // tslint:disable-next-line:no-unused-expression
+       resp.coords.latitude;
+       // tslint:disable-next-line:no-unused-expression
+       resp.coords.longitude;
+      }).catch((error) => {
+        console.log('Error getting location', error);
+      });
 
       // tslint:disable-next-line:new-parens
       this.geolocation = new Geolocation;
     }
   }
+
 
   // tslint:disable-next-line:use-lifecycle-interface
   ngOnInit() {
@@ -77,8 +80,8 @@ export class GeoCatchingPage {
 
   loadMap(coords) {
     Environment.setEnv({
-      API_KEY_FOR_BROWSER_RELEASE: 'AIzaSyAJjXyc0-8x1DSdbnS0FhnkmskZ5hHvzlQ',
-      API_KEY_FOR_BROWSER_DEBUG: 'AIzaSyAJjXyc0-8x1DSdbnS0FhnkmskZ5hHvzlQ'
+      API_KEY_FOR_BROWSER_RELEASE: 'AIzaSyCcyuFkXAqca0vcsLIQRG2UociZGr2oUrA',
+      API_KEY_FOR_BROWSER_DEBUG: 'AIzaSyCcyuFkXAqca0vcsLIQRG2UociZGr2oUrA'
     });
     this.map = GoogleMaps.create('map_canvas', {
       camera: {
@@ -165,8 +168,9 @@ export class GeoCatchingPage {
     });
     await alert.present();
   }
+
   logout() {
     this.afAuth.auth.signOut();
-    console.log('déconnécté !!');
+    console.log('déconnecté !!');
   }
 }
