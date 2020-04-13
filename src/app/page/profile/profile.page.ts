@@ -37,7 +37,7 @@ export class ProfilePage {
   constructor(
     public loadingController: LoadingController,
     public alertController: AlertController,
-    // badge: Badge,
+    badge: Badge,
     public afDB: AngularFireDatabase,
     public afAuth: AngularFireAuth,
     public afSG: AngularFireStorage,
@@ -48,18 +48,18 @@ export class ProfilePage {
       if (!auth) {
         console.log('non connecté');
       } else {
-        console.log('connecté: ' + auth.uid);
-        this.userId = auth.uid;
+        // console.log('connecté: ' + auth.uid);
+        // this.userId = auth.uid;
         this.mail = auth.email;
-        this.method = auth.providerData[0].providerId;
+        // this.method = auth.providerData[0].providerId;
        // this.badge.set();
        // this.badge.increase();
        // this.badge.clear();
       }
     });
   }
-//========================================================//
-      getImagesDatabase() {
+// ========================================================//
+    getImagesDatabase() {
         this.afDB.list('images').snapshotChanges(['child_added']).subscribe(images => {
          console.log(images);
          images.forEach(image => {
@@ -69,10 +69,10 @@ export class ProfilePage {
     });
   });
 }
-//========================================================//
+// ========================================================//
 
 
-//========================================================//    
+// ========================================================//    
     getImagesStorage(image: any) {
       const imgRef = image.payload.exportVal().ref;
       // pour récupérer l'URL des images
@@ -84,9 +84,9 @@ export class ProfilePage {
           });
         });
     }
-//========================================================//
+// ========================================================//
 
-//========================================================//
+// ========================================================//
   // tslint:disable-next-line:semicolon
   async addPhoto(source: string) {
     if  (source === 'library') {
@@ -100,9 +100,9 @@ export class ProfilePage {
 
     }
   }
-//========================================================//
+// ========================================================//
 
-//========================================================//
+// ========================================================//
   async openCamera() {
     const options: CameraOptions = {
       quality: 100,
@@ -115,10 +115,10 @@ export class ProfilePage {
     };
     return await this.camera.getPicture(options);
   }
-//========================================================//
+// ========================================================//
 
 
-//========================================================//
+// ========================================================//
 async openLibrary() {
   const options: CameraOptions = {
     quality: 100,
@@ -131,17 +131,17 @@ async openLibrary() {
   };
   return await this.camera.getPicture(options);
 }
-//========================================================//
+// ========================================================//
 
 
-//========================================================//
+// ========================================================//
   logout() {
     this.afAuth.auth.signOut();
   }
-  //========================================================//
+// ========================================================//
 
 
-//========================================================//
+// ========================================================//
   async uploadFirebase() {
     const loading = await this.loadingController.create();
     await loading.present();
@@ -162,5 +162,5 @@ async openLibrary() {
       await alert.present();
   });
   }
-//========================================================//
+// ========================================================//
 }
