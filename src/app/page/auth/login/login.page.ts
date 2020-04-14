@@ -86,12 +86,13 @@ export class LoginPage implements OnInit {
       { type: 'pattern', message: 'Your password must contain at least one uppercase, one lowercase, and one number.' }
     ],
     };
+  formBuilder: any;
 
   constructor(
         // authService: AuthService, 
-        router: Router, skillService: SkillService, 
-        public modalController: ModalController, 
-        public formBuilder: FormBuilder
+        router: Router,
+        // public modalController: ModalController, 
+        // public formBuilder: FormBuilder
     )
                                     {
                                       //  this.skillService = skillService;

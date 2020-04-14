@@ -5,24 +5,29 @@
 </ion-header>
 
 <ion-content>
+<ion-content>
+  <ion-title>
+    Connexion
+  </ion-title>
+  <ion-item>
+    <ion-label>Pseudo</ion-label>
+    <ion-input type="text" [(ngModel)]="todo.title" name="title"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Mot de passe</ion-label>
+      <ion-input type="text" [(ngModel)]="todo.title" [ngModelOptions]="{standalone: true}"></ion-input>
+      </ion-item>
+</ion-content>
+
   <div class="ion-padding">
     <ion-button shape="round" (click)="FacebookLogin()">
       <ion-icon slot="start" name="logo-facebook"></ion-icon>
         Connexion avec Facebook
     </ion-button>
   </div>
-
-
   <!-- with name set -->
-<ion-item>
-  <ion-label>Todo</ion-label>
-  <ion-input type="text" [(ngModel)]="todo.title" name="title"></ion-input>
-</ion-item>
 
 <!-- or with standalone set to true -->
-<ion-item>
-  <ion-label>Todo</ion-label>
-  <ion-input type="text" [(ngModel)]="todo.title" [ngModelOptions]="{standalone: true}"></ion-input>
-</ion-item>
   
 </ion-content>
