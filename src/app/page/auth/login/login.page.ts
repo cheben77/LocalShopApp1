@@ -47,7 +47,7 @@ export class FormsPage {
     });
   }
   logForm() {
-    console.log(this.todo.value)
+    console.log(this.todo.value);
   }
 }
 
@@ -95,13 +95,13 @@ export class LoginPage implements OnInit {
     )
                                     {
                                       //  this.skillService = skillService;
-                                      //  this.authService = AuthService;
-                                      //  this.user = AuthService.user;
-                                      //  this.userCredential = new UserCredential();
-                                      //  this.router = this.router;
+                                      // this.authService = AuthService;
+                                        this.user = AuthService.user;
+                                        this.userCredential = new UserCredential();
+                                        this.router = this.router;
                                     // this.university = null;
   }
-  
+
 ngOnInit() {
     this.validationsForm = this.formBuilder.group({
       email: new FormControl('', Validators.compose([
