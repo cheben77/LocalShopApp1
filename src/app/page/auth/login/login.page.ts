@@ -29,6 +29,7 @@ import { User } from 'src/app/models/user';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
+  providerFb: firebase.auth.FacebookAuthProvider;
   authService: AuthService;
   public userCredential: UserCredential;
   router: Router;
