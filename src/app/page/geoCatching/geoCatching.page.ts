@@ -183,6 +183,6 @@ placeMarker(markerTitle: string) {
   }
   logout() {
     this.afAuth.auth.signOut();
-    console.log('déconnécté !!');
+    console.log('déconnecter !!');
   }
 }

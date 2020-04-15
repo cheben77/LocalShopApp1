@@ -12,7 +12,7 @@ import { UserCredential } from 'src/app/models/user-credential';
 import { University } from 'src/app/models/university';
 //import { UnivModalComponent } from 'src/app/components/univ-modal/univ-modal.component';
 import { NavController } from '@ionic/angular';
-// import * as firebase from 'firebase/app';
+import * as firebase from 'firebase/app';
 import { Facebook } from '@ionic-native/facebook/ngx';
 import { Platform } from '@ionic/angular';
 import { AngularFireModule } from '@angular/fire';
@@ -22,35 +22,34 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { Component } from '@angular/core';
 
 
-@Component({
-  template: `
-    <form (ngSubmit)="logForm()">
-      <ion-item>
-        <ion-label>Todo</ion-label>
-        <ion-input type="text" [(ngModel)]="todo.title" name="title"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label>Description</ion-label>
-        <ion-textarea [(ngModel)]="todo.description" name="description"></ion-textarea>
-      </ion-item>
-      <button ion-button type="submit" block>Add Todo</button>
-    </form>
-  `,
-})
-export class FormsPage {
-  private todo: FormGroup;
-
-  constructor( private formBuilder: FormBuilder ) {
-    this.todo = this.formBuilder.group({
-      title: ['', Validators.required],
-      description: [''],
-    });
-  }
-  logForm() {
-    console.log(this.todo.value);
-  }
-}
-
+// @Component({
+  // template: `
+    // <form (ngSubmit)="logForm()">
+      // <ion-item>
+        // <ion-label>Todo</ion-label>
+        // <ion-input type="text" [(ngModel)]="todo.title" name="title"></ion-input>
+      // </ion-item>
+      // <ion-item>
+        // <ion-label>Description</ion-label>
+        // <ion-textarea [(ngModel)]="todo.description" name="description"></ion-textarea>
+      // </ion-item>
+      // <button ion-button type="submit" block>Add Todo</button>
+    // </form>
+  // `,
+// })
+// export class FormsPage {
+  // private todo: FormGroup;
+// 
+  // constructor( private formBuilder: FormBuilder ) {
+    // this.todo = this.formBuilder.group({
+      // title: ['', Validators.required],
+      // description: [''],
+    // });
+  // }
+  // logForm() {
+    // console.log(this.todo.value);
+  // }
+// }
 
 @Component({
   selector: 'app-login',
@@ -58,6 +57,7 @@ export class FormsPage {
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
+  providerFb: firebase.auth.FacebookAuthProvider;
          authService: AuthService;
   public userCredential: UserCredential;
          router: Router;
@@ -91,12 +91,15 @@ export class LoginPage implements OnInit {
   constructor(
         // authService: AuthService, 
         router: Router,
+        private fb: Facebook,
+        public platform: Platform
         // public modalController: ModalController, 
         // public formBuilder: FormBuilder
     )
                                     {
                                       //  this.skillService = skillService;
                                       // this.authService = AuthService;
+                                        this.providerFb = new firebase.auth.FacebookAuthProvider();
                                         this.user = AuthService.user;
                                         this.userCredential = new UserCredential();
                                         this.router = this.router;
@@ -104,6 +107,7 @@ export class LoginPage implements OnInit {
   }
 
 ngOnInit() {
+    this.facebookLogin();
     this.validationsForm = this.formBuilder.group({
       email: new FormControl('', Validators.compose([
       Validators.required,
@@ -142,6 +146,46 @@ ngOnInit() {
       this.errorMail();
     });
   }
+
+  facebookLogin() {
+    if (this.platform.is('cordova')) {
+      console.log('PLateforme cordova');
+      this.facebookCordova();
+    } else {
+      console.log('PLateforme Web');
+      this.facebookWeb();
+    }
+}
+facebookCordova() {
+  this.fb.login(['email']).then( (response) => {
+      const facebookCredential = firebase.auth.FacebookAuthProvider
+          .credential(response.authResponse.accessToken);
+      firebase.auth().signInWithCredential(facebookCredential)
+      .then((success) => {
+          console.log('Info Facebook: ' + JSON.stringify(success));
+          this.afDB.object('Users/' + success.user.uid).set({
+            displayName: success.user.displayName,
+            photoURL: success.user.photoURL
+          });
+      }).catch((error) => {
+          console.log('Erreur: ' + JSON.stringify(error));
+      });
+  }).catch((error) => { console.log(error); });
+}
+
+facebookWeb() {
+  this.afAuth.auth
+    .signInWithPopup(new firebase.auth.FacebookAuthProvider())
+    .then((success) => {
+      console.log('Info Facebook: ' + JSON.stringify(success));
+      this.afDB.object('Users/' + success.user.uid).set({
+            displayName: success.user.displayName,
+            photoURL: success.user.photoURL
+          });
+    }).catch((error) => {
+      console.log('Erreur: ' + JSON.stringify(error));
+    });
+}
 
   async errorMail() {
     const toast = await this.toastController.create({

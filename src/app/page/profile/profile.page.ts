@@ -37,26 +37,26 @@ export class ProfilePage {
     private camera: Camera
   ) {
     this.getImagesDatabase();
-    // this.afAuth.authState.subscribe(auth => {
-      // if (!auth) {
-        // console.log('non connecté');
-      // } else {
-        // console.log('connecté: ' + auth.uid);
-        // this.userId = auth.uid;
-        // this.mail = auth.email;
-        // this.method = auth.providerData[0].providerId;
-      //  this.badge.set();
-      //  this.badge.increase();
-      //  this.badge.clear();
-      // }
-      // this.plt.ready().then(() =>{
-          // this.localNotification.on('click').subscribe(res =>{
-// 
-          // });
-          // this.localNotification.on('trigger').subscribe(res => {
-          // });
-        // });
-    // });
+    this.afAuth.authState.subscribe(auth => {
+      if (!auth) {
+        console.log('non connecté');
+      } else {
+        console.log('connecté: ' + auth.uid);
+        this.userId = auth.uid;
+        this.mail = auth.email;
+        this.method = auth.providerData[0].providerId;
+        this.badge.set();
+        this.badge.increase();
+        this.badge.clear();
+      }
+      this.plt.ready().then(() =>{
+          this.localNotification.on('click').subscribe(res =>{
+
+          });
+          this.localNotification.on('trigger').subscribe(res => {
+          });
+        });
+    });
   }
 // ========================================================//
       getImagesDatabase() {

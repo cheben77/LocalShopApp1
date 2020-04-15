@@ -18,8 +18,11 @@
       <ion-label>Mot de passe</ion-label>
       <ion-input type="text" [(ngModel)]="todo.title" [ngModelOptions]="{standalone: true}"></ion-input>
       </ion-item>
-</ion-content>
 
+      <ion-button (click)="login">
+        <ion-icon name="">
+        </ion-icon>
+      </ion-button>
   <div class="ion-padding">
     <ion-button shape="round" (click)="FacebookLogin()">
       <ion-icon slot="start" name="logo-facebook"></ion-icon>
