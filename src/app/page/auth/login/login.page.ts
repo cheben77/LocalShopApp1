@@ -12,6 +12,7 @@ import { University } from 'src/app/models/university';
 //import { UnivModalComponent } from 'src/app/components/univ-modal/univ-modal.component';
 import { NavController } from '@ionic/angular';
 
+import * as firebase from 'firebase/app';
 import { Facebook } from '@ionic-native/facebook/ngx';
 import { Platform } from '@ionic/angular';
 import { AngularFireModule } from '@angular/fire';
@@ -57,7 +58,10 @@ export class LoginPage implements OnInit {
     ],
     };
   constructor(
-    authService: AuthService,
+    afDB: AngularFireDatabase,
+    private fb: Facebook,
+    public platform: Platform,
+    //  authService: AuthService,
     router: Router
     //skillService: SkillService, 
     //public modalController: ModalController, 
@@ -65,10 +69,11 @@ export class LoginPage implements OnInit {
     )
    {
      //this.skillService = skillService;
-      //this.authService = authService;
-        this.user = authService.user;
-        this.userCredential = new UserCredential();
-        this.router = router;
+     this.providerFb = new firebase.auth.FacebookAuthProvider();
+     this.authService = this.authService;
+    //  this.user = authService.user;
+      // this.userCredential = new UserCredential();
+     this.router = router;
      // this.university = null;
   }
   
@@ -110,6 +115,45 @@ ngOnInit() {
       this.errorMail();
     });
   }
+  facebookLogin() {
+    if (this.platform.is('cordova')) {
+      console.log('PLateforme cordova');
+      this.facebookCordova();
+    } else {
+      console.log('PLateforme Web');
+      this.facebookWeb();
+    }
+}
+facebookCordova() {
+  this.fb.login(['email']).then( (response) => {
+      const facebookCredential = firebase.auth.FacebookAuthProvider
+          .credential(response.authResponse.accessToken);
+      firebase.auth().signInWithCredential(facebookCredential)
+      .then((success) => {
+          console.log('Info Facebook: ' + JSON.stringify(success));
+          this.afDB.object('Users/' + success.user.uid).set({
+            displayName: success.user.displayName,
+            photoURL: success.user.photoURL
+          });
+      }).catch((error) => {
+          console.log('Erreur: ' + JSON.stringify(error));
+      });
+  }).catch((error) => { console.log(error); });
+}
+
+facebookWeb() {
+  this.afAuth.auth
+    .signInWithPopup(new firebase.auth.FacebookAuthProvider())
+    .then((success) => {
+      console.log('Info Facebook: ' + JSON.stringify(success));
+      this.afDB.object('Users/' + success.user.uid).set({
+            displayName: success.user.displayName,
+            photoURL: success.user.photoURL
+          });
+    }).catch((error) => {
+      console.log('Erreur: ' + JSON.stringify(error));
+    });
+}
 
   async errorMail() {
     const toast = await this.toastController.create({
@@ -133,5 +177,6 @@ ngOnInit() {
 
   logout() {
     this.afAuth.auth.signOut();
+    console.log('Utilisateur déconnecter');
   }
 }
