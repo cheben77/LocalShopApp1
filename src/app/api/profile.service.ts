@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-// import * as firebase from 'firebase';
 import { LoadingController, AlertController } from '@ionic/angular';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { AngularFireAuth } from '@angular/fire/auth';
