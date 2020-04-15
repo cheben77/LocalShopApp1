@@ -104,7 +104,8 @@
       "cordova-plugin-facebook4": {
         "APP_ID": "290889701876354",
         "APP_NAME": "LocalShop"
-      }
+      },
+      "cordova-plugin-firebase": {}
     },
     "platforms": [
       "browser",
