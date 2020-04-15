@@ -25,7 +25,7 @@ import { ActivatedRoute } from '@angular/router';
 export class GeoCatchingPage {
   map: GoogleMap;
   private geolocation: Geolocation;
-  //myPosition: Observable<Geoposition>;
+  // myPosition: Observable<Geoposition>;
   afAuth: any;
   myPosition: any;
 
@@ -55,9 +55,7 @@ export class GeoCatchingPage {
   ngOnInit() {
     console.log(this.platform, 'plop');
     if (this.platform.is('cordova')) {
-
       this.myPosition = this.geolocation.watchPosition();
-
       this.myPosition.subscribe(data => {
         this.loadMap(data.coords);
         this.map.addMarker({
@@ -72,7 +70,6 @@ export class GeoCatchingPage {
             animation: 'DROP',
             position: QRCodePosition
           });
-
         }));
       });
     }
