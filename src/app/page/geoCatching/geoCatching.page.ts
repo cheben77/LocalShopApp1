@@ -23,6 +23,7 @@ import { ActivatedRoute } from '@angular/router';
 
 
 export class GeoCatchingPage {
+  
   map: GoogleMap;
   private geolocation: Geolocation;
   // myPosition: Observable<Geoposition>;

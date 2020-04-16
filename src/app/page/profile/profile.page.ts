@@ -7,18 +7,18 @@ import { LoadingController, AlertController } from '@ionic/angular';
 import { AngularFireStorage } from '@angular/fire/storage';
 
 // tslint:disable-next-line:component-class-suffix
-export class RefresherExample {
-  constructor() {}
-
-  doRefresh(event) {
-    console.log('Begin async operation');
-
-    setTimeout(() => {
-      console.log('Async operation has ended');
-      event.target.complete();
-    }, 2000);
-  }
-}
+// export class RefresherExample {
+  // constructor() {}
+// 
+  // doRefresh(event) {
+    // console.log('Begin async operation');
+// 
+    // setTimeout(() => {
+      // console.log('Async operation has ended');
+      // event.target.complete();
+    // }, 2000);
+  // }
+// }
 @Component({
   selector: 'app-profile',
   templateUrl: 'profile.page.html',
@@ -32,6 +32,7 @@ export class ProfilePage {
   imagePath: string;
   upload: any;
   images = [];
+  badge: any;
 
 
   constructor(
@@ -48,13 +49,13 @@ export class ProfilePage {
       if (!auth) {
         console.log('non connecté');
       } else {
-        // console.log('connecté: ' + auth.uid);
-        // this.userId = auth.uid;
-        this.mail = auth.email;
-        // this.method = auth.providerData[0].providerId;
-       // this.badge.set();
-       // this.badge.increase();
-       // this.badge.clear();
+         console.log('connecté: ' + auth.uid);
+         this.userId = auth.uid;
+         this.mail = auth.email;
+         this.method = auth.providerData[0].providerId;
+         this.badge.set();
+         this.badge.increase();
+         this.badge.clear();
       }
     });
   }

@@ -57,6 +57,9 @@ export class LoginPage implements OnInit {
       { type: 'pattern', message: 'Your password must contain at least one uppercase, one lowercase, and one number.' }
     ],
     };
+  afDG: any;
+
+
   constructor(
     afDB: AngularFireDatabase,
     private fb: Facebook,
@@ -72,12 +75,13 @@ export class LoginPage implements OnInit {
      this.providerFb = new firebase.auth.FacebookAuthProvider();
      this.authService = this.authService;
     //  this.user = authService.user;
-      // this.userCredential = new UserCredential();
+     this.userCredential = new UserCredential();
      this.router = router;
      // this.university = null;
   }
   
 ngOnInit() {
+  this.afDB = this.afDB;
     // this.validationsForm = this.formBuilder.group({
       // email: new FormControl('', Validators.compose([
       // Validators.required,
@@ -92,12 +96,12 @@ ngOnInit() {
   // });
 }
 
-// add() {
-//     this.afDG.list('User/').push({
-//       pseudo: '',
-//       Age: '',
-//     });
-//   }
+add() {
+    this.afDG.list('User/').push({
+      pseudo: '',
+      Age: '',
+    });
+  }
 
   async login() {
     const toastLog = await this.toastController.create({
