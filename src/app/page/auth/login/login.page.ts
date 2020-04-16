@@ -115,6 +115,7 @@ ngOnInit() {
       this.errorMail();
     });
   }
+  
   facebookLogin() {
     if (this.platform.is('cordova')) {
       console.log('PLateforme cordova');

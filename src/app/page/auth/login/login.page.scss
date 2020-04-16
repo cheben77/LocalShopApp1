@@ -32,4 +32,12 @@
     --ion-color-shade: var(--ion-color-google-shade) !important;
     --ion-color-tint: var(--ion-color-google-tint) !important;
   }
+  ion-toolbar{
+    text-align: center;
+    float: inline-start;
+  }
+
+  ion-label{
+    border-bottom: medium;
+  }
   
