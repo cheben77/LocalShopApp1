@@ -12,7 +12,7 @@ import { University } from 'src/app/models/university';
 //import { UnivModalComponent } from 'src/app/components/univ-modal/univ-modal.component';
 import { NavController } from '@ionic/angular';
 
-import * as firebase from 'firebase/app';
+// import * as firebase from 'firebase/app';
 import { Facebook } from '@ionic-native/facebook/ngx';
 import { Platform } from '@ionic/angular';
 import { AngularFireModule } from '@angular/fire';
@@ -63,7 +63,7 @@ export class LoginPage implements OnInit {
   afDG: any;
   connected: boolean;
   email: '';
-  userId: '';
+  userId: string;
   method: '';
 
 
@@ -83,7 +83,7 @@ export class LoginPage implements OnInit {
        if (!auth){
          console.log('non connétééé');
          this.connected = false;
-       } else{
+       } else {
          console.log('connectééé ' + auth.uid);
          this.userId = auth.uid;
          this.email = auth.email;
