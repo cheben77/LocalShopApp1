@@ -38,7 +38,7 @@ export class ProfilePage {
   constructor(
     public loadingController: LoadingController,
     public alertController: AlertController,
-    badge: Badge,
+    // badge: Badge,
     public afDB: AngularFireDatabase,
     public afAuth: AngularFireAuth,
     public afSG: AngularFireStorage,
@@ -47,15 +47,15 @@ export class ProfilePage {
     this.getImagesDatabase();
     this.afAuth.authState.subscribe(auth => {
       if (!auth) {
-        console.log('non connecté');
+        console.log('non connectéPageProfile');
       } else {
          console.log('connecté: ' + auth.uid);
          this.userId = auth.uid;
          this.mail = auth.email;
          this.method = auth.providerData[0].providerId;
-         this.badge.set();
-         this.badge.increase();
-         this.badge.clear();
+        //  this.badge.set();
+        //  this.badge.increase();
+        //  this.badge.clear();
       }
     });
   }

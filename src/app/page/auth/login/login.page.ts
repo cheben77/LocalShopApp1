@@ -42,7 +42,6 @@ export class LoginPage implements OnInit {
   validationsForm: FormGroup;
   afDB: AngularFireDatabase;
   toastController: ToastController;
-  public afAuth: AngularFireAuth;
   loginData: any;
   validationMessages = {
     // Email types and messages error
@@ -57,12 +56,18 @@ export class LoginPage implements OnInit {
       { type: 'pattern', message: 'Your password must contain at least one uppercase, one lowercase, and one number.' }
     ],
     };
+  dataUser = {
+    email: '',
+    motDePasse: ''
+  };
   afDG: any;
+  connected: boolean;
 
 
   constructor(
     afDB: AngularFireDatabase,
     private fb: Facebook,
+    public afAuth: AngularFireAuth,
     public platform: Platform,
     //  authService: AuthService,
     router: Router
@@ -70,7 +75,16 @@ export class LoginPage implements OnInit {
     //public modalController: ModalController, 
     //public formBuilder: FormBuilder
     )
-   {
+   {  
+     this.afAuth.authState.subscribe( auth => {
+       if (!auth){
+         console.log('non connétééé');
+         this.connected = false;
+       } else{
+         console.log('connectééé');
+         this.connected = true;
+       }
+     });
      //this.skillService = skillService;
      this.providerFb = new firebase.auth.FacebookAuthProvider();
      this.authService = this.authService;
@@ -98,26 +112,34 @@ ngOnInit() {
 
 add() {
     this.afDG.list('User/').push({
-      pseudo: '',
-      Age: '',
+      pseudo: 'Cheben',
+      Age: '34',
     });
   }
 
   async login() {
-    const toastLog = await this.toastController.create({
-      message: 'Ravi de terevoir !!',
-      duration: 2000,
-      position: 'top'
-    });
-    toastLog.present();
-    this.afAuth.auth.signInWithEmailAndPassword(this.loginData.email, this.loginData.password)
-    .then(auth => {
-      console.log('utilisateur connecté');
-    })
-    .catch(err => {
-      console.log('Erreur: ' + err);
-      this.errorMail();
-    });
+    console.log('email: ' + this.dataUser.email);
+    console.log('motDePasse:  ' + this.dataUser.motDePasse);
+    this.afAuth.auth.signInWithEmailAndPassword(this.dataUser.email, 
+                                               this.dataUser.motDePasse);
+    this.dataUser = {
+     email: '',
+     motDePasse: ''
+   };
+    // const toastLog = await this.toastController.create({
+      // message: 'Ravi de terevoir !!',
+      // duration: 2000,
+      // position: 'top'
+    // });
+    // toastLog.present();
+    // this.afAuth.auth.signInWithEmailAndPassword(this.loginData.email, this.loginData.password)
+    // .then(auth => {
+      // console.log('utilisateur connecté');
+    // })
+    // .catch(err => {
+      // console.log('Erreur: ' + err);
+      // this.errorMail();
+    // });
   }
   
   facebookLogin() {
