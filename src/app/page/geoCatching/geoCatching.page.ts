@@ -36,19 +36,19 @@ export class GeoCatchingPage {
     public platform: Platform,
     public api: FirebaseService
   ) {
-    if (this.platform.is('cordova')) {
-      this.geolocation.getCurrentPosition().then((resp) => {
-       // tslint:disable-next-line:no-unused-expression
-       resp.coords.latitude;
-       // tslint:disable-next-line:no-unused-expression
-       resp.coords.longitude;
-      }).catch((error) => {
-        console.log('Error getting location', error);
-      });
-
+    // if (this.platform.is('cordova')) {
+      // this.geolocation.getCurrentPosition().then((resp) => {
+      //  tslint:disable-next-line:no-unused-expression
+      //  resp.coords.latitude;
+      //  tslint:disable-next-line:no-unused-expression
+      //  resp.coords.longitude;
+      // }).catch((error) => {
+        // console.log('Error getting location', error);
+      // });
+// 
       // tslint:disable-next-line:new-parens
-      this.geolocation = new Geolocation;
-    }
+      // this.geolocation = new Geolocation;
+    // }
   }
 
 

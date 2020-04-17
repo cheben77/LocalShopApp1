@@ -62,6 +62,9 @@ export class LoginPage implements OnInit {
   };
   afDG: any;
   connected: boolean;
+  email: '';
+  userId: '';
+  method: '';
 
 
   constructor(
@@ -81,7 +84,10 @@ export class LoginPage implements OnInit {
          console.log('non connétééé');
          this.connected = false;
        } else{
-         console.log('connectééé');
+         console.log('connectééé ' + auth.uid);
+         this.userId = auth.uid;
+         this.email = auth.email;
+         this.method = auth.providerData(0).providerId;
          this.connected = true;
        }
      });
@@ -132,7 +138,8 @@ add() {
       // position: 'top'
     // });
     // toastLog.present();
-    // this.afAuth.auth.signInWithEmailAndPassword(this.loginData.email, this.loginData.password)
+    // this.afAuth.auth.signInWithEmailAndPassword(
+      // this.loginData.email, this.loginData.password)
     // .then(auth => {
       // console.log('utilisateur connecté');
     // })
@@ -140,6 +147,7 @@ add() {
       // console.log('Erreur: ' + err);
       // this.errorMail();
     // });
+    console.log('vous etes connecter');
   }
   
   facebookLogin() {
@@ -192,14 +200,18 @@ facebookWeb() {
   }
 
   async signUp() {
-    this.afAuth.auth.createUserWithEmailAndPassword(this.loginData.email, this.loginData.password)
-    .then(auth => {
-      console.log('utilisateur créer');
-    })
-    .catch(err => {
-      console.log('Erreur: ' + err);
-      this.errorMail();
-    });
+    this.afAuth.auth.createUserWithEmailAndPassword(this.loginData.email, this.loginData.password);
+    this.dataUser = {
+      email: '',
+      motDePasse: ''
+    };
+    // .then(auth => {
+      // console.log('utilisateur créer');
+    // })
+    // .catch(err => {
+      // console.log('Erreur: ' + err);
+      // this.errorMail();
+    // });
   }
 
   logout() {

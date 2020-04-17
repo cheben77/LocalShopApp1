@@ -26,7 +26,7 @@ import { AngularFireStorage } from '@angular/fire/storage';
 })
 export class ProfilePage {
   userId: string;
-  mail: string;
+  email: string;
   method: any;
   image = 'https://www.kasterencultuur.nl/editor/placeholder.jpg';
   imagePath: string;
@@ -51,7 +51,7 @@ export class ProfilePage {
       } else {
          console.log('connecté: ' + auth.uid);
          this.userId = auth.uid;
-         this.mail = auth.email;
+         this.email = auth.email;
          this.method = auth.providerData[0].providerId;
         //  this.badge.set();
         //  this.badge.increase();
@@ -147,8 +147,9 @@ async openLibrary() {
     const loading = await this.loadingController.create();
     await loading.present();
     // tslint:disable-next-line:no-unused-expression
-    this.imagePath = //'User/img'
-     new Date().getTime() + '.jpg';
+    this.imagePath = 'user/image';
+    // tslint:disable-next-line:no-unused-expression
+    new Date().getTime() + '.jpg';
 
 
     this.upload = this.afSG.ref(this.imagePath).putString(this.image, 'data_url');

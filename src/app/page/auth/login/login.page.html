@@ -20,9 +20,15 @@
         Mot de passe
       </ion-label>
       <ion-input [(ngModel)]="dataUser.motDePasse" type="password"></ion-input>
-      <ion-button expand="block" (click)="login()">connexion
+      <ion-button expand="block" (click)="login()" >connexion
         <ion-icon name=""></ion-icon>
       </ion-button>
+
+      <ion-button (click)="signUp()" color="tertiary" expand="block">
+          Inscription
+      </ion-button>
+
+
       <ion-button (click)="logout()">
         <ion-icon (click)="logout()">
         </ion-icon>
@@ -32,6 +38,14 @@
 
 <div *ngIf="connected">
 <h1>Ravi de te voir </h1>
+<ion-label>
+  <ion-item>
+    Adrresse email
+  </ion-item>
+</ion-label>
+<h2>
+ {{  email }}
+</h2>
 </div>
 
 
