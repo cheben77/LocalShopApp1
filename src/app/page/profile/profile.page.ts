@@ -29,7 +29,7 @@ export class ProfilePage {
 // ========================================================//
   constructor(
     public afAuth: AngularFireAuth,
-    badge: Badge,
+    // badge: Badge,
     public afDB: AngularFireDatabase,
     public afSG: AngularFireStorage,
     public loadingController: LoadingController,
@@ -45,21 +45,21 @@ export class ProfilePage {
         this.userId = auth.uid;
         this.mail = auth.email;
         this.method = auth.providerData[0].providerId;
-        this.badge.set();
-        this.badge.increase();
-        this.badge.clear();
+        // this.badge.set();
+        // this.badge.increase();
+        // this.badge.clear();
       }
-      this.plt.ready().then(() =>{
-          this.localNotification.on('click').subscribe(res =>{
-
-          });
-          this.localNotification.on('trigger').subscribe(res => {
-          });
-        });
+      // this.plt.ready().then(() =>{
+          // this.localNotification.on('click').subscribe(res =>{
+// 
+          // });
+          // this.localNotification.on('trigger').subscribe(res => {
+          // });
+        // });
     });
   }
 // ========================================================//
-      getImagesDatabase() {
+    getImagesDatabase() {
         this.afDB.list('images').snapshotChanges(['child_added']).subscribe(images => {
          console.log(images);
          images.forEach(image => {
@@ -88,7 +88,7 @@ export class ProfilePage {
 
 // ========================================================//
   // tslint:disable-next-line:semicolon
-  async addPhoto(source: string) {
+    async addPhoto(source: string) {
     if  (source === 'library') {
        console.log('library');
        const libraryImage = await this.openLibrary();
@@ -103,7 +103,7 @@ export class ProfilePage {
 // ========================================================//
 
 // ========================================================//
-async openCamera() {
+    async openCamera() {
     const options: CameraOptions = {
       quality: 100,
       destinationType: this.camera.DestinationType.DATA_URL,
@@ -118,7 +118,7 @@ async openCamera() {
 // ========================================================//
 
 // ========================================================//
-async openLibrary() {
+    async openLibrary() {
   const options: CameraOptions = {
     quality: 100,
     destinationType: this.camera.DestinationType.DATA_URL,
@@ -133,13 +133,13 @@ async openLibrary() {
 // ========================================================//
 
 // ========================================================//
-  logout() {
+    logout() {
     this.afAuth.auth.signOut();
   }
 // ========================================================//
 
 // ================Function UpLoad_FireBase========================================//
-  async uploadFirebase() {
+    async uploadFirebase() {
 // ==================Mise en place de l'image dans le Profile User FireBase==================================//
     const loading = await this.loadingController.create();
     await loading.present();

@@ -57,6 +57,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
+  loginData = {
+    email: '',
+    password: ''
+  };
   providerFb: firebase.auth.FacebookAuthProvider;
          authService: AuthService;
   public userCredential: UserCredential;
@@ -68,9 +72,6 @@ export class LoginPage implements OnInit {
   //private skillService: SkillService;
   validationsForm: FormGroup;
   afDB: AngularFireDatabase;
-  toastController: ToastController;
-  public afAuth: AngularFireAuth;
-  loginData: any;
   validationMessages = {
     // tslint:disable-next-line: object-literal-key-quotes
     // Email types and messages error
@@ -91,6 +92,8 @@ export class LoginPage implements OnInit {
   constructor(
         // authService: AuthService, 
         router: Router,
+        public toastController: ToastController,
+        public afAuth: AngularFireAuth,
         private fb: Facebook,
         public platform: Platform
         // public modalController: ModalController, 
@@ -130,13 +133,24 @@ ngOnInit() {
 //     });
 //   }
 
-  async login() {
-    const toastLog = await this.toastController.create({
-      message: 'Ravi de terevoir !!',
-      duration: 2000,
-      position: 'top'
-    });
-    toastLog.present();
+  // async login() {
+    // const toastLog = await this.toastController.create({
+      // message: 'Ravi de terevoir !!',
+      // duration: 2000,
+      // position: 'top'
+    // });
+    // toastLog.present();
+    // this.afAuth.auth.signInWithEmailAndPassword(this.loginData.email, this.loginData.password)
+    // .then(auth => {
+      // console.log('utilisateur connecté');
+    // })
+    // .catch(err => {
+      // console.log('Erreur: ' + err);
+      // this.errorMail();
+    // });
+  // }
+
+  login() {
     this.afAuth.auth.signInWithEmailAndPassword(this.loginData.email, this.loginData.password)
     .then(auth => {
       console.log('utilisateur connecté');
@@ -146,6 +160,7 @@ ngOnInit() {
       this.errorMail();
     });
   }
+
 
   facebookLogin() {
     if (this.platform.is('cordova')) {

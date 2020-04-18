@@ -5,21 +5,21 @@
 </ion-header>
 
 <ion-content>
-<ion-content>
+<ion-header>
   <ion-title>
     Connexion
   </ion-title>
   <ion-item>
     <ion-label>Pseudo</ion-label>
-    <ion-input type="text" [(ngModel)]="login" name="title"></ion-input>
+    <ion-input type="text" [(ngModel)]="loginData.email" name="title"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label>Mot de passe</ion-label>
-      <ion-input type="text" [(ngModel)]="todo.title" [ngModelOptions]="{standalone: true}"></ion-input>
+      <ion-input type="text" [(ngModel)]="loginData.password" [ngModelOptions]="{standalone: true}"></ion-input>
       </ion-item>
 
-      <ion-button (click)="login">
+      <ion-button (click)="login">Connexion
         <ion-icon name="">
         </ion-icon>
       </ion-button>
@@ -33,4 +33,5 @@
 
 <!-- or with standalone set to true -->
   
+</ion-header>
 </ion-content>

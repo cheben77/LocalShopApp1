@@ -38,7 +38,12 @@ const routes: Routes = [
   {
     path: 'partenaires-maps',
     loadChildren: () => import('./page/partenaires-maps/partenaires-maps.module').then( m => m.PartenairesMapsPageModule)
+  },
+  {
+    path: 'infos',
+    loadChildren: () => import('./page/infos/infos.module').then( m => m.InfosPageModule)
   }
+
 
 ];
 @NgModule({
