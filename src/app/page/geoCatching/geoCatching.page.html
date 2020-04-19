@@ -1,26 +1,10 @@
-<ion-header class="ion-padding">
-  <div class="followings">
-    <ion-avatar>
-      <img src="./assets/icon/logo.jpg" class="avatarProfile">
-    </ion-avatar>
-  </div>
-    <ion-title class="ion-text-center">
-      Aventure Games
-    </ion-title> 
+<ion-header>
   <ion-toolbar color="success">
-    <ion-toolbar>
-      <ion-item slot="start">
-         <ion-label>Modes d'aventures</ion-label>
-           <ion-select value="brown" okText="Ok" cancelText="Annuler">
-             <ion-select-option value="brown">Missions</ion-select-option>
-             <ion-select-option value="blonde">Partenaires</ion-select-option>
-             <ion-select-option value="black">Quete de savoir</ion-select-option>
-           </ion-select>
-       </ion-item>
-   </ion-toolbar>
-    
+    <ion-title class="ion-text-center">
+      GéoCatching Game !!
+    </ion-title>
     <ion-buttons slot="end">
-      <ion-button>
+      <ion-button (click)="addMarker()">
         <ion-icon slot="icon-only" name="add-circle-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -28,26 +12,26 @@
 </ion-header>
 
 <ion-content>
-    <div id="map_canvas">
-      <ion-fab vertical="bottom" horizontal="start" slot="fixed">
-        <ion-fab-button>
-          <ion-icon name="share"></ion-icon>
-        </ion-fab-button>
-        <ion-fab-list side="top">
-          <ion-fab-button><ion-icon name="log-out" color="danger" (click)="logout()" [routerLink]="['/tabs/login']"></ion-icon></ion-fab-button>
-        </ion-fab-list>
-        <ion-fab-list side="bottom">
-          <ion-fab-button><ion-icon name="qr-scanner" color="tertiary" [routerLink]="['/tabs/qrCode']" routerLinkActive="router-link-active" ></ion-icon></ion-fab-button>
-        </ion-fab-list>
-        <ion-fab-list side="start">
-          <ion-fab-button><ion-icon name="logo-instagram"></ion-icon></ion-fab-button>
-        </ion-fab-list>
-      </ion-fab> 
-    </div>
-    <!-- <ion-fab vertical="bottom" horizontal="start" slot="fixed">
-    <ion-fab-button color="success" [routerLink]="['/aventure']" routerLinkActive="router-link-active" >
-      <ion-icon name="cog"></ion-icon>
+  <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="share"></ion-icon>
     </ion-fab-button>
-  </ion-fab> -->  
-    
+    <ion-fab-list side="top">
+      <ion-fab-button><ion-icon name="log-out" color="danger" (click)="logout()" [routerLink]="['/tabs/login']"></ion-icon></ion-fab-button>
+    </ion-fab-list>
+    <ion-fab-list side="bottom">
+      <ion-fab-button><ion-icon name="qr-scanner" color="tertiary" [routerLink]="['/tabs/qrCode']" routerLinkActive="router-link-active" ></ion-icon></ion-fab-button>
+    </ion-fab-list>
+    <ion-fab-list side="start">
+      <ion-fab-button><ion-icon name="logo-instagram"></ion-icon></ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+  
+  <div id="map_canvas">
+    <ion-fab vertical="bottom" horizontal="start" slot="fixed">
+      <ion-fab-button color="success" (click)="mapOptions()">
+        <ion-icon name="map"></ion-icon>
+    </ion-fab-button>
+    </ion-fab>
+  </div>
 </ion-content>

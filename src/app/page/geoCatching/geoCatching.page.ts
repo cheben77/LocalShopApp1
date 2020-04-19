@@ -13,7 +13,7 @@ import {
   Circle
 } from '@ionic-native/google-maps';
 import { ActionSheetController, Platform, AlertController } from '@ionic/angular';
-import { Geolocation, Geoposition } from '@ionic-native/geolocation/ngx';
+//import { Geolocation, Geoposition } from '@ionic-native/geolocation/ngx';
 import { fromEvent, Observable } from 'rxjs';
 import { FirebaseService } from '../../services/firebase.service';
 import { ActivatedRoute } from '@angular/router';
@@ -28,8 +28,9 @@ import { async } from 'rxjs/internal/scheduler/async';
 export class GeoCatchingPage {
   map: GoogleMap;
   private geolocation: Geolocation;
-  myPosition: Observable<Geoposition>;
+  // myPosition: Observable<Geoposition>;
   afAuth: any;
+  myPosition: any;
 
   constructor(
     public alertController: AlertController,
@@ -46,7 +47,7 @@ export class GeoCatchingPage {
       // });
 
       // tslint:disable-next-line:new-parens
-      this.geolocation = new Geolocation;
+      // this.geolocation = new Geolocation;
     }
   }
 
@@ -55,7 +56,7 @@ export class GeoCatchingPage {
     console.log(this.platform, 'plop');
     if (this.platform.is('cordova')) {
 
-      this.myPosition = this.geolocation.watchPosition();
+      // this.myPosition = this.geolocation.watchPosition();
 
       this.myPosition.subscribe(data => {
         this.loadMap(data.coords);
@@ -108,7 +109,6 @@ export class GeoCatchingPage {
     this.map.setMapTypeId(GoogleMapsMapTypeId.SATELLITE);
   }
  //===================================================//
-
   // async mapOptions() {
   //   const actionSheet = await this.actionCtrl.create({
   //     buttons: [{

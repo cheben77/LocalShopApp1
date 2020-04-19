@@ -124,7 +124,6 @@ ngOnInit() {
     ]))
   });
 }
-  // tslint:disable-next-line:align
 
 // add() {
 //     this.afDG.list('User/').push({
@@ -161,7 +160,6 @@ ngOnInit() {
     });
   }
 
-
   facebookLogin() {
     if (this.platform.is('cordova')) {
       console.log('PLateforme cordova');
@@ -171,6 +169,7 @@ ngOnInit() {
       this.facebookWeb();
     }
 }
+
 facebookCordova() {
   this.fb.login(['email']).then( (response) => {
       const facebookCredential = firebase.auth.FacebookAuthProvider
@@ -224,5 +223,6 @@ facebookWeb() {
 
   logout() {
     this.afAuth.auth.signOut();
+    console.log('User Deconnecter');
   }
 }
