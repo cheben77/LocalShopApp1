@@ -87,6 +87,7 @@ export class LoginPage implements OnInit {
       { type: 'pattern', message: 'Your password must contain at least one uppercase, one lowercase, and one number.' }
     ],
     };
+<<<<<<< HEAD
   formBuilder: any;
 
   constructor(
@@ -107,6 +108,20 @@ export class LoginPage implements OnInit {
                                         this.userCredential = new UserCredential();
                                         this.router = this.router;
                                     // this.university = null;
+=======
+  // tslint:disable-next-line:max-line-length
+  constructor(
+    authService: AuthService, 
+    router: Router, skillService: SkillService, 
+    public modalController: ModalController, 
+    public formBuilder: FormBuilder) {
+      //this.skillService = skillService;
+      //this.authService = authService;
+      // this.user = authService.user;
+      //this.userCredential = new UserCredential();
+      this.router = router;
+     // this.university = null;
+>>>>>>> MarquetPlace
   }
 
 ngOnInit() {
@@ -124,7 +139,6 @@ ngOnInit() {
     ]))
   });
 }
-  // tslint:disable-next-line:align
 
 // add() {
 //     this.afDG.list('User/').push({
@@ -224,5 +238,6 @@ facebookWeb() {
 
   logout() {
     this.afAuth.auth.signOut();
+    console.log('User Deconnecter');
   }
 }

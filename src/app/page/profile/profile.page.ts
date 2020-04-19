@@ -6,6 +6,10 @@ import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { LoadingController, AlertController } from '@ionic/angular';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { Injectable } from '@angular/core';
+<<<<<<< HEAD
+=======
+//import * as firebase from 'firebase';
+>>>>>>> MarquetPlace
 // ========================================================//
 
 
@@ -49,6 +53,7 @@ export class ProfilePage {
         // this.badge.increase();
         // this.badge.clear();
       }
+<<<<<<< HEAD
       // this.plt.ready().then(() =>{
           // this.localNotification.on('click').subscribe(res =>{
 // 
@@ -86,6 +91,18 @@ export class ProfilePage {
     }
 // ========================================================//
 
+=======
+      this.plt.ready().then(() =>{
+          this.localNotification.on('click').subscribe(res =>{
+
+          });
+          this.localNotification.on('trigger').subscribe(res => {
+            
+          });
+        });
+    });
+  }
+>>>>>>> MarquetPlace
 // ========================================================//
   // tslint:disable-next-line:semicolon
     async addPhoto(source: string) {
@@ -103,7 +120,11 @@ export class ProfilePage {
 // ========================================================//
 
 // ========================================================//
+<<<<<<< HEAD
     async openCamera() {
+=======
+async openCamera() {
+>>>>>>> MarquetPlace
     const options: CameraOptions = {
       quality: 100,
       destinationType: this.camera.DestinationType.DATA_URL,
@@ -118,7 +139,11 @@ export class ProfilePage {
 // ========================================================//
 
 // ========================================================//
+<<<<<<< HEAD
     async openLibrary() {
+=======
+async openLibrary() {
+>>>>>>> MarquetPlace
   const options: CameraOptions = {
     quality: 100,
     destinationType: this.camera.DestinationType.DATA_URL,
@@ -133,20 +158,34 @@ export class ProfilePage {
 // ========================================================//
 
 // ========================================================//
+<<<<<<< HEAD
     logout() {
+=======
+  logout() {
+>>>>>>> MarquetPlace
     this.afAuth.auth.signOut();
   }
 // ========================================================//
 
 // ================Function UpLoad_FireBase========================================//
+<<<<<<< HEAD
     async uploadFirebase() {
 // ==================Mise en place de l'image dans le Profile User FireBase==================================//
+=======
+  async uploadFirebase() {
+    // ==================Mise en place de l'image dans le Profile User FireBase==================================//
+>>>>>>> MarquetPlace
     const loading = await this.loadingController.create();
     await loading.present();
     this.imagePath = 'Images/User/img/' + new Date().getTime() + '.jpg';
     this.upload = this.afSG.ref(this.imagePath).putString(this.image, 'data_url');
 // ==========================================================//
+<<<<<<< HEAD
 // ===============Alert par message==========================================//
+=======
+
+// =========================================================//
+>>>>>>> MarquetPlace
     this.upload.then(async () => { 
       this.image = 'https://www.kasterencultuur.nl/editor/placeholder.jpg';
       await loading.dismiss();
