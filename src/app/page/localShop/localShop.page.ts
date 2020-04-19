@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { AngularFireStorage } from '@angular/fire/storage';
+<<<<<<< HEAD
 import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
+=======
+>>>>>>> MarquetPlace
 
 @Component({
   selector: 'app-localSop',

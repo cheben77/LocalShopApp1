@@ -104,11 +104,22 @@ export class GeoCatchingPage {
   }
   //===================================================//
 
+<<<<<<< HEAD
   //===================================================//
+=======
+
+>>>>>>> MarquetPlace
   setMapTypeId() {
     this.map.setMapTypeId(GoogleMapsMapTypeId.SATELLITE);
   }
  //===================================================//
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+=======
+>>>>>>> MarquetPlace
+>>>>>>> 35b3261f73643fbf0e87dad6d4679099b51911d4
   // async mapOptions() {
   //   const actionSheet = await this.actionCtrl.create({
   //     buttons: [{
