@@ -4,6 +4,46 @@
   </ion-toolbar>
 </ion-header>
 
+<ion-content class="ion-padding">
+  <ion-header>
+    <ion-toolbar>
+      Bonjour & Bienvenue
+    </ion-toolbar>
+
+    <div *ngIf="!connected">
+      <ion-label>
+        Email
+      </ion-label>
+      <ion-input [(ngModel)]="dataUser.email" type="email">
+      </ion-input>
+      <ion-label>
+        Mot de passe
+      </ion-label>
+      <ion-input [(ngModel)]="dataUser.motDePasse" type="password"></ion-input>
+      <ion-button expand="block" (click)="login()">connexion
+        <ion-icon name=""></ion-icon>
+      </ion-button>
+      <ion-button (click)="logout()">
+        <ion-icon (click)="logout()">
+        </ion-icon>
+      </ion-button>
+    </div>
+    <br>
+
+<div *ngIf="connected">
+<h1>Ravi de te voir </h1>
+</div>
+
+
+
+
+
+<!-- <ion-button color="dark" (click)="add()">Ajouter -->
+  <!-- <ion-icon> -->
+  <!-- </ion-icon> -->
+<!-- </ion-button> -->
+</ion-header>
+
 <ion-content>
 <ion-header>
   <ion-title>
@@ -24,7 +64,7 @@
         </ion-icon>
       </ion-button>
   <div class="ion-padding">
-    <ion-button shape="round" (click)="FacebookLogin()">
+    <ion-button shape="round" (click)="FacebookLogin()" class="ion-padding">
       <ion-icon slot="start" name="logo-facebook"></ion-icon>
         Connexion avec Facebook
     </ion-button>

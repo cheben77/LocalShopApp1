@@ -14,8 +14,11 @@
 <<<<<<< HEAD
     <préférence name="GOOGLE_MAPS_ANDROID_API_KEY" value="AIzaSyBJX-gnG_U4pJqWY24Ed0-G5wa7msWQuFw" />
     <preference name="GOOGLE_MAPS_IOS_API_KEY" value="AIzaSyBJX-gnG_U4pJqWY24Ed0-G5wa7msWQuFw" />
+<<<<<<< HEAD
 =======
 >>>>>>> MarquetPlace
+=======
+>>>>>>> d710d59c0e1766217aead66997b368cc841654b1
     <preference name="ScrollEnabled" value="false" />
     <preference name="android-minSdkVersion" value="19" />
     <preference name="BackupWebStorage" value="none" />

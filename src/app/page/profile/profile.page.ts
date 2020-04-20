@@ -25,6 +25,7 @@ export class ProfilePage {
   imagePath: string;
   upload: any;
   images = [];
+  badge: any;
 
 // ========================================================//
   constructor(
@@ -39,7 +40,7 @@ export class ProfilePage {
     this.getImagesDatabase();
     this.afAuth.authState.subscribe(auth => {
       if (!auth) {
-        console.log('non connecté');
+        console.log('non connectéPageProfile');
       } else {
         console.log('connecté: ' + auth.uid);
         this.userId = auth.uid;

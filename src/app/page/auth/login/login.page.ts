@@ -12,6 +12,7 @@ import { UserCredential } from 'src/app/models/user-credential';
 import { University } from 'src/app/models/university';
 //import { UnivModalComponent } from 'src/app/components/univ-modal/univ-modal.component';
 import { NavController } from '@ionic/angular';
+
 import * as firebase from 'firebase/app';
 import { Facebook } from '@ionic-native/facebook/ngx';
 import { Platform } from '@ionic/angular';
@@ -73,13 +74,11 @@ export class LoginPage implements OnInit {
   validationsForm: FormGroup;
   afDB: AngularFireDatabase;
   validationMessages = {
-    // tslint:disable-next-line: object-literal-key-quotes
     // Email types and messages error
     email: [
       { type: 'required', message: 'Email is required.' },
       { type: 'pattern', message: 'Please enter a valid email.' }
     ],
-    // tslint:disable-next-line: object-literal-key-quotes
     // Password types and messages error
     password: [
       { type: 'required', message: 'Password is required.' },
@@ -88,6 +87,7 @@ export class LoginPage implements OnInit {
     ],
     };
   formBuilder: any;
+  afDG: any;
 
   constructor(
         // authService: AuthService, 
@@ -110,7 +110,6 @@ export class LoginPage implements OnInit {
   }
 
 ngOnInit() {
-    this.facebookLogin();
     this.validationsForm = this.formBuilder.group({
       email: new FormControl('', Validators.compose([
       Validators.required,
@@ -119,18 +118,19 @@ ngOnInit() {
     password: new FormControl('', Validators.compose([
       Validators.required,
       // validators deactivate for this first phase of projet
-      Validators.minLength(5),
-      Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$')
-    ]))
-  });
+      // Validators.minLength(5),
+      // Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$')
+     ]))
+   });
+    this.facebookLogin();
 }
 
-// add() {
-//     this.afDG.list('User/').push({
-//       pseudo: '',
-//       Age: '',
-//     });
-//   }
+add() {
+    this.afDG.list('User/').push({
+      pseudo: 'Cheben',
+      Age: '34',
+    });
+  }
 
   // async login() {
     // const toastLog = await this.toastController.create({

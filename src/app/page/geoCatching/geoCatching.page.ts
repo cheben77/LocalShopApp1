@@ -13,7 +13,7 @@ import {
   Circle
 } from '@ionic-native/google-maps';
 import { ActionSheetController, Platform, AlertController } from '@ionic/angular';
-//import { Geolocation, Geoposition } from '@ionic-native/geolocation/ngx';
+import { Geolocation, Geoposition } from '@ionic-native/geolocation/ngx';
 import { fromEvent, Observable } from 'rxjs';
 import { FirebaseService } from '../../services/firebase.service';
 import { ActivatedRoute } from '@angular/router';
@@ -26,6 +26,7 @@ import { async } from 'rxjs/internal/scheduler/async';
 
 
 export class GeoCatchingPage {
+  
   map: GoogleMap;
   private geolocation: Geolocation;
   // myPosition: Observable<Geoposition>;
@@ -39,17 +40,20 @@ export class GeoCatchingPage {
     public api: FirebaseService
   ) {
     if (this.platform.is('cordova')) {
-      // this.geolocation.getCurrentPosition().then((resp) => {
-      //  // resp.coords.latitude
-      //  // resp.coords.longitude
-      // }).catch((error) => {
-      //   console.log('Error getting location', error);
-      // });
+      this.geolocation.getCurrentPosition().then((resp) => {
+       // tslint:disable-next-line:no-unused-expression
+       resp.coords.latitude;
+       // tslint:disable-next-line:no-unused-expression
+       resp.coords.longitude;
+      }).catch((error) => {
+        console.log('Error getting location', error);
+      });
 
       // tslint:disable-next-line:new-parens
       // this.geolocation = new Geolocation;
     }
   }
+
 
   // tslint:disable-next-line:use-lifecycle-interface
   ngOnInit() {
@@ -72,7 +76,6 @@ export class GeoCatchingPage {
             animation: 'DROP',
             position: QRCodePosition
           });
-
         }));
       });
     }
@@ -181,8 +184,13 @@ placeMarker(markerTitle: string) {
     });
     await alert.present();
   }
+
   logout() {
     this.afAuth.auth.signOut();
+<<<<<<< HEAD
     console.log('déconnecter !!');
+=======
+    console.log('déconnecté !!');
+>>>>>>> d710d59c0e1766217aead66997b368cc841654b1
   }
 }
