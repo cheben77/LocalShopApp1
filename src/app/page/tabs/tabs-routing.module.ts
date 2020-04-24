@@ -80,7 +80,7 @@ const routes: Routes = [
     {
       path: '',
       loadChildren: () =>
-        import('../partenaires/partenaires.module').then(m => m.PartenairesPageModule)
+        import('../localShop/partenaires/partenaires.module').then(m => m.PartenairesPageModule)
     }
   ]
 },

@@ -25,20 +25,25 @@ const routes: Routes = [
   },
   {
     path: 'partenaires',
-    loadChildren: () => import('./page/partenaires/partenaires.module').then( m => m.PartenairesPageModule)
+    loadChildren: () => import('./page/localShop/partenaires/partenaires.modulees.module').then( m => m.PartenairesPageModule)
   },
   {
     path: 'aventure',
-    loadChildren: () => import('./page/aventure/aventure.module').then( m => m.AventurePageModule)
+    loadChildren: () => import('./page/geoCatching/aventure/aventure.moduleule').then( m => m.AventurePageModule)
   },
   {
     path: 'quetes',
-    loadChildren: () => import('./page/quetes/quetes.module').then( m => m.QuetesPageModule)
+    loadChildren: () => import('./page/geoCatching/quetes/quetes.modulele').then( m => m.QuetesPageModule)
   },
   {
     path: 'partenaires-maps',
     loadChildren: () => import('./page/partenaires-maps/partenaires-maps.module').then( m => m.PartenairesMapsPageModule)
+  },
+  {
+    path: 'infos',
+    loadChildren: () => import('./page/localShop/infos/infos.module').then( m => m.InfosPageModule)
   }
+
 
 ];
 @NgModule({
