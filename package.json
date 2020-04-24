@@ -34,6 +34,7 @@
     "@ionic-native/status-bar": "^5.24.0",
     "@ionic/angular": "^4.11.10",
     "@ionic/cli": "^6.6.0",
+    "angular": "^1.7.9",
     "angularx-qrcode": "^2.2.1",
     "animejs": "^3.2.0",
     "bounce.js": "^0.8.2",
