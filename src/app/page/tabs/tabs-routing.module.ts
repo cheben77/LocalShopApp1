@@ -33,7 +33,7 @@ const routes: Routes = [
           {
             path: '',
             loadChildren: () =>
-              import('../qrCode/qrCode.module').then(m => m.QrCodePageModule)
+              import('../profile/qrCode/qrCode.module').then(m => m.QrCodePageModule)
           }
         ]
       },
@@ -70,7 +70,7 @@ const routes: Routes = [
       {
         path: '',
         loadChildren: () =>
-          import('../geo-aventure/geo-aventure.module').then(m => m.GeoAventurePageModule)
+          import('../localShop/geo-aventure/geo-aventure.module').then(m => m.GeoAventurePageModule)
       }
     ]
   },

@@ -21,19 +21,19 @@ const routes: Routes = [
 
   {
     path: 'geo-aventure',
-    loadChildren: () => import('./page/geo-aventure/geo-aventure.module').then( m => m.GeoAventurePageModule)
+    loadChildren: () => import('./page/localShop/geo-aventure/geo-aventure.module').then( m => m.GeoAventurePageModule)
   },
   {
     path: 'partenaires',
-    loadChildren: () => import('./page/localShop/partenaires/partenaires.modulees.module').then( m => m.PartenairesPageModule)
+    loadChildren: () => import('./page/localShop/partenaires/partenaires.module').then( m => m.PartenairesPageModule)
   },
   {
     path: 'aventure',
-    loadChildren: () => import('./page/geoCatching/aventure/aventure.moduleule').then( m => m.AventurePageModule)
+    loadChildren: () => import('./page/geoCatching/aventure/aventure.module').then( m => m.AventurePageModule)
   },
   {
     path: 'quetes',
-    loadChildren: () => import('./page/geoCatching/quetes/quetes.modulele').then( m => m.QuetesPageModule)
+    loadChildren: () => import('./page/geoCatching/quetes/quetes.module').then( m => m.QuetesPageModule)
   },
   {
     path: 'partenaires-maps',
