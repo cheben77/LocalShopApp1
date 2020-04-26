@@ -38,30 +38,10 @@ bower_components
 build/Release
 
 # Dependency directories
-node_modules/
 platforms/
 plugins/
 jspm_packages/
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 www/
-=======
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
-=======
-<<<<<<< HEAD
-=======
-www/
->>>>>>> 2ec8c2af2df3bf365053a4a899d01f55ecc1320c
->>>>>>> b5302a84f66ce77e570becc624080fb28e97adf6
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> GeoYann
-=======
->>>>>>> Stashed changes
 
 # TypeScript v1 declaration files
 typings/
@@ -129,3 +109,4 @@ dist
 
 # vscode
 .vscode/
+node_modules

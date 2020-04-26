@@ -37,7 +37,7 @@ const routes: Routes = [
   },
   {
     path: 'partenaires-maps',
-    loadChildren: () => import('./page/partenaires-maps/partenaires-maps.module').then( m => m.PartenairesMapsPageModule)
+    loadChildren: () => import('./page/geoCatching/partenaires-maps/partenaires-maps.module').then( m => m.PartenairesMapsPageModule)
   },
   {
     path: 'infos',
